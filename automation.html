@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-bright": "#353a3f",
+                        "on-tertiary-fixed": "#1c1b1c",
+                        "error": "#ffb4ab",
+                        "tertiary-fixed": "#e5e2e3",
+                        "secondary-container": "#ff525f",
+                        "primary-fixed": "#7df4ff",
+                        "on-error": "#690005",
+                        "on-background": "#dfe2ea",
+                        "inverse-surface": "#dfe2ea",
+                        "error-container": "#93000a",
+                        "outline-variant": "#3b494b",
+                        "on-secondary": "#680014",
+                        "surface-container-lowest": "#0a0f14",
+                        "surface-container-highest": "#31353b",
+                        "background": "#0f1419",
+                        "secondary-fixed": "#ffdad9",
+                        "on-surface": "#dfe2ea",
+                        "on-tertiary-fixed-variant": "#474647",
+                        "surface-container-low": "#181c21",
+                        "surface-dim": "#0f1419",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-fixed": "#400009",
+                        "tertiary-container": "#dbd8d9",
+                        "primary-fixed-dim": "#00dbe9",
+                        "on-primary-container": "#006970",
+                        "tertiary": "#f8f5f6",
+                        "on-secondary-fixed-variant": "#920021",
+                        "surface-tint": "#00dbe9",
+                        "surface-variant": "#31353b",
+                        "tertiary-fixed-dim": "#c8c6c7",
+                        "on-primary-fixed": "#002022",
+                        "on-primary": "#00363a",
+                        "outline": "#849495",
+                        "inverse-on-surface": "#2c3137",
+                        "surface-container": "#1c2025",
+                        "on-surface-variant": "#b9cacb",
+                        "secondary-fixed-dim": "#ffb3b3",
+                        "secondary": "#ffb3b3",
+                        "primary": "#dbfcff",
+                        "on-tertiary": "#313031",
+                        "primary-container": "#00f0ff",
+                        "surface": "#0f1419",
+                        "on-secondary-container": "#5b0011",
+                        "on-primary-fixed-variant": "#004f54",
+                        "surface-container-high": "#262a30",
+                        "on-tertiary-container": "#5f5e5f",
+                        "inverse-primary": "#006970"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin": "64px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "label-caps": ["Space Grotesk"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Space Grotesk"],
+                        "headline-lg": ["Space Grotesk"],
+                        "display-xl": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.2em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "display-xl": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(15, 20, 25, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 240, 255, 0.2);
+            position: relative;
+        }
+        .glass-panel::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 10px;
+            height: 10px;
+            border-top: 2px solid #00f0ff;
+            border-right: 2px solid #00f0ff;
+        }
+        .scan-line {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00f0ff, transparent);
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.3;
+        }
+        .circuit-bg {
+            background-image: radial-gradient(#00f0ff 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+            opacity: 0.05;
+        }
+        .terminal-caret {
+            display: inline-block;
+            width: 8px;
+            height: 1.2em;
+            background: #00f0ff;
+            vertical-align: middle;
+            margin-left: 4px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-slate-950/40 backdrop-blur-xl border-b border-cyan-500/20 shadow-[0_0_20px_rgba(0,240,255,0.15)]">
+<div class="font-['Space_Grotesk'] font-bold text-cyan-400 tracking-tighter text-xl italic">BEEGO-SPACE</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-['Space_Grotesk'] uppercase tracking-widest text-xs text-cyan-400 font-bold border-b-2 border-cyan-400 hover:bg-cyan-500/10 hover:text-cyan-300 transition-all duration-300 active:scale-95 cursor-crosshair h-16 flex items-center" href="#">Command Center</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-widest text-xs text-slate-500 font-medium hover:bg-cyan-500/10 hover:text-cyan-300 transition-all duration-300 active:scale-95 cursor-crosshair" href="#">Hardware Mesh</a>
+<a class="font-['Space_Grotesk'] uppercase tracking-widest text-xs text-slate-500 font-medium hover:bg-cyan-500/10 hover:text-cyan-300 transition-all duration-300 active:scale-95 cursor-crosshair" href="#">Logic Gates</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="text-cyan-400 active:scale-95 cursor-crosshair"><span class="material-symbols-outlined">notifications_active</span></button>
+<button class="text-cyan-400 active:scale-95 cursor-crosshair"><span class="material-symbols-outlined">settings_input_component</span></button>
+<div class="w-8 h-8 rounded-full border border-cyan-500/40 overflow-hidden">
+<img alt="User System Operator Avatar" class="w-full h-full object-cover" data-alt="Cyberpunk style profile avatar of a human operator wearing futuristic neon headset with digital overlays" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYVb0TyQE4dhnkfjROC_nwGinLs3m-K6s2Xj-yvuWUL7mamvWTeGSD0jDpLJoNalcRvw0e_hb6OewU5-b28TxanStiU93nvj9ZRQ7_LUaFkixDC9GznTeFg1bm7Disnpis_XpIKeS2hIMkH-dXpJ0vWEaYhNBQ0DWis1btYtV2WS6dXhn7qrqoELslEG75r7c_Tvkm6FsDAtgODDpW_M5ZCCIZUwhjZTTx5G0QqNEODa0XnBrp7AY0En6yFbMDxGVtT5rzDQK8ag"/>
+</div>
+</div>
+</header>
+<!-- SideNavBar (Hidden on small screens) -->
+<aside class="fixed left-0 top-0 h-full z-40 flex flex-col pt-20 bg-slate-950/60 backdrop-blur-2xl border-r border-cyan-500/20 w-64 hidden md:flex">
+<div class="px-6 mb-8">
+<div class="text-cyan-400 font-black text-lg font-['Space_Grotesk']">BEEGO-OS v1.0</div>
+<div class="font-['Space_Grotesk'] uppercase text-[10px] tracking-tight text-cyan-400/60">AUTHENTICATED_USER</div>
+</div>
+<div class="flex-1 divide-y divide-cyan-500/10">
+<a class="bg-cyan-500/20 text-cyan-400 border-l-4 border-cyan-400 px-4 py-3 flex items-center gap-3 font-['Space_Grotesk'] uppercase text-[10px] tracking-tight transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">terminal</span> Command Center
+            </a>
+<a class="text-slate-400 px-4 py-3 flex items-center gap-3 font-['Space_Grotesk'] uppercase text-[10px] tracking-tight hover:bg-cyan-900/30 hover:text-cyan-200 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">memory</span> Hardware Mesh
+            </a>
+<a class="text-slate-400 px-4 py-3 flex items-center gap-3 font-['Space_Grotesk'] uppercase text-[10px] tracking-tight hover:bg-cyan-900/30 hover:text-cyan-200 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">settings_ethernet</span> Logic Gates
+            </a>
+<a class="text-slate-400 px-4 py-3 flex items-center gap-3 font-['Space_Grotesk'] uppercase text-[10px] tracking-tight hover:bg-cyan-900/30 hover:text-cyan-200 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">hub</span> Network Matrix
+            </a>
+<a class="text-slate-400 px-4 py-3 flex items-center gap-3 font-['Space_Grotesk'] uppercase text-[10px] tracking-tight hover:bg-cyan-900/30 hover:text-cyan-200 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">list_alt</span> System Logs
+            </a>
+</div>
+<div class="p-4">
+<button class="w-full py-3 border border-cyan-500 text-cyan-400 font-['Space_Grotesk'] text-[10px] tracking-widest hover:bg-cyan-500/10 transition-all">INITIATE SCAN</button>
+</div>
+<div class="border-t border-cyan-500/10 p-2">
+<a class="text-error px-4 py-2 flex items-center gap-3 font-['Space_Grotesk'] uppercase text-[9px] hover:bg-error/10 transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">report</span> Emergency Stop
+            </a>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="md:ml-64 pt-24 pb-32 px-4 md:px-margin min-h-screen relative overflow-hidden">
+<div class="absolute inset-0 circuit-bg pointer-events-none"></div>
+<!-- Dashboard Header -->
+<section class="mb-12 relative">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<span class="text-primary-fixed-dim font-label-caps text-label-caps mb-2 block">PROTOCOL: AUTOMATION_HUB_V3</span>
+<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Active Automation Matrix</h1>
+</div>
+<div class="flex gap-4">
+<div class="glass-panel px-6 py-3">
+<span class="text-slate-500 font-label-caps text-[10px] block">NETWORK STATUS</span>
+<span class="text-cyan-400 font-headline-md text-xl flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span> OPERATIONAL
+                        </span>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Contract Flow Visualization (Large) -->
+<div class="md:col-span-8 glass-panel p-8 min-h-[400px]">
+<div class="flex justify-between items-start mb-8">
+<div>
+<h2 class="font-headline-md text-headline-md text-primary">Flow Visualization</h2>
+<p class="text-on-surface-variant font-body-md">Logic-path mapping for automated triggers</p>
+</div>
+<span class="text-cyan-400/40 font-['Space_Grotesk'] text-[10px]">MAP_ID: 0x992..EF2</span>
+</div>
+<div class="relative w-full h-64 border border-cyan-500/10 rounded flex items-center justify-around overflow-hidden">
+<div class="scan-line"></div>
+<!-- Flow Mockup -->
+<div class="flex flex-col items-center gap-2 z-10">
+<div class="w-12 h-12 glass-panel flex items-center justify-center border-cyan-400">
+<span class="material-symbols-outlined text-cyan-400">login</span>
+</div>
+<span class="font-label-caps text-[10px]">ENTRY</span>
+</div>
+<div class="h-[2px] flex-1 bg-gradient-to-r from-cyan-400/50 to-cyan-400/10 mx-4"></div>
+<div class="flex flex-col items-center gap-2 z-10">
+<div class="w-16 h-16 glass-panel flex items-center justify-center border-cyan-400 shadow-[0_0_15px_rgba(0,240,255,0.3)]">
+<span class="material-symbols-outlined text-cyan-400">query_stats</span>
+</div>
+<span class="font-label-caps text-[10px] text-cyan-400">VALUATION</span>
+</div>
+<div class="h-[2px] flex-1 bg-cyan-400/10 mx-4"></div>
+<div class="flex flex-col items-center gap-2 z-10">
+<div class="w-12 h-12 glass-panel flex items-center justify-center border-slate-700">
+<span class="material-symbols-outlined text-slate-500">point_of_sale</span>
+</div>
+<span class="font-label-caps text-[10px] text-slate-500">EXECUTE</span>
+</div>
+</div>
+<div class="mt-8 grid grid-cols-3 gap-4">
+<div class="border-l border-cyan-500/30 pl-4 py-2">
+<div class="text-slate-500 text-[10px] font-label-caps">LATENCY</div>
+<div class="text-cyan-400 font-headline-md text-lg">12ms</div>
+</div>
+<div class="border-l border-cyan-500/30 pl-4 py-2">
+<div class="text-slate-500 text-[10px] font-label-caps">Uptime</div>
+<div class="text-cyan-400 font-headline-md text-lg">99.98%</div>
+</div>
+<div class="border-l border-cyan-500/30 pl-4 py-2">
+<div class="text-slate-500 text-[10px] font-label-caps">GAS_MODE</div>
+<div class="text-cyan-400 font-headline-md text-lg">ADAPTIVE</div>
+</div>
+</div>
+</div>
+<!-- Active Triggers (Sidebar) -->
+<div class="md:col-span-4 flex flex-col gap-gutter">
+<div class="glass-panel p-6 flex-1">
+<h3 class="font-headline-md text-xl text-primary mb-6 flex items-center justify-between">
+                        Active Triggers
+                        <span class="material-symbols-outlined text-cyan-400">bolt</span>
+</h3>
+<div class="space-y-4">
+<div class="p-4 bg-cyan-500/5 border border-cyan-500/20 rounded">
+<div class="flex justify-between items-center mb-1">
+<span class="font-label-caps text-[11px] text-cyan-400">PRICE_ACTION</span>
+<span class="px-2 py-0.5 bg-cyan-400/20 text-cyan-400 text-[9px] rounded">LIVE</span>
+</div>
+<div class="text-on-surface text-sm font-medium">ETH &gt; $4,200 Trigger</div>
+</div>
+<div class="p-4 bg-slate-900/40 border border-slate-800 rounded">
+<div class="flex justify-between items-center mb-1">
+<span class="font-label-caps text-[11px] text-slate-500">TIME_LOCK</span>
+<span class="px-2 py-0.5 bg-slate-800 text-slate-500 text-[9px] rounded">PENDING</span>
+</div>
+<div class="text-on-surface text-sm font-medium">Weekly Rebalance</div>
+</div>
+<div class="p-4 bg-slate-900/40 border border-slate-800 rounded">
+<div class="flex justify-between items-center mb-1">
+<span class="font-label-caps text-[11px] text-slate-500">WHALE_WATCH</span>
+<span class="px-2 py-0.5 bg-slate-800 text-slate-500 text-[9px] rounded">STANDBY</span>
+</div>
+<div class="text-on-surface text-sm font-medium">Tx &gt; 1,000 ETH Liquid</div>
+</div>
+</div>
+</div>
+<!-- Gas Optimization Panel -->
+<div class="glass-panel p-6 bg-secondary-container/10 border-secondary-container/20 overflow-hidden relative">
+<div class="absolute -right-4 -bottom-4 opacity-10">
+<span class="material-symbols-outlined text-8xl text-secondary-container">local_gas_station</span>
+</div>
+<h3 class="font-headline-md text-xl text-secondary-container mb-4">Gas Efficiency</h3>
+<div class="text-display-xl text-secondary-container opacity-80 mb-2">94%</div>
+<div class="text-on-surface-variant font-label-caps text-[10px]">SAVED: 4.22 ETH (LAST 30D)</div>
+<button class="mt-6 w-full py-2 bg-secondary-container/20 border border-secondary-container text-secondary-container font-label-caps text-[10px] hover:bg-secondary-container hover:text-white transition-all">FORCE_OPTIMIZE</button>
+</div>
+</div>
+<!-- Source Code View (Full Width) -->
+<div class="md:col-span-12 glass-panel overflow-hidden">
+<div class="bg-slate-950/80 px-6 py-3 border-b border-cyan-500/20 flex justify-between items-center">
+<div class="flex gap-4">
+<div class="flex gap-1">
+<div class="w-3 h-3 rounded-full bg-error/40"></div>
+<div class="w-3 h-3 rounded-full bg-secondary-container/40"></div>
+<div class="w-3 h-3 rounded-full bg-cyan-400/40"></div>
+</div>
+<span class="text-slate-500 font-['Space_Grotesk'] text-[10px] ml-4">contract_automation_v2.sol</span>
+</div>
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-slate-500 text-sm">content_copy</span>
+<span class="material-symbols-outlined text-slate-500 text-sm">download</span>
+</div>
+</div>
+<div class="p-8 font-mono text-sm overflow-x-auto text-cyan-400/80">
+<div class="flex gap-4">
+<div class="text-slate-700 select-none text-right w-8">01</div>
+<div><span class="text-secondary-container">pragma</span> solidity ^0.8.20;</div>
+</div>
+<div class="flex gap-4">
+<div class="text-slate-700 select-none text-right w-8">02</div>
+<div></div>
+</div>
+<div class="flex gap-4">
+<div class="text-slate-700 select-none text-right w-8">03</div>
+<div><span class="text-cyan-400">contract</span> BeegoAutomation {</div>
+</div>
+<div class="flex gap-4">
+<div class="text-slate-700 select-none text-right w-8">04</div>
+<div class="pl-8"><span class="text-slate-500">// Initialize system core</span></div>
+</div>
+<div class="flex gap-4">
+<div class="text-slate-700 select-none text-right w-8">05</div>
+<div class="pl-8"><span class="text-cyan-400">address</span> <span class="text-secondary-container">public</span> operator;</div>
+</div>
+<div class="flex gap-4">
+<div class="text-slate-700 select-none text-right w-8">06</div>
+<div class="pl-8"><span class="text-cyan-400">constructor</span>() { operator = msg.sender; }</div>
+</div>
+<div class="flex gap-4">
+<div class="text-slate-700 select-none text-right w-8">07</div>
+<div class="pl-8"></div>
+</div>
+<div class="flex gap-4">
+<div class="text-slate-700 select-none text-right w-8">08</div>
+<div class="pl-8"><span class="text-cyan-400">function</span> initiateSequence() <span class="text-secondary-container">external</span> {</div>
+</div>
+<div class="flex gap-4">
+<div class="text-slate-700 select-none text-right w-8">09</div>
+<div class="pl-16"><span class="text-slate-500">/* Logic matrix execution */</span></div>
+</div>
+<div class="flex gap-4">
+<div class="text-slate-700 select-none text-right w-8">10</div>
+<div class="pl-16">execute_flow_logic();<span class="terminal-caret"></span></div>
+</div>
+<div class="flex gap-4">
+<div class="text-slate-700 select-none text-right w-8">11</div>
+<div class="pl-8">}</div>
+</div>
+<div class="flex gap-4">
+<div class="text-slate-700 select-none text-right w-8">12</div>
+<div>}</div>
+</div>
+</div>
+</div>
+<!-- System Metrics Small Cards -->
+<div class="md:col-span-3 glass-panel p-6">
+<div class="text-slate-500 font-label-caps text-[10px] mb-2">THERMAL_LOAD</div>
+<div class="h-1 bg-slate-800 w-full mb-3 overflow-hidden rounded-full">
+<div class="h-full bg-cyan-400 w-[65%]"></div>
+</div>
+<div class="text-primary-fixed-dim font-headline-md text-xl">42°C</div>
+</div>
+<div class="md:col-span-3 glass-panel p-6">
+<div class="text-slate-500 font-label-caps text-[10px] mb-2">MEM_ALLOCATION</div>
+<div class="h-1 bg-slate-800 w-full mb-3 overflow-hidden rounded-full">
+<div class="h-full bg-cyan-400 w-[24%]"></div>
+</div>
+<div class="text-primary-fixed-dim font-headline-md text-xl">2.4 GB</div>
+</div>
+<div class="md:col-span-3 glass-panel p-6">
+<div class="text-slate-500 font-label-caps text-[10px] mb-2">IO_THROUGHPUT</div>
+<div class="h-1 bg-slate-800 w-full mb-3 overflow-hidden rounded-full">
+<div class="h-full bg-secondary-container w-[88%]"></div>
+</div>
+<div class="text-secondary-container font-headline-md text-xl">1.2 GB/s</div>
+</div>
+<div class="md:col-span-3 glass-panel p-6">
+<div class="text-slate-500 font-label-caps text-[10px] mb-2">CORE_SYNC</div>
+<div class="h-1 bg-slate-800 w-full mb-3 overflow-hidden rounded-full">
+<div class="h-full bg-cyan-400 w-[95%]"></div>
+</div>
+<div class="text-primary-fixed-dim font-headline-md text-xl">ACTIVE</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 md:hidden bg-slate-950/80 backdrop-blur-lg border-t border-cyan-500/30 rounded-t-lg shadow-[0_-10px_25px_rgba(0,240,255,0.1)]">
+<a class="flex flex-col items-center justify-center text-cyan-400 bg-cyan-400/10 rounded-sm p-2 ring-1 ring-cyan-400/50 hover:text-cyan-300 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-['Space_Grotesk'] text-[9px] font-bold tracking-tighter">DASH</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-600 p-2 hover:text-cyan-300 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">precision_manufacturing</span>
+<span class="font-['Space_Grotesk'] text-[9px] font-bold tracking-tighter">AUTO</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-600 p-2 hover:text-cyan-300 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">sensors</span>
+<span class="font-['Space_Grotesk'] text-[9px] font-bold tracking-tighter">SENSORS</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-600 p-2 hover:text-cyan-300 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">warning</span>
+<span class="font-['Space_Grotesk'] text-[9px] font-bold tracking-tighter">ALERTS</span>
+</a>
+</nav>
+<!-- Contextual Floating Action Button -->
+<button class="fixed bottom-24 right-8 w-14 h-14 bg-cyan-400 text-on-primary-container rounded-full shadow-[0_0_20px_rgba(0,240,255,0.6)] flex items-center justify-center z-40 active:scale-90 transition-transform md:bottom-12">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">add</span>
+</button>
+</body></html>
