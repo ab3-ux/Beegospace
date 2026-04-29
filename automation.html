@@ -2,8 +2,7 @@
 
 <html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Automation Hub | Beego-Space</title>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -14,53 +13,49 @@
             theme: {
                 extend: {
                     "colors": {
-                        "on-surface-variant": "#c7c4d7",
-                        "on-error-container": "#ffdad6",
-                        "secondary-fixed": "#d4e4fa",
-                        "surface-container-low": "#131b2e",
-                        "surface-container": "#171f33",
-                        "tertiary": "#bcc7de",
-                        "surface": "#0b1326",
-                        "on-tertiary-container": "#eff2ff",
-                        "on-surface": "#dae2fd",
-                        "on-secondary-container": "#a7b6cc",
-                        "on-primary": "#1800a7",
-                        "error-container": "#93000a",
-                        "on-error": "#690005",
-                        "primary-fixed-dim": "#c2c1ff",
-                        "primary": "#c2c1ff",
-                        "outline": "#918fa0",
-                        "on-secondary-fixed": "#0d1c2d",
                         "on-tertiary-fixed-variant": "#3c475a",
-                        "on-background": "#dae2fd",
-                        "on-tertiary-fixed": "#111c2d",
-                        "secondary-fixed-dim": "#b9c8de",
-                        "on-secondary": "#233143",
-                        "inverse-on-surface": "#283044",
-                        "background": "#0b1326",
-                        "surface-variant": "#2d3449",
-                        "secondary": "#b9c8de",
-                        "primary-container": "#5e5ce6",
-                        "on-primary-fixed": "#0c006b",
-                        "inverse-surface": "#dae2fd",
                         "surface-tint": "#c2c1ff",
-                        "on-tertiary": "#263143",
-                        "tertiary-fixed-dim": "#bcc7de",
-                        "tertiary-fixed": "#d8e3fb",
-                        "primary-fixed": "#e2dfff",
-                        "surface-container-high": "#222a3d",
-                        "inverse-primary": "#4d4ad5",
-                        "surface-container-lowest": "#060e20",
-                        "on-primary-fixed-variant": "#332dbc",
-                        "tertiary-container": "#646f84",
-                        "secondary-container": "#39485a",
                         "surface-bright": "#31394d",
-                        "error": "#ffb4ab",
-                        "surface-container-highest": "#2d3449",
-                        "outline-variant": "#464554",
+                        "surface": "#0b1326",
+                        "on-tertiary-fixed": "#111c2d",
+                        "surface-container": "#171f33",
+                        "on-secondary-fixed-variant": "#39485a",
+                        "secondary-fixed-dim": "#b9c8de",
+                        "error-container": "#93000a",
+                        "primary-fixed": "#e2dfff",
+                        "on-tertiary-container": "#eff2ff",
                         "on-primary-container": "#f4f1ff",
+                        "on-error-container": "#ffdad6",
+                        "primary-container": "#5e5ce6",
+                        "surface-container-low": "#131b2e",
+                        "surface-container-high": "#222a3d",
+                        "tertiary": "#bcc7de",
+                        "on-surface-variant": "#c7c4d7",
+                        "secondary": "#b9c8de",
+                        "inverse-primary": "#4d4ad5",
+                        "tertiary-fixed-dim": "#bcc7de",
+                        "on-primary": "#1800a7",
+                        "outline": "#918fa0",
+                        "tertiary-container": "#646f84",
+                        "outline-variant": "#464554",
+                        "inverse-on-surface": "#283044",
+                        "inverse-surface": "#dae2fd",
+                        "background": "#0b1326",
+                        "on-secondary": "#233143",
+                        "primary": "#c2c1ff",
+                        "on-secondary-fixed": "#0d1c2d",
+                        "secondary-fixed": "#d4e4fa",
+                        "on-primary-fixed-variant": "#332dbc",
+                        "on-tertiary": "#263143",
+                        "surface-container-highest": "#2d3449",
                         "surface-dim": "#0b1326",
-                        "on-secondary-fixed-variant": "#39485a"
+                        "on-surface": "#dae2fd",
+                        "on-error": "#690005",
+                        "on-secondary-container": "#a7b6cc",
+                        "primary-fixed-dim": "#c2c1ff",
+                        "surface-variant": "#2d3449",
+                        "on-primary-fixed": "#0c006b",
+                        "error": "#ffb4ab"
                     },
                     "borderRadius": {
                         "DEFAULT": "0.25rem",
@@ -69,300 +64,202 @@
                         "full": "9999px"
                     },
                     "spacing": {
+                        "stack-md": "24px",
                         "gutter": "24px",
-                        "stack-sm": "12px",
-                        "stack-lg": "48px",
                         "margin": "40px",
+                        "stack-lg": "48px",
                         "container-max": "1440px",
                         "unit": "8px",
-                        "stack-md": "24px"
+                        "stack-sm": "12px"
                     },
                     "fontFamily": {
-                        "body-md": ["Manrope"],
-                        "body-lg": ["Manrope"],
                         "label-caps": ["Manrope"],
                         "headline-md": ["Space Grotesk"],
                         "body-sm": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "headline-lg": ["Space Grotesk"],
                         "display": ["Space Grotesk"],
-                        "headline-lg": ["Space Grotesk"]
+                        "body-md": ["Manrope"]
                     },
                     "fontSize": {
-                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
                         "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
                         "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
                         "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "500"}],
                         "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "500"}],
-                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "500"}]
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
                     }
-                }
-            }
+                },
+            },
         }
     </script>
 <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
         body {
             background-color: #0b1326;
             color: #dae2fd;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
         .glass-panel {
-            background: rgba(23, 31, 51, 0.6);
+            background: rgba(23, 31, 51, 0.7);
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(145, 143, 160, 0.2);
+            border: 1px solid rgba(145, 143, 160, 0.1);
+        }
+        .scroll-hide::-webkit-scrollbar {
+            display: none;
         }
     </style>
-</head>
-<body class="font-body-md text-body-md antialiased">
-<!-- Thirdweb SDK Placeholder scripts -->
-<!-- <script src="https://unpkg.com/@thirdweb-dev/sdk/dist/thirdweb-sdk.umd.js"></script> -->
-<!-- SideNavBar -->
-<aside class="bg-zinc-950 font-['Space_Grotesk'] antialiased h-screen w-64 fixed left-0 top-0 border-r border-zinc-800 flex flex-col h-full py-8 px-4">
-<div class="mb-10 px-2">
-<h1 class="text-lg font-bold tracking-tighter text-zinc-100">Automation Hub</h1>
-<p class="text-xs text-zinc-500 uppercase tracking-widest mt-1">Orbital Command</p>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-zinc-950/80 backdrop-blur-xl border-b border-zinc-800/50">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-violet-500/20 flex items-center justify-center border border-violet-500/30 overflow-hidden">
+<img alt="User Wallet Avatar" class="w-full h-full object-cover" data-alt="A professional user profile avatar in a high-tech orbital command center interface. The male subject is depicted in soft, focused lighting against a background of dark zinc surfaces and subtle violet interface glows. The visual style is premium and minimalist, emphasizing a sense of calm capability and technological authority consistent with a sophisticated aerospace-inspired dashboard." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhIG1T9HA4J854CPZwfUq9PECvsc7R-pGk0p4UNtR-o1H6LfD9jnlc0gykoGZeMp4rUsVCyWlgdGpIPmzaWbRSOSBF3OViO4V6CSUaain0pCp9KIktAySuCpZjHCsH9Rcxt22_qW0BdRnUNW4XoXBQWuCenWYcIV5o_n0UMs9Ih-TCDVlwdBckWd-n-0JFiUPOdTmM9pBXAo5rSV_lk7ww0cF9pxv-_T6704LR9_WYxYJcOwojp5An7QUqTuOSj8-SCur3P-AnDw"/>
 </div>
-<nav class="flex-1 space-y-2">
-<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-[#5E5CE6] bg-zinc-900/50 border-r-2 border-[#5E5CE6] scale-98 active:opacity-80 transition-colors duration-150" href="#">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
-<span class="font-medium">Dashboard</span>
+<h1 class="text-lg font-bold tracking-tighter text-zinc-50 font-['Space_Grotesk']">Orbital Hub</h1>
+</div>
+<button class="active:scale-95 transition-transform text-zinc-500 hover:bg-zinc-900/50 transition-colors duration-150 p-2 rounded-lg">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</header>
+<main class="pt-24 pb-32 px-5 max-w-md mx-auto space-y-8">
+<!-- Liquidity Hero Card -->
+<section class="relative overflow-hidden rounded-xl border border-outline-variant bg-surface-container p-6 shadow-2xl">
+<!-- Branding Microchip Overlay -->
+<div class="absolute -right-12 -top-12 w-48 h-48 opacity-10 pointer-events-none">
+<img alt="Microchip Decorative" class="w-full h-full object-contain" data-alt="A highly detailed close-up of a futuristic microchip processor with intricate gold and silver circuitry paths. The lighting is dramatic and moody, reflecting off the metallic surfaces within a dark, aerospace-inspired environment. The overall aesthetic is one of extreme precision and high-end engineering, utilizing a palette of deep slate and vibrant violet accents to signal premium orbital technology." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuq-Hvl1H9pkW-ULLt_12KuT75I8FYbe0sA-0zrdKTovDhIG7qcpt_1E-toV3Z1_K4qBXu2731-HF5o0gQmOtf1qXWvctiV8Q6vHzzhQ760fJAy76DdCFAmBtst_7BMsnz93QQFXTJOxVGg3WH8Pl4nbPVCzyM4QNq1R8yo4QJp7lKs742SWQXADuxdWeKW6x7jFk-jnxjkx89mgf367eDRgIT8YwUzB1C8Ajrs-gD3tKdTPKTotWSxNSvpkueGILxlMjBlxVCHw"/>
+</div>
+<div class="relative z-10">
+<span class="font-label-caps text-label-caps text-on-surface-variant mb-2 block">Current Liquidity</span>
+<div class="flex items-baseline gap-2 mb-1">
+<span class="font-display text-[32px] font-bold text-surface-tint tracking-tight">2.484</span>
+<span class="font-headline-md text-headline-md text-primary opacity-80">ETH</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline">$5,821.42 USD</span>
+<div class="mt-6 flex gap-3">
+<button class="flex-1 bg-primary-container text-on-primary-container font-label-caps text-label-caps py-3 rounded-lg active:scale-95 transition-transform flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span> Deposit
+                    </button>
+<button class="flex-1 bg-surface-container-high border border-outline-variant text-on-surface font-label-caps text-label-caps py-3 rounded-lg active:scale-95 transition-transform flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="ios_share">ios_share</span> Send
+                    </button>
+</div>
+</div>
+</section>
+<!-- Thirdweb Contracts Section -->
+<section class="space-y-4">
+<div class="flex justify-between items-end">
+<h2 class="font-headline-md text-headline-md text-zinc-50">Thirdweb Contracts</h2>
+<span class="font-label-caps text-label-caps text-primary cursor-pointer">View All</span>
+</div>
+<div class="space-y-3">
+<!-- Contract Card 1 -->
+<div class="glass-panel rounded-xl p-4 flex items-center justify-between active:scale-[0.98] transition-transform">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="account_tree">account_tree</span>
+</div>
+<div>
+<h3 class="font-body-md text-zinc-50 font-medium">Liquidity Provision</h3>
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+<span class="text-[12px] text-outline font-label-caps">Active</span>
+</div>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-caps text-[12px] text-zinc-50 block">$42.8k</span>
+<span class="text-[10px] text-outline font-label-caps">24H VOL</span>
+</div>
+</div>
+<!-- Contract Card 2 -->
+<div class="glass-panel rounded-xl p-4 flex items-center justify-between active:scale-[0.98] transition-transform">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<div>
+<h3 class="font-body-md text-zinc-50 font-medium">Yield Optimizer</h3>
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+<span class="text-[12px] text-outline font-label-caps">Paused</span>
+</div>
+</div>
+</div>
+<div class="text-right">
+<span class="font-label-caps text-[12px] text-zinc-50 block">$12.4k</span>
+<span class="text-[10px] text-outline font-label-caps">24H VOL</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Execution Logs Section -->
+<section class="space-y-4">
+<h2 class="font-headline-md text-headline-md text-zinc-50">Execution Logs</h2>
+<div class="bg-surface-container-lowest border border-zinc-800/50 rounded-xl overflow-hidden">
+<div class="p-4 space-y-4">
+<!-- Log Item -->
+<div class="flex gap-4 items-start">
+<span class="font-label-caps text-[10px] text-outline mt-1 tabular-nums">14:22:01</span>
+<div class="flex-1">
+<p class="font-body-sm text-zinc-200 leading-tight">Contract <span class="text-primary font-medium">0x82...3f1a</span> executed successful swap.</p>
+<span class="text-[11px] text-outline">Gas: 42 gwei • Status: Confirmed</span>
+</div>
+</div>
+<div class="h-px bg-zinc-800/50 w-full"></div>
+<!-- Log Item -->
+<div class="flex gap-4 items-start">
+<span class="font-label-caps text-[10px] text-outline mt-1 tabular-nums">14:18:45</span>
+<div class="flex-1">
+<p class="font-body-sm text-zinc-200 leading-tight">Rebalancing triggered for <span class="text-primary font-medium">Mainnet Pool B</span>.</p>
+<span class="text-[11px] text-outline">Delta: +0.024 ETH • Auto-signed</span>
+</div>
+</div>
+<div class="h-px bg-zinc-800/50 w-full"></div>
+<!-- Log Item -->
+<div class="flex gap-4 items-start opacity-50">
+<span class="font-label-caps text-[10px] text-outline mt-1 tabular-nums">14:15:10</span>
+<div class="flex-1">
+<p class="font-body-sm text-zinc-200 leading-tight">Health check completed: All systems nominal.</p>
+</div>
+</div>
+</div>
+<button class="w-full py-3 bg-surface-container-high/50 font-label-caps text-[11px] text-outline hover:text-zinc-50 transition-colors">
+                    Stream Live Logs...
+                </button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 h-20 pb-safe bg-zinc-950/90 backdrop-blur-2xl border-t border-zinc-800/50">
+<!-- Hub (Active) -->
+<a class="flex flex-col items-center justify-center text-violet-400 bg-violet-500/10 rounded-lg px-3 py-1 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-medium tracking-wide">Hub</span>
 </a>
-<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-zinc-500 hover:bg-zinc-900 hover:text-zinc-200 transition-colors duration-150" href="#">
-<span class="material-symbols-outlined">auto_mode</span>
-<span class="font-medium">Workflows</span>
+<!-- Contracts -->
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-300 transition-all duration-150 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="account_tree">account_tree</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-medium tracking-wide">Contracts</span>
 </a>
-<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-zinc-500 hover:bg-zinc-900 hover:text-zinc-200 transition-colors duration-150" href="#">
-<span class="material-symbols-outlined">terminal</span>
-<span class="font-medium">Contracts</span>
+<!-- Logs -->
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-300 transition-all duration-150 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="segment">segment</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-medium tracking-wide">Logs</span>
 </a>
-<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-zinc-500 hover:bg-zinc-900 hover:text-zinc-200 transition-colors duration-150" href="#">
-<span class="material-symbols-outlined">history_edu</span>
-<span class="font-medium">Execution Logs</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-zinc-500 hover:bg-zinc-900 hover:text-zinc-200 transition-colors duration-150" href="#">
-<span class="material-symbols-outlined">settings</span>
-<span class="font-medium">Settings</span>
+<!-- Wallet -->
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-300 transition-all duration-150 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-medium tracking-wide">Wallet</span>
 </a>
 </nav>
-<div class="mt-auto px-2">
-<button class="w-full bg-primary-container text-on-primary-container py-3 rounded-lg font-bold flex items-center justify-center gap-2 hover:opacity-90 active:scale-95 transition-all">
-<span class="material-symbols-outlined">add</span>
-                New Workflow
-            </button>
-<div class="mt-6 flex items-center gap-3 p-2 rounded-xl bg-zinc-900/40">
-<img alt="User Profile" class="w-10 h-10 rounded-full border border-zinc-700" data-alt="A professional headshot of a software engineer in a high-tech environment with soft blue rim lighting. The background is a blurred server room with subtle data cable glows. The style is ultra-clean and high-end corporate tech aesthetic, using a deep navy and charcoal color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHdSj4Fi4GoDqm553_ZxLL7v7DFpUf41Fk3RbOWduRl72CFLHDntNAYzyRCcib46qRXQYsVt9_r8-7qUs_5WG6nUqi6jEIle13Po3EbKxdVLACYACmjCat3DlP2xxLX9E5yue1__z1jDe6rF34GVNwmtwRFs_zp8jxEMCIAzKEVzSCy-0ztW34mB8WoLE4GngSNdaIBGbeB4UwdgPsLyd0Nduu8YU7OlE4SimmtSbMKllHf0UHq19EnKQLH6dnWTrWpM_5GFuYnA"/>
-<div class="flex flex-col">
-<span class="text-xs font-bold text-zinc-100">Operator 01</span>
-<span class="text-[10px] text-zinc-500 uppercase">Pro Tier</span>
-</div>
-</div>
-</div>
-</aside>
-<!-- TopAppBar -->
-<header class="bg-zinc-950/80 backdrop-blur-md font-['Space_Grotesk'] text-sm tracking-wide fixed top-0 right-0 w-[calc(100%-16rem)] h-16 border-b border-zinc-800 z-40 flex justify-between items-center px-8">
-<div class="flex items-center gap-6">
-<h2 class="text-xl font-black text-white">Command Center</h2>
-<div class="relative">
-<span class="absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500 material-symbols-outlined text-base">search</span>
-<input class="bg-zinc-900/50 border-none rounded-full py-1.5 pl-10 pr-4 text-xs w-64 focus:ring-1 focus:ring-[#5E5CE6] transition-all" placeholder="Search system logs..." type="text"/>
-</div>
-</div>
-<div class="flex items-center gap-6">
-<div class="flex items-center gap-4 text-zinc-400">
-<div class="flex flex-col items-end">
-<span class="text-[10px] uppercase font-bold tracking-tighter text-zinc-500">Connected Wallet</span>
-<span class="text-xs font-mono text-zinc-200">0x71C...4921</span>
-</div>
-<div class="h-8 w-[1px] bg-zinc-800"></div>
-<div class="flex flex-col items-end">
-<span class="text-[10px] uppercase font-bold tracking-tighter text-zinc-500">Balance</span>
-<span class="text-xs font-mono text-[#5E5CE6]">2.484 ETH</span>
-</div>
-</div>
-<div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-zinc-400 cursor-pointer hover:text-white transition-all active:scale-95">notifications</span>
-<span class="material-symbols-outlined text-zinc-400 cursor-pointer hover:text-white transition-all active:scale-95">account_balance_wallet</span>
-<button class="bg-[#5E5CE6] text-white px-5 py-2 rounded-full font-bold text-xs hover:bg-[#4d4ad5] active:scale-95 transition-all">Connect Wallet</button>
-</div>
-</div>
-</header>
-<!-- Main Content Canvas -->
-<main class="ml-64 pt-24 px-margin pb-stack-lg min-h-screen">
-<div class="max-w-container-max mx-auto grid grid-cols-12 gap-gutter">
-<!-- Hero Stats: Current Liquidity -->
-<section class="col-span-12 md:col-span-8 space-y-stack-md">
-<div class="relative overflow-hidden glass-panel rounded-xl p-8 flex flex-col justify-between min-h-[240px]">
-<div class="relative z-10">
-<div class="flex items-center gap-2 mb-2">
-<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-<span class="font-label-caps text-on-surface-variant">System Live • Global Liquidity</span>
-</div>
-<h3 class="font-display text-display text-white mt-2">$5,682.31 <span class="text-headline-md font-light text-zinc-500">USD</span></h3>
-<p class="font-body-sm text-zinc-400 mt-4 max-w-md">Real-time valuation across all managed orbital contracts. System health remains optimal with 99.9% execution uptime.</p>
-</div>
-<div class="absolute right-0 top-0 bottom-0 w-1/2 opacity-30 pointer-events-none">
-<img alt="Microchip Visualization" class="w-full h-full object-cover mask-image-fade" data-alt="A macro close-up of a sophisticated microchip with intricate glowing traces of electricity flowing through golden circuits. The lighting is dramatic high-contrast, featuring deep blacks and Electric Violet glows. The image feels extremely high-tech, precise, and professional, reflecting an orbital computing theme." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgVyIfn7t9VTLyKgNvTCL-lOJ0hpZtUdToVTvUCHA0aua6VfR139b9o9QN6YbYGPPDxYzi_epx2poTyuV8njQsegWZ4a2aft-c6T0qjrjT0GMCsdWFn8OVl7VySuEjUEwr4IzNfqba88fGiTGHYWzbETpaVzdpBN2hSTy07R-8pDQ-GH97Da-hiFYJUZT9T9ZTQ9zN4T0dp7dlgUN_Beo08osC5PAZpk0IzlEv1AekAPOUHtgHobCDBgn7CWzZ99RNWByc0pBBHQ"/>
-</div>
-<div class="relative z-10 flex gap-4 mt-8">
-<button class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-label-caps flex items-center gap-2 hover:opacity-90 transition-all">
-<span class="material-symbols-outlined text-sm">rocket_launch</span> DEPLOY NEW NODE
-                        </button>
-<button class="border border-zinc-800 bg-white/5 px-6 py-2.5 rounded-lg font-label-caps text-white hover:bg-white/10 transition-all">
-                            VIEW ANALYTICS
-                        </button>
-</div>
-</div>
-<!-- Thirdweb Contracts Section -->
-<div class="glass-panel rounded-xl overflow-hidden">
-<div class="px-8 py-6 border-b border-zinc-800 flex justify-between items-center">
-<h4 class="font-headline-md text-white">Thirdweb Contracts</h4>
-<div class="flex gap-2">
-<span class="px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-[10px] font-bold text-zinc-400">FILTERS</span>
-<span class="px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-[10px] font-bold text-zinc-400">REFRESH</span>
-</div>
-</div>
-<div class="overflow-x-auto">
-<table class="w-full text-left border-collapse">
-<thead>
-<tr class="bg-zinc-900/30">
-<th class="px-8 py-4 font-label-caps text-zinc-500">Contract Name</th>
-<th class="px-8 py-4 font-label-caps text-zinc-500">Address</th>
-<th class="px-8 py-4 font-label-caps text-zinc-500">Status</th>
-<th class="px-8 py-4 font-label-caps text-zinc-500">Volume (24h)</th>
-<th class="px-8 py-4 font-label-caps text-zinc-500">Actions</th>
-</tr>
-</thead>
-<tbody class="divide-y divide-zinc-900">
-<tr class="hover:bg-zinc-900/40 transition-colors">
-<td class="px-8 py-5 font-headline-md text-sm text-zinc-200">Liquidity Provision</td>
-<td class="px-8 py-5 font-mono text-xs text-zinc-500">0x8a92...11c4</td>
-<td class="px-8 py-5">
-<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-[10px] font-bold uppercase tracking-wider">
-<span class="w-1 h-1 rounded-full bg-emerald-400"></span> Active
-                                        </span>
-</td>
-<td class="px-8 py-5 text-sm font-medium text-zinc-300">12.4 ETH</td>
-<td class="px-8 py-5 text-right">
-<span class="material-symbols-outlined text-zinc-600 hover:text-white cursor-pointer">more_vert</span>
-</td>
-</tr>
-<tr class="hover:bg-zinc-900/40 transition-colors">
-<td class="px-8 py-5 font-headline-md text-sm text-zinc-200">Yield Optimizer</td>
-<td class="px-8 py-5 font-mono text-xs text-zinc-500">0x3f5b...99a2</td>
-<td class="px-8 py-5">
-<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-500/10 text-amber-400 text-[10px] font-bold uppercase tracking-wider">
-<span class="w-1 h-1 rounded-full bg-amber-400"></span> Paused
-                                        </span>
-</td>
-<td class="px-8 py-5 text-sm font-medium text-zinc-300">0.0 ETH</td>
-<td class="px-8 py-5 text-right">
-<span class="material-symbols-outlined text-zinc-600 hover:text-white cursor-pointer">more_vert</span>
-</td>
-</tr>
-<tr class="hover:bg-zinc-900/40 transition-colors">
-<td class="px-8 py-5 font-headline-md text-sm text-zinc-200">Orbital Swap Router</td>
-<td class="px-8 py-5 font-mono text-xs text-zinc-500">0x71d2...cc81</td>
-<td class="px-8 py-5">
-<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-[10px] font-bold uppercase tracking-wider">
-<span class="w-1 h-1 rounded-full bg-emerald-400"></span> Active
-                                        </span>
-</td>
-<td class="px-8 py-5 text-sm font-medium text-zinc-300">45.2 ETH</td>
-<td class="px-8 py-5 text-right">
-<span class="material-symbols-outlined text-zinc-600 hover:text-white cursor-pointer">more_vert</span>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</section>
-<!-- Right Panel: Execution Logs -->
-<section class="col-span-12 md:col-span-4 flex flex-col gap-gutter">
-<div class="glass-panel rounded-xl flex-1 flex flex-col overflow-hidden">
-<div class="px-6 py-5 border-b border-zinc-800 flex items-center justify-between">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-[#5E5CE6] text-lg">terminal</span>
-<h4 class="font-label-caps text-white">Execution Logs</h4>
-</div>
-<span class="material-symbols-outlined text-zinc-600 text-sm cursor-pointer hover:text-zinc-400">filter_list</span>
-</div>
-<div class="flex-1 p-6 space-y-4 font-mono text-[11px] overflow-y-auto max-h-[700px]">
-<!-- Log Entry -->
-<div class="flex gap-4">
-<span class="text-zinc-600 shrink-0">12:45:02</span>
-<div class="flex flex-col gap-1">
-<span class="text-emerald-400 font-bold uppercase">[SUCCESS]</span>
-<span class="text-zinc-300">Oracle price update broadcasted for ETH/USD. Delta: +0.24%</span>
-</div>
-</div>
-<div class="flex gap-4">
-<span class="text-zinc-600 shrink-0">12:44:58</span>
-<div class="flex flex-col gap-1">
-<span class="text-[#5E5CE6] font-bold uppercase">[INFO]</span>
-<span class="text-zinc-300">Auto-balancing contract triggered for Pool #29.</span>
-</div>
-</div>
-<div class="flex gap-4">
-<span class="text-zinc-600 shrink-0">12:43:21</span>
-<div class="flex flex-col gap-1">
-<span class="text-zinc-500 font-bold uppercase">[DEBUG]</span>
-<span class="text-zinc-400">Gas price monitored: 18 Gwei. Within threshold (25 Gwei).</span>
-</div>
-</div>
-<div class="flex gap-4">
-<span class="text-zinc-600 shrink-0">12:40:15</span>
-<div class="flex flex-col gap-1">
-<span class="text-error font-bold uppercase">[WARN]</span>
-<span class="text-zinc-300">Connection latency detected in Node 04. Re-routing through Orbital Relay.</span>
-</div>
-</div>
-<div class="flex gap-4">
-<span class="text-zinc-600 shrink-0">12:38:55</span>
-<div class="flex flex-col gap-1">
-<span class="text-[#5E5CE6] font-bold uppercase">[INFO]</span>
-<span class="text-zinc-300">New wallet connection detected: 0x71C...4921</span>
-</div>
-</div>
-<div class="flex gap-4">
-<span class="text-zinc-600 shrink-0">12:35:00</span>
-<div class="flex flex-col gap-1">
-<span class="text-emerald-400 font-bold uppercase">[SUCCESS]</span>
-<span class="text-zinc-300">Daily snapshot stored in decentralized ledger. Hash: 0xf3...8b2</span>
-</div>
-</div>
-<!-- Empty space filler for log vibe -->
-<div class="pt-4 border-t border-zinc-900">
-<span class="text-zinc-700">_waiting for next event...</span>
-</div>
-</div>
-</div>
-<div class="glass-panel rounded-xl p-6">
-<h5 class="font-label-caps text-zinc-500 mb-4">Hardware Monitor</h5>
-<div class="space-y-4">
-<div>
-<div class="flex justify-between text-[10px] uppercase font-bold text-zinc-400 mb-1">
-<span>Processor Load</span>
-<span>24%</span>
-</div>
-<div class="h-1 bg-zinc-900 rounded-full overflow-hidden">
-<div class="h-full bg-[#5E5CE6] w-[24%]"></div>
-</div>
-</div>
-<div>
-<div class="flex justify-between text-[10px] uppercase font-bold text-zinc-400 mb-1">
-<span>Storage Used</span>
-<span>68%</span>
-</div>
-<div class="h-1 bg-zinc-900 rounded-full overflow-hidden">
-<div class="h-full bg-[#5E5CE6] w-[68%]"></div>
-</div>
-</div>
-</div>
-</div>
-</section>
-</div>
-</main>
-<!-- FAB Suppression: This screen is a management hub, no primary transactional FAB required as per rules for detailed hubs -->
 </body></html>
