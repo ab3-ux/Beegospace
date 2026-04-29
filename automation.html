@@ -124,7 +124,7 @@
 </nav>
 </div>
 <div class="flex items-center gap-3">
-<button class="bg-primary-container text-on-primary-container px-4 py-2 rounded-lg font-label-caps text-xs active:scale-95 transition-transform">
+<button class="bg-primary-container text-on-primary-container px-4 py-2 rounded-lg font-label-caps text-xs active:scale-95 transition-transform" id="connectButton">
                 Connect Wallet
             </button>
 <div class="flex items-center gap-2">
@@ -320,4 +320,32 @@
 <span class="text-[10px] font-medium font-['Space_Grotesk']">Wallet</span>
 </a>
 </nav>
-</body></html>
+<script>
+  const connectButton = document.getElementById('connectButton');
+
+  async function connectWallet() {
+    if (typeof window.ethereum !== 'undefined') {
+      try {
+        const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+        const account = accounts[0];
+        const shortenedAddress = `${account.substring(0, 6)}...${account.substring(account.length - 4)}`;
+        
+        connectButton.textContent = shortenedAddress;
+        connectButton.classList.remove('bg-primary-container');
+        connectButton.classList.add('bg-zinc-800', 'text-white');
+        
+        console.log('Connected account:', account);
+      } catch (error) {
+        console.error('User rejected connection:', error);
+        alert('Connection request rejected.');
+      }
+    } else {
+      alert('MetaMask is not installed. Please install it to use this feature.');
+      window.open('https://metamask.io/download/', '_blank');
+    }
+  }
+
+  if (connectButton) {
+    connectButton.addEventListener('click', connectWallet);
+  }
+</script></body></html>
