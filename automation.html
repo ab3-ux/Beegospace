@@ -7,7 +7,7 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.7.0/ethers.umd.min.js"></script>
 <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
@@ -186,7 +186,7 @@
 <button class="p-2 text-zinc-400 hover:bg-zinc-900/50 rounded-lg transition-colors">
 <span class="material-symbols-outlined" data-icon="notifications">notifications</span>
 </button>
-<button class="bg-primary-container text-white px-4 py-2 rounded-lg font-['Space_Grotesk'] uppercase tracking-widest text-[10px] font-bold active:scale-95 transition-transform ml-2">
+<button class="bg-primary-container text-white px-4 py-2 rounded-lg font-['Space_Grotesk'] uppercase tracking-widest text-[10px] font-bold active:scale-95 transition-transform ml-2" id="connectWalletBtn">
                             Connect Wallet
                         </button>
 </div>
@@ -245,10 +245,10 @@
 <span class="material-symbols-outlined text-primary" data-icon="account_balance">account_balance</span>
 </div>
 <div class="flex items-baseline gap-2">
-<h3 class="text-4xl font-display font-bold text-white tracking-tighter">2.484</h3>
+<h3 class="text-4xl font-display font-bold text-white tracking-tighter" id="ethBalance">2.484</h3>
 <span class="text-xl font-display text-zinc-500">ETH</span>
 </div>
-<p class="text-xs text-secondary mt-2">≈ $6,245.12 USD</p>
+<p class="text-xs text-secondary mt-2" id="usdValue">≈ $6,245.12 USD</p>
 </div>
 <div class="mt-6 flex items-center gap-2 text-primary font-label-caps text-[10px] group-hover:gap-3 transition-all cursor-pointer">
 <span>MANAGE VAULTS</span>
@@ -343,40 +343,24 @@
 </div>
 <span class="h-1.5 w-1.5 rounded-full bg-primary"></span>
 </div>
-<div class="flex-1 overflow-y-auto p-4 font-mono text-[11px] leading-relaxed flex flex-col gap-2">
+<div class="flex-1 overflow-y-auto p-4 font-mono text-[11px] leading-relaxed flex flex-col gap-2" id="logContainer">
 <div class="flex gap-2 text-zinc-500">
 <span class="text-zinc-700">[12:44:01]</span>
-<span>AUTH: Connection established via WalletConnect.</span>
+<span>AUTH: Connection standing by.</span>
 </div>
 <div class="flex gap-2 text-zinc-500">
 <span class="text-zinc-700">[12:44:02]</span>
 <span>SDK: Thirdweb Client initialized (ChainID: 1).</span>
 </div>
-<div class="flex gap-2 text-[#5E5CE6]">
-<span class="text-zinc-700">[12:44:05]</span>
-<span>SYNC: Fetching gas price from mainnet oracle...</span>
-</div>
 <div class="flex gap-2 text-zinc-400">
 <span class="text-zinc-700">[12:44:05]</span>
-<span>DATA: Gas optimal at 14 gwei. Process idle.</span>
-</div>
-<div class="flex gap-2 text-zinc-500">
-<span class="text-zinc-700">[12:45:12]</span>
-<span>WATCH: Re-evaluating Vault_Guardian constraints.</span>
-</div>
-<div class="flex gap-2 text-primary">
-<span class="text-zinc-700">[12:45:13]</span>
-<span>LOG: System standing by for manual override.</span>
-</div>
-<div class="flex gap-2 text-zinc-500">
-<span class="text-zinc-700">[12:46:00]</span>
-<span>HEARTBEAT: Service operational.</span>
+<span>DATA: System idle. Awaiting wallet connection.</span>
 </div>
 </div>
 <div class="p-4 bg-zinc-900/50 border-t border-zinc-800">
 <div class="flex items-center justify-between text-[10px] font-label-caps">
 <span class="text-zinc-500 uppercase">Uptime: 99.98%</span>
-<span class="text-primary uppercase cursor-pointer hover:underline">Clear Logs</span>
+<span class="text-primary uppercase cursor-pointer hover:underline" onclick="document.getElementById('logContainer').innerHTML=''">Clear Logs</span>
 </div>
 </div>
 </div>
@@ -404,4 +388,103 @@
 </nav>
 </div>
 </div>
+<script>
+    const connectBtn = document.getElementById('connectWalletBtn');
+    const ethDisplay = document.getElementById('ethBalance');
+    const usdDisplay = document.getElementById('usdValue');
+    const logContainer = document.getElementById('logContainer');
+
+    function addLog(msg, colorClass = 'text-zinc-500') {
+        const time = new Date().toLocaleTimeString([], { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' });
+        const logEntry = document.createElement('div');
+        logEntry.className = `flex gap-2 ${colorClass}`;
+        logEntry.innerHTML = `<span class="text-zinc-700">[${time}]</span> <span>${msg}</span>`;
+        logContainer.appendChild(logEntry);
+        logContainer.scrollTop = logContainer.scrollHeight;
+    }
+
+    async function getETHPrice() {
+        try {
+            const response = await fetch('https://api.binance.com/api/v3/ticker/price?symbol=ETHUSDT');
+            const data = await response.json();
+            return parseFloat(data.price);
+        } catch (e) {
+            return 2514.12; // Fallback
+        }
+    }
+
+    async function updateBalance(provider, address) {
+        try {
+            const balanceBigInt = await provider.getBalance(address);
+            const balanceEth = ethers.formatEther(balanceBigInt);
+            const formattedEth = parseFloat(balanceEth).toFixed(4);
+            ethDisplay.innerText = formattedEth;
+            
+            const ethPrice = await getETHPrice();
+            const usdValue = (parseFloat(balanceEth) * ethPrice).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            usdDisplay.innerText = `≈ $${usdValue} USD`;
+            
+            addLog(`DATA: Balance updated to ${formattedEth} ETH.`, 'text-zinc-400');
+        } catch (error) {
+            addLog(`ERROR: Failed to fetch balance.`, 'text-error');
+        }
+    }
+
+    async function connectWallet() {
+        if (typeof window.ethereum === 'undefined') {
+            alert('MetaMask is not installed. Please download it at https://metamask.io/download/');
+            addLog('AUTH: Wallet environment not detected.', 'text-error');
+            return;
+        }
+
+        try {
+            connectBtn.disabled = true;
+            connectBtn.innerText = "Connecting...";
+            addLog('AUTH: Requesting account access...', 'text-[#5E5CE6]');
+
+            const provider = new ethers.BrowserProvider(window.ethereum);
+            const accounts = await provider.send("eth_requestAccounts", []);
+            const address = accounts[0];
+            
+            const shortAddress = `${address.substring(0, 6)}...${address.substring(address.length - 4)}`;
+            connectBtn.innerText = shortAddress;
+            connectBtn.classList.replace('bg-primary-container', 'bg-zinc-800');
+            
+            addLog(`AUTH: Connected to ${shortAddress}.`, 'text-primary');
+            
+            await updateBalance(provider, address);
+
+            window.ethereum.on('accountsChanged', (newAccounts) => {
+                if (newAccounts.length === 0) {
+                    location.reload();
+                } else {
+                    connectWallet();
+                }
+            });
+
+            window.ethereum.on('chainChanged', () => {
+                location.reload();
+            });
+
+        } catch (error) {
+            console.error(error);
+            connectBtn.innerText = "Connect Wallet";
+            connectBtn.disabled = false;
+            addLog('AUTH: Connection rejected or failed.', 'text-error');
+        }
+    }
+
+    connectBtn.addEventListener('click', connectWallet);
+
+    // Auto-connect if already authorized
+    window.addEventListener('load', async () => {
+        if (typeof window.ethereum !== 'undefined') {
+            const provider = new ethers.BrowserProvider(window.ethereum);
+            const accounts = await provider.listAccounts();
+            if (accounts.length > 0) {
+                connectWallet();
+            }
+        }
+    });
+</script>
 </body></html>
