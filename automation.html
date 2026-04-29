@@ -3,580 +3,418 @@
 <html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>AutoHub | Beego-Space</title>
+<title>Beego-Space Automation Hub</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.7.0/ethers.umd.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "error": "#ffb4ab",
-                    "secondary": "#b9c8de",
-                    "on-secondary": "#233143",
-                    "on-error": "#690005",
-                    "surface-dim": "#0b1326",
-                    "surface-container-lowest": "#060e20",
-                    "surface-container-high": "#222a3d",
-                    "surface": "#0b1326",
-                    "surface-bright": "#31394d",
-                    "inverse-on-surface": "#283044",
-                    "on-tertiary-container": "#eff2ff",
-                    "on-surface": "#dae2fd",
-                    "on-secondary-container": "#a7b6cc",
-                    "on-background": "#dae2fd",
-                    "on-error-container": "#ffdad6",
-                    "tertiary-fixed-dim": "#bcc7de",
-                    "inverse-surface": "#dae2fd",
-                    "surface-container-low": "#131b2e",
-                    "on-tertiary": "#263143",
-                    "surface-variant": "#2d3449",
-                    "outline": "#918fa0",
-                    "on-primary-container": "#f4f1ff",
-                    "inverse-primary": "#4d4ad5",
-                    "surface-container-highest": "#2d3449",
-                    "primary": "#c2c1ff",
-                    "on-surface-variant": "#c7c4d7",
-                    "on-primary": "#1800a7",
-                    "tertiary-container": "#646f84",
-                    "on-primary-fixed-variant": "#332dbc",
-                    "primary-fixed": "#e2dfff",
-                    "outline-variant": "#464554",
-                    "secondary-fixed-dim": "#b9c8de",
-                    "secondary-container": "#39485a",
-                    "tertiary": "#bcc7de",
-                    "error-container": "#93000a",
-                    "on-secondary-fixed": "#0d1c2d",
-                    "secondary-fixed": "#d4e4fa",
-                    "surface-container": "#171f33",
-                    "primary-fixed-dim": "#c2c1ff",
-                    "on-tertiary-fixed": "#111c2d",
-                    "on-primary-fixed": "#0c006b",
-                    "tertiary-fixed": "#d8e3fb",
-                    "surface-tint": "#c2c1ff",
-                    "on-tertiary-fixed-variant": "#3c475a",
-                    "primary-container": "#5e5ce6",
-                    "on-secondary-fixed-variant": "#39485a",
-                    "background": "#0b1326"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0.25rem",
-                    "lg": "0.5rem",
-                    "xl": "0.75rem",
-                    "full": "9999px"
-            },
-            "spacing": {
-                    "container-max": "1440px",
-                    "stack-lg": "48px",
-                    "gutter": "24px",
-                    "unit": "8px",
-                    "stack-md": "24px",
-                    "margin": "40px",
-                    "stack-sm": "12px"
-            },
-            "fontFamily": {
-                    "body-lg": ["Manrope"],
-                    "display": ["Space Grotesk"],
-                    "headline-lg": ["Space Grotesk"],
-                    "headline-md": ["Space Grotesk"],
-                    "body-md": ["Manrope"],
-                    "label-caps": ["Manrope"],
-                    "body-sm": ["Manrope"]
-            },
-            "fontSize": {
-                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "500"}],
-                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "500"}],
-                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
-                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
-                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-container": "#eff2ff",
+                      "error-container": "#93000a",
+                      "on-surface": "#dae2fd",
+                      "on-secondary-container": "#a7b6cc",
+                      "on-primary": "#1800a7",
+                      "on-error-container": "#ffdad6",
+                      "on-surface-variant": "#c7c4d7",
+                      "tertiary": "#bcc7de",
+                      "surface": "#0b1326",
+                      "secondary-fixed": "#d4e4fa",
+                      "surface-container-low": "#131b2e",
+                      "surface-container": "#171f33",
+                      "secondary-fixed-dim": "#b9c8de",
+                      "on-secondary": "#233143",
+                      "inverse-on-surface": "#283044",
+                      "background": "#0b1326",
+                      "surface-variant": "#2d3449",
+                      "secondary": "#b9c8de",
+                      "primary-container": "#5e5ce6",
+                      "on-primary-fixed": "#0c006b",
+                      "primary-fixed-dim": "#c2c1ff",
+                      "primary": "#c2c1ff",
+                      "outline": "#918fa0",
+                      "on-secondary-fixed": "#0d1c2d",
+                      "on-error": "#690005",
+                      "on-tertiary-fixed": "#111c2d",
+                      "on-tertiary-fixed-variant": "#3c475a",
+                      "on-background": "#dae2fd",
+                      "surface-container-lowest": "#060e20",
+                      "surface-tint": "#c2c1ff",
+                      "on-tertiary": "#263143",
+                      "inverse-surface": "#dae2fd",
+                      "inverse-primary": "#4d4ad5",
+                      "tertiary-fixed-dim": "#bcc7de",
+                      "tertiary-fixed": "#d8e3fb",
+                      "primary-fixed": "#e2dfff",
+                      "surface-container-high": "#222a3d",
+                      "surface-container-highest": "#2d3449",
+                      "outline-variant": "#464554",
+                      "on-primary-container": "#f4f1ff",
+                      "error": "#ffb4ab",
+                      "on-secondary-fixed-variant": "#39485a",
+                      "surface-dim": "#0b1326",
+                      "tertiary-container": "#646f84",
+                      "secondary-container": "#39485a",
+                      "on-primary-fixed-variant": "#332dbc",
+                      "surface-bright": "#31394d"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "unit": "8px",
+                      "stack-md": "24px",
+                      "container-max": "1440px",
+                      "margin": "40px",
+                      "stack-sm": "12px",
+                      "stack-lg": "48px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "body-lg": ["Manrope"],
+                      "body-md": ["Manrope"],
+                      "label-caps": ["Manrope"],
+                      "headline-md": ["Space Grotesk"],
+                      "body-sm": ["Manrope"],
+                      "headline-lg": ["Space Grotesk"],
+                      "display": ["Space Grotesk"]
+              },
+              "fontSize": {
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                      "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                      "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "500"}]
+              }
             }
-          },
-        },
-      }
+          }
+        }
     </script>
 <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
         body {
             background-color: #0b1326;
             color: #dae2fd;
         }
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .glass-card {
-            background: rgba(23, 31, 51, 0.4);
+        .glass-panel {
+            background: rgba(45, 52, 73, 0.4);
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(145, 143, 160, 0.1);
+            border: 1px solid rgba(145, 143, 160, 0.2);
         }
-        @keyframes orbit-spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
         }
-        .loader-spin {
-            animation: orbit-spin 2s linear infinite;
-        }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #464554; border-radius: 10px; }
     </style>
 </head>
-<body class="font-body-md text-on-surface overflow-hidden">
-<div class="flex h-screen overflow-hidden">
+<body class="font-body-md text-on-background selection:bg-primary/30">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-zinc-950/70 backdrop-blur-xl border-b border-zinc-800/50 flex justify-between items-center px-8 h-16 w-full">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tighter text-zinc-100 font-space-grotesk">Beego-Space</span>
+<nav class="hidden md:flex gap-6">
+<a class="text-zinc-400 hover:text-zinc-200 transition-colors font-space-grotesk tracking-tight" href="#">Governance</a>
+<a class="text-zinc-400 hover:text-zinc-200 transition-colors font-space-grotesk tracking-tight" href="#">Docs</a>
+<a class="text-zinc-400 hover:text-zinc-200 transition-colors font-space-grotesk tracking-tight" href="#">Audit</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex gap-2">
+<button class="p-2 text-zinc-400 hover:bg-zinc-900/50 transition-all duration-150 active:scale-95">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-zinc-400 hover:bg-zinc-900/50 transition-all duration-150 active:scale-95">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+<button class="px-6 py-2 bg-primary-container text-on-primary-container font-space-grotesk font-semibold rounded-lg hover:brightness-110 active:scale-95 transition-all" id="connectButton">
+                Connect Wallet
+            </button>
+</div>
+</header>
 <!-- SideNavBar -->
-<aside class="hidden md:flex flex-col h-full p-4 bg-zinc-950 w-64 border-r border-zinc-800 transition-all duration-200 ease-in-out font-['Space_Grotesk'] text-sm font-medium">
-<div class="flex flex-col gap-unit mb-stack-lg px-2">
-<span class="text-lg font-black text-zinc-100 tracking-tighter">AutoHub</span>
-<div class="flex items-center gap-2 mt-4">
-<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center">
-<span class="material-symbols-outlined text-on-primary-container text-sm">rocket_launch</span>
+<aside class="h-screen w-64 fixed left-0 top-0 border-r border-zinc-800 bg-zinc-950 flex flex-col pt-20 pb-8 z-40">
+<div class="px-6 mb-8">
+<div class="flex items-center gap-3 mb-1">
+<div class="w-8 h-8 rounded-full bg-surface-container-high border border-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-sm text-primary">person</span>
 </div>
 <div>
-<p class="text-zinc-100 text-xs font-bold leading-none">Orbital Command</p>
-<p class="text-zinc-500 text-[10px] uppercase tracking-widest mt-1">Mainnet v2.4</p>
+<p class="text-on-surface font-semibold text-xs font-space-grotesk">Command Center</p>
+<p class="text-zinc-500 text-[10px] uppercase tracking-widest">Orbital Node v1.0.4</p>
 </div>
 </div>
 </div>
-<nav class="flex-1 flex flex-col gap-1">
-<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-zinc-900 text-[#5E5CE6] border-r-2 border-[#5E5CE6] transition-all" href="#">
-<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<nav class="flex-1 space-y-1">
+<a class="bg-zinc-900 text-violet-400 border-r-2 border-violet-500 px-4 py-3 flex items-center gap-3 font-space-grotesk text-sm transition-transform active:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
 <span>Dashboard</span>
 </a>
-<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-zinc-400 hover:text-zinc-100 hover:bg-zinc-900 transition-all" href="#">
-<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+<a class="text-zinc-500 px-4 py-3 flex items-center gap-3 hover:bg-zinc-900/50 hover:text-zinc-300 font-space-grotesk text-sm transition-transform active:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="precision_manufacturing">precision_manufacturing</span>
 <span>Automations</span>
 </a>
-<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-zinc-400 hover:text-zinc-100 hover:bg-zinc-900 transition-all" href="#">
+<a class="text-zinc-500 px-4 py-3 flex items-center gap-3 hover:bg-zinc-900/50 hover:text-zinc-300 font-space-grotesk text-sm transition-transform active:translate-x-1" href="#">
 <span class="material-symbols-outlined" data-icon="description">description</span>
 <span>Contracts</span>
 </a>
-<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-zinc-400 hover:text-zinc-100 hover:bg-zinc-900 transition-all" href="#">
+<a class="text-zinc-500 px-4 py-3 flex items-center gap-3 hover:bg-zinc-900/50 hover:text-zinc-300 font-space-grotesk text-sm transition-transform active:translate-x-1" href="#">
 <span class="material-symbols-outlined" data-icon="terminal">terminal</span>
 <span>Execution Logs</span>
 </a>
-</nav>
-<div class="mt-auto pt-6 border-t border-zinc-800 flex flex-col gap-1">
-<button class="mb-4 w-full bg-primary-container text-white py-3 rounded-lg font-bold text-xs uppercase tracking-widest active:scale-95 transition-transform">
-                    New Workflow
-                </button>
-<a class="flex items-center gap-3 px-4 py-2 text-zinc-500 hover:text-zinc-300 transition-all text-xs" href="#">
-<span class="material-symbols-outlined text-sm" data-icon="menu_book">menu_book</span>
-<span>Docs</span>
+<a class="text-zinc-500 px-4 py-3 flex items-center gap-3 hover:bg-zinc-900/50 hover:text-zinc-300 font-space-grotesk text-sm transition-transform active:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span>Analytics</span>
 </a>
-<a class="flex items-center gap-3 px-4 py-2 text-zinc-500 hover:text-zinc-300 transition-all text-xs" href="#">
-<span class="material-symbols-outlined text-sm" data-icon="contact_support">contact_support</span>
+</nav>
+<div class="px-4 mt-auto">
+<button class="w-full py-3 bg-violet-600/10 border border-violet-500/30 text-violet-400 rounded-lg text-sm font-space-grotesk hover:bg-violet-600/20 transition-colors mb-6">
+                Deploy Contract
+            </button>
+<div class="flex flex-col gap-2 border-t border-zinc-800 pt-6">
+<a class="text-zinc-500 px-2 flex items-center gap-3 hover:text-zinc-300 text-xs font-space-grotesk" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="help">help</span>
 <span>Support</span>
 </a>
 </div>
+</div>
 </aside>
-<!-- Main Content Area -->
-<div class="flex-1 flex flex-col h-full relative overflow-y-auto">
-<!-- TopAppBar -->
-<header class="sticky top-0 z-40 bg-zinc-950/80 backdrop-blur-xl border-b border-zinc-800 flex justify-between items-center w-full px-6 py-3">
-<div class="flex items-center gap-6">
-<span class="text-xl font-bold tracking-tighter text-zinc-100 md:hidden">AutoHub</span>
-<nav class="hidden lg:flex items-center gap-6 font-['Space_Grotesk'] uppercase tracking-widest text-xs">
-<a class="text-[#5E5CE6] font-bold border-b-2 border-[#5E5CE6] pb-1" href="#">Nexus</a>
-<a class="text-zinc-500 hover:text-zinc-300" href="#">Analytics</a>
-<a class="text-zinc-500 hover:text-zinc-300" href="#">Bridge</a>
-</nav>
+<!-- Main Content -->
+<main class="pl-64 pt-16 min-h-screen bg-background">
+<div class="max-w-[1440px] mx-auto p-10 space-y-12">
+<!-- Hero Section -->
+<section class="relative h-[400px] rounded-2xl overflow-hidden glass-panel flex items-center px-12 group">
+<div class="absolute inset-0 z-0">
+<img alt="Microchip Hardware" class="w-full h-full object-cover opacity-40 group-hover:scale-105 transition-transform duration-700" data-alt="A macro cinematic shot of a high-end futuristic microchip glowing with electric violet circuits against a dark, matte obsidian background. The lighting is low-key with sharp highlights on the metallic paths, creating a mood of absolute technical precision and elite engineering. The overall aesthetic is dark-mode luxury with a focus on hardware detail and clean architectural lines." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAIuXqhmGktzWbqjbLK-1qPysPnd7GizI5WCDWK1QqoOutO3DzEVuTHyuBgUL9YyflK333YIGeMAMQFY6AurFube2HgCnyxxFfag97Xax5o0qZ_4EE7QBL4UO0xc998zpfoJ3Cdu6_ZO6g9FAXZOt_jciURtnyArDpl-vbF_Jpl1RutjENbqjPcdWI2F503UWy4SxFKK0C89nFbZdr_TFR6GAZ3MeccadeL_fQesfB9ueMaiYINhOgSwKM1UBrl6vWnqg428VDrQ"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent"></div>
 </div>
-<div class="flex items-center gap-4">
-<div class="hidden sm:flex items-center bg-zinc-900 px-3 py-1.5 rounded-full border border-zinc-800">
-<span class="material-symbols-outlined text-zinc-500 text-sm mr-2" data-icon="search">search</span>
-<input class="bg-transparent border-none focus:ring-0 text-xs text-zinc-300 w-32 p-0" placeholder="Search hash..." type="text"/>
-</div>
-<div class="flex items-center gap-2">
-<button class="p-2 text-zinc-400 hover:bg-zinc-900/50 rounded-lg transition-colors">
-<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
-</button>
-<button class="p-2 text-zinc-400 hover:bg-zinc-900/50 rounded-lg transition-colors">
-<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
-</button>
-<button class="bg-primary-container text-white px-4 py-2 rounded-lg font-['Space_Grotesk'] uppercase tracking-widest text-[10px] font-bold active:scale-95 transition-transform ml-2 flex items-center gap-2" id="connectWalletBtn">
-<span id="btnText">Connect Wallet</span>
-</button>
-</div>
-</div>
-</header>
-<!-- Content Canvas -->
-<main class="p-margin flex flex-col gap-stack-lg max-w-container-max mx-auto w-full">
-<!-- Hero Section / System Status -->
-<section class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
-<div class="lg:col-span-7 flex flex-col gap-stack-sm">
-<div class="flex items-center gap-2 mb-2">
-<span class="flex h-2 w-2 rounded-full bg-[#5E5CE6] animate-pulse"></span>
-<span class="font-label-caps text-primary tracking-[0.2em] uppercase">System Status: Optimal</span>
-</div>
-<h1 class="font-display text-display text-on-surface">Beego-Space Automated liquidity orchestration.</h1>
-<p class="font-body-lg text-on-surface-variant max-w-2xl mt-4">
-                            High-fidelity Web3 automation engine leveraging Thirdweb SDK for seamless multi-chain execution and decentralized liquidity management across all major EVM networks.
-                        </p>
-<div class="flex gap-4 mt-6">
-<div class="flex items-center gap-3 px-4 py-2 bg-surface-container-high rounded-xl border border-outline-variant">
-<img alt="Thirdweb" class="w-5 h-5 grayscale opacity-70" data-alt="The logo of Thirdweb presented in a minimalist, monochrome tech aesthetic, reflecting a high-end software development environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1d_b9s11dka9hTbiUQNApyUqjuKNThoLg0Um0L2kec3oxXK26Npfbet_bUZHZLBObPF8zK6upoGms-gd3wmZ6gUwKdACKuQRhLSKL3bR7cExhC2-GARvg13QnAUv3mxfjsFPuM0x3BCQwWZTBjjT2EzUz_9Xl-MQ11HCGaT2PMm4nwiBZRefsN-UvZICI4uy9fu8hApsMtDut0Vpyz2nVHlVRKSH7jFbkiWskNtmLOc_VFCU7PFPc3lP3jpB7norLizer-acEcg"/>
-<span class="font-label-caps text-xs text-secondary uppercase">Thirdweb Integrated</span>
-</div>
-<div class="flex items-center gap-3 px-4 py-2 bg-surface-container-high rounded-xl border border-outline-variant">
-<span class="material-symbols-outlined text-primary text-sm">account_balance_wallet</span>
-<span class="font-label-caps text-xs text-secondary uppercase">WalletConnect v2</span>
-</div>
-</div>
-</div>
-<div class="lg:col-span-5 relative">
-<div class="aspect-square rounded-3xl overflow-hidden border border-zinc-800 shadow-2xl relative group">
-<img alt="Remastered Chip" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A highly detailed close-up of a futuristic semiconductor chip illuminated by deep violet and neon blue light. The surface shows intricate silicon traces and gold interconnects in a dark, aerospace-grade aesthetic. The lighting is dramatic and precise, suggesting advanced computing power and orbital-level stability in a high-tech laboratory setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfSMGh3RMTtENsijeTWa4hriTbvUMHQqrpNd2SomNA5_WLsR9XuEE_zQGAjMrAk3Ioie16gCinl5IGaStiVbmFSsVz1GQG8to0J4PSSDa8SUk6J9mhevSrOE9xVxi3pw4JMsYm3u7QLR7p1exscQKhZy0lsoESja8h25huv3cpY4Pl7o2-zK8qEgoBDSTh3sqRQUszjTafZ-VasQ8qm1WVklXSxsj1ve2NaNdA0wXosSVgo-OfqZ3mVpgqq_cQQNbydVoFAegVVw"/>
-<div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent opacity-60"></div>
-<div class="absolute bottom-6 left-6 right-6 p-4 glass-card rounded-xl border border-zinc-700/50">
-<div class="flex justify-between items-end">
-<div>
-<p class="text-[10px] font-label-caps text-zinc-400 mb-1 uppercase tracking-widest">Active Core</p>
-<p class="font-headline-md text-white">ORBIT-X1</p>
-</div>
-<div class="text-right">
-<p class="text-[10px] font-label-caps text-primary mb-1 uppercase">Load Factor</p>
-<p class="font-headline-md text-primary">12.4%</p>
-</div>
-</div>
-</div>
+<div class="relative z-10 max-w-2xl">
+<span class="text-primary font-label-caps tracking-[0.2em] mb-4 block uppercase">System Status: Nominal</span>
+<h1 class="text-display font-display text-white mb-6 leading-tight">Beego-Space Automated liquidity orchestration</h1>
+<p class="text-on-surface-variant text-body-lg mb-8">Execute complex cross-chain strategies with surgical precision. Our orbital-grade infrastructure ensures zero-latency execution for institutional vaults.</p>
+<div class="flex gap-4">
+<button class="px-8 py-3 bg-primary-container text-on-primary-container rounded-lg font-space-grotesk font-semibold hover:brightness-110 transition-all">Launch Orchestrator</button>
+<button class="px-8 py-3 glass-panel border-outline-variant text-white rounded-lg font-space-grotesk font-semibold hover:bg-surface-variant transition-all">View Assets</button>
 </div>
 </div>
 </section>
-<!-- Dashboard Grid -->
-<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Grid Content -->
+<div class="grid grid-cols-12 gap-8">
+<!-- Left & Middle Column -->
+<div class="col-span-12 lg:col-span-8 space-y-8">
 <!-- Liquidity Card -->
-<div class="glass-card rounded-2xl p-6 flex flex-col justify-between min-h-[220px] hover:border-primary/30 transition-colors group">
+<div class="glass-panel rounded-2xl p-8 border border-zinc-800">
+<div class="flex justify-between items-start mb-6">
 <div>
-<div class="flex justify-between items-start mb-4">
-<span class="font-label-caps text-zinc-500 uppercase tracking-widest">Current Liquidity</span>
-<span class="material-symbols-outlined text-primary" data-icon="account_balance">account_balance</span>
+<h3 class="text-label-caps text-zinc-500 uppercase tracking-widest mb-1">Current Liquidity</h3>
+<p class="text-[40px] font-display text-white">2.484 ETH</p>
+<p class="text-on-secondary-container font-body-md">$6,245.12 USD</p>
 </div>
-<div class="flex items-baseline gap-2">
-<h3 class="text-4xl font-display font-bold text-white tracking-tighter" id="ethBalance">2.484</h3>
-<span class="text-xl font-display text-zinc-500">ETH</span>
+<div class="px-3 py-1 bg-primary/10 border border-primary/20 rounded-full">
+<span class="text-primary text-xs font-bold font-space-grotesk">+4.2% (24h)</span>
 </div>
-<p class="text-xs text-secondary mt-2" id="usdValue">≈ $6,245.12 USD</p>
 </div>
-<div class="mt-6 flex items-center gap-2 text-primary font-label-caps text-[10px] group-hover:gap-3 transition-all cursor-pointer">
-<span>MANAGE VAULTS</span>
-<span class="material-symbols-outlined text-xs">arrow_forward</span>
+<div class="h-2 w-full bg-zinc-900 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[65%] rounded-full"></div>
+</div>
+<div class="flex justify-between mt-4 text-[10px] text-zinc-500 font-label-caps uppercase tracking-widest">
+<span>Mainnet Pool</span>
+<span>Target: 4.000 ETH</span>
 </div>
 </div>
 <!-- Contracts List -->
-<div class="glass-card rounded-2xl p-6 lg:col-span-2">
-<div class="flex justify-between items-center mb-6">
-<h4 class="font-headline-md text-white flex items-center gap-2">
-<span class="material-symbols-outlined text-primary" data-icon="description">description</span>
-                                Active Thirdweb Contracts
-                            </h4>
-<button class="text-xs font-label-caps text-zinc-400 hover:text-white uppercase tracking-widest px-3 py-1.5 border border-zinc-800 rounded-lg">View All</button>
+<div class="glass-panel rounded-2xl p-8 border border-zinc-800">
+<div class="flex justify-between items-center mb-8">
+<h3 class="text-headline-md font-display text-white">Active Thirdweb Contracts</h3>
+<button class="text-primary text-sm font-space-grotesk hover:underline">Manage All</button>
 </div>
-<div class="flex flex-col gap-1">
-<div class="flex items-center justify-between p-3 hover:bg-zinc-900/50 rounded-xl transition-colors cursor-pointer border border-transparent hover:border-zinc-800">
+<div class="space-y-4">
+<!-- Item 1 -->
+<div class="flex items-center justify-between p-4 rounded-xl bg-surface-container-low border border-zinc-800/50 hover:border-primary/30 transition-colors group">
 <div class="flex items-center gap-4">
-<div class="w-10 h-10 rounded-lg bg-zinc-900 flex items-center justify-center border border-zinc-800">
-<span class="material-symbols-outlined text-zinc-400" data-icon="hub">hub</span>
+<div class="w-10 h-10 rounded-lg bg-primary/5 flex items-center justify-center text-primary border border-primary/10">
+<span class="material-symbols-outlined">hub</span>
 </div>
 <div>
-<p class="font-body-md text-white font-medium">LiquidityPool_V3_Router</p>
-<p class="text-[10px] font-label-caps text-zinc-500 uppercase">0x821a...4f2e • Mainnet</p>
+<h4 class="text-on-surface font-semibold font-space-grotesk">LiquidityPool_V3_Router</h4>
+<p class="text-zinc-500 text-xs font-body-sm">0x71C...8E92</p>
 </div>
 </div>
 <div class="flex items-center gap-6">
-<div class="text-right">
-<p class="text-[10px] font-label-caps text-zinc-500 uppercase">Status</p>
-<p class="text-xs font-bold text-primary uppercase">Idle</p>
+<div class="flex items-center gap-2 px-3 py-1 bg-green-500/10 text-green-400 rounded-full border border-green-500/20">
+<span class="status-dot bg-green-400"></span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Active</span>
 </div>
-<span class="material-symbols-outlined text-zinc-700" data-icon="more_vert">more_vert</span>
+<button class="p-2 text-zinc-600 group-hover:text-zinc-300">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
 </div>
 </div>
-<div class="flex items-center justify-between p-3 hover:bg-zinc-900/50 rounded-xl transition-colors cursor-pointer border border-transparent hover:border-zinc-800">
+<!-- Item 2 -->
+<div class="flex items-center justify-between p-4 rounded-xl bg-surface-container-low border border-zinc-800/50 hover:border-primary/30 transition-colors group">
 <div class="flex items-center gap-4">
-<div class="w-10 h-10 rounded-lg bg-zinc-900 flex items-center justify-center border border-zinc-800">
-<span class="material-symbols-outlined text-zinc-400" data-icon="security">security</span>
+<div class="w-10 h-10 rounded-lg bg-primary/5 flex items-center justify-center text-primary border border-primary/10">
+<span class="material-symbols-outlined">shield_lock</span>
 </div>
 <div>
-<p class="font-body-md text-white font-medium">Vault_Guardian_Module</p>
-<p class="text-[10px] font-label-caps text-zinc-500 uppercase">0xf91c...11a2 • Polygon</p>
+<h4 class="text-on-surface font-semibold font-space-grotesk">Vault_Guardian_Module</h4>
+<p class="text-zinc-500 text-xs font-body-sm">0x3f1...A2B4</p>
 </div>
 </div>
 <div class="flex items-center gap-6">
-<div class="text-right">
-<p class="text-[10px] font-label-caps text-zinc-500 uppercase">Status</p>
-<p class="text-xs font-bold text-primary uppercase">Guarding</p>
+<div class="flex items-center gap-2 px-3 py-1 bg-blue-500/10 text-blue-400 rounded-full border border-blue-500/20">
+<span class="status-dot bg-blue-400"></span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Guarding</span>
 </div>
-<span class="material-symbols-outlined text-zinc-700" data-icon="more_vert">more_vert</span>
+<button class="p-2 text-zinc-600 group-hover:text-zinc-300">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
 </div>
 </div>
-<div class="flex items-center justify-between p-3 hover:bg-zinc-900/50 rounded-xl transition-colors cursor-pointer border border-transparent hover:border-zinc-800">
+<!-- Item 3 -->
+<div class="flex items-center justify-between p-4 rounded-xl bg-surface-container-low border border-zinc-800/50 hover:border-primary/30 transition-colors group">
 <div class="flex items-center gap-4">
-<div class="w-10 h-10 rounded-lg bg-zinc-900 flex items-center justify-center border border-zinc-800">
-<span class="material-symbols-outlined text-zinc-400" data-icon="account_tree">account_tree</span>
+<div class="w-10 h-10 rounded-lg bg-primary/5 flex items-center justify-center text-primary border border-primary/10">
+<span class="material-symbols-outlined">sync_alt</span>
 </div>
 <div>
-<p class="font-body-md text-white font-medium">Governance_Distributor</p>
-<p class="text-[10px] font-label-caps text-zinc-500 uppercase">0x442d...bc39 • Arbitrum</p>
+<h4 class="text-on-surface font-semibold font-space-grotesk">Governance_Distributor</h4>
+<p class="text-zinc-500 text-xs font-body-sm">0x9a8...CC10</p>
 </div>
 </div>
 <div class="flex items-center gap-6">
-<div class="text-right">
-<p class="text-[10px] font-label-caps text-zinc-500 uppercase">Status</p>
-<p class="text-xs font-bold text-[#5E5CE6] uppercase">Syncing</p>
+<div class="flex items-center gap-2 px-3 py-1 bg-yellow-500/10 text-yellow-400 rounded-full border border-yellow-500/20">
+<span class="status-dot bg-yellow-400"></span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Syncing</span>
 </div>
-<span class="material-symbols-outlined text-zinc-700" data-icon="more_vert">more_vert</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Live Execution Logs Section -->
-<section class="grid grid-cols-1 lg:grid-cols-4 gap-gutter mb-stack-lg">
-<div class="lg:col-span-3">
-<div class="glass-card rounded-2xl p-6 h-full flex flex-col">
-<h4 class="font-headline-md text-white mb-6">Automation Canvas</h4>
-<div class="flex-1 flex flex-col items-center justify-center border-2 border-dashed border-zinc-800 rounded-xl p-12 bg-zinc-950/30">
-<span class="material-symbols-outlined text-4xl text-zinc-700 mb-4" data-icon="add_circle">add_circle</span>
-<p class="text-zinc-500 font-body-md">Drag components here to build a sequence</p>
-<button class="mt-4 px-6 py-2 border border-zinc-700 rounded-lg text-xs font-label-caps text-zinc-300 hover:bg-zinc-800 transition-colors">Open Template Library</button>
-</div>
-</div>
-</div>
-<div class="lg:col-span-1">
-<div class="bg-zinc-950 border border-zinc-800 rounded-2xl flex flex-col h-[400px]">
-<div class="p-4 border-b border-zinc-800 flex items-center justify-between">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-primary text-sm" data-icon="terminal">terminal</span>
-<h5 class="font-label-caps text-zinc-100 uppercase tracking-widest text-[10px]">Live Execution Logs</h5>
-</div>
-<span class="h-1.5 w-1.5 rounded-full bg-primary"></span>
-</div>
-<div class="flex-1 overflow-y-auto p-4 font-mono text-[11px] leading-relaxed flex flex-col gap-2" id="logContainer">
-<div class="flex gap-2 text-zinc-500">
-<span class="text-zinc-700">[12:44:01]</span>
-<span>AUTH: Connection standing by.</span>
-</div>
-<div class="flex gap-2 text-zinc-500">
-<span class="text-zinc-700">[12:44:02]</span>
-<span>SDK: Thirdweb Client initialized (ChainID: 1).</span>
-</div>
-<div class="flex gap-2 text-zinc-400">
-<span class="text-zinc-700">[12:44:05]</span>
-<span>DATA: System idle. Awaiting wallet connection.</span>
-</div>
-</div>
-<div class="p-4 bg-zinc-900/50 border-t border-zinc-800">
-<div class="flex items-center justify-between text-[10px] font-label-caps">
-<span class="text-zinc-500 uppercase">Uptime: 99.98%</span>
-<span class="text-primary uppercase cursor-pointer hover:underline" onclick="document.getElementById('logContainer').innerHTML=''">Clear Logs</span>
+<button class="p-2 text-zinc-600 group-hover:text-zinc-300">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
 </div>
 </div>
 </div>
 </div>
-</section>
+</div>
+<!-- Right Column: Execution Logs -->
+<div class="col-span-12 lg:col-span-4">
+<div class="glass-panel rounded-2xl border border-zinc-800 flex flex-col h-full overflow-hidden">
+<div class="p-6 border-b border-zinc-800 flex items-center justify-between bg-zinc-950/40">
+<h3 class="text-headline-md font-display text-white text-lg">Live Execution Logs</h3>
+<span class="material-symbols-outlined text-primary text-sm">pulse_alert</span>
+</div>
+<div class="flex-1 p-6 space-y-6 overflow-y-auto max-h-[600px] font-mono text-[11px]">
+<div class="flex gap-4">
+<span class="text-zinc-600">14:02:11</span>
+<div class="flex-1">
+<p class="text-green-400 mb-1">[SUCCESS] Liquidity Rebalanced</p>
+<p class="text-zinc-500">Tx: 0x82...192A on Arbitrum One</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="text-zinc-600">13:58:45</span>
+<div class="flex-1">
+<p class="text-blue-400 mb-1">[INFO] Vault Guardian Scan Started</p>
+<p class="text-zinc-500">Checking 14 registered contracts...</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="text-zinc-600">13:45:22</span>
+<div class="flex-1">
+<p class="text-primary mb-1">[EXEC] Swap Execution Initiated</p>
+<p class="text-zinc-500">Pair: ETH/USDC | Amount: 0.45 ETH</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="text-zinc-600">13:30:10</span>
+<div class="flex-1">
+<p class="text-yellow-400 mb-1">[WARN] Gas Threshold Reached</p>
+<p class="text-zinc-500">Postponing non-critical sync tasks</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="text-zinc-600">13:12:01</span>
+<div class="flex-1">
+<p class="text-green-400 mb-1">[SUCCESS] Oracle Feed Updated</p>
+<p class="text-zinc-500">Chainlink Aggregator: ETH/USD 2,514.12</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="text-zinc-600">13:00:00</span>
+<div class="flex-1">
+<p class="text-zinc-400 mb-1">[SYSTEM] Node Checksum Verified</p>
+<p class="text-zinc-500">Orbital Node v1.0.4 Heartbeat OK</p>
+</div>
+</div>
+</div>
+<div class="p-4 bg-zinc-950/60 border-t border-zinc-800">
+<button class="w-full py-2 bg-zinc-900 text-zinc-400 rounded-lg text-xs font-label-caps uppercase tracking-widest border border-zinc-800 hover:text-white transition-colors">
+                                Export Full Logs
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
 </main>
-<!-- BottomNavBar (Mobile Only) -->
-<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-2 bg-zinc-950/90 backdrop-blur-lg border-t border-zinc-800 z-50 shadow-2xl shadow-black font-['Space_Grotesk'] text-[10px] uppercase">
-<a class="flex flex-col items-center justify-center text-[#5E5CE6] bg-[#5E5CE6]/10 rounded-xl p-2 min-w-[60px]" href="#">
-<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
-<span class="mt-1">Hub</span>
-</a>
-<a class="flex flex-col items-center justify-center text-zinc-500 p-2 min-w-[60px] active:bg-zinc-800 rounded-xl transition-all" href="#">
-<span class="material-symbols-outlined" data-icon="sync">sync</span>
-<span class="mt-1">Ops</span>
-</a>
-<a class="flex flex-col items-center justify-center text-zinc-500 p-2 min-w-[60px] active:bg-zinc-800 rounded-xl transition-all" href="#">
-<span class="material-symbols-outlined" data-icon="wallet">wallet</span>
-<span class="mt-1">Wallet</span>
-</a>
-<a class="flex flex-col items-center justify-center text-zinc-500 p-2 min-w-[60px] active:bg-zinc-800 rounded-xl transition-all" href="#">
-<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
-<span class="mt-1">Logs</span>
-</a>
-</nav>
-</div>
-</div>
-<!-- Modal for No Provider Fallback -->
-<div class="fixed inset-0 z-50 flex items-center justify-center hidden p-4" id="fallbackModal">
-<div class="absolute inset-0 bg-zinc-950/80 backdrop-blur-md"></div>
-<div class="relative glass-card w-full max-w-md p-8 rounded-3xl border border-zinc-800 shadow-2xl">
-<div class="flex flex-col items-center text-center gap-6">
-<div class="w-16 h-16 rounded-2xl bg-error/10 flex items-center justify-center border border-error/20">
-<span class="material-symbols-outlined text-error text-3xl">account_balance_wallet</span>
-</div>
-<div class="space-y-2">
-<h3 class="text-xl font-display font-bold text-white">Wallet Not Detected</h3>
-<p class="text-zinc-400 text-sm leading-relaxed">We couldn't detect an EVM provider like MetaMask or Rabby in your browser. Orbital Precision requires an active injection to facilitate transactions.</p>
-</div>
-<div class="w-full flex flex-col gap-3">
-<a class="w-full py-3 bg-primary-container hover:bg-primary text-white rounded-xl font-bold text-xs uppercase tracking-widest transition-all" href="https://metamask.io/download/" target="_blank">Install MetaMask</a>
-<button class="w-full py-3 bg-zinc-900 hover:bg-zinc-800 text-zinc-400 rounded-xl font-bold text-xs uppercase tracking-widest border border-zinc-800 transition-all" onclick="document.getElementById('fallbackModal').classList.add('hidden')">Cancel</button>
-</div>
-</div>
-</div>
-</div>
 <script>
-    /**
-     * AUTO-HUB ROBUST WEB3 SCRIPT v3.0
-     * Handles Provider Discovery, Connection States, and Fallbacks
-     */
-    
-    const connectBtn = document.getElementById('connectWalletBtn');
-    const btnText = document.getElementById('btnText');
-    const ethDisplay = document.getElementById('ethBalance');
-    const usdDisplay = document.getElementById('usdValue');
-    const logContainer = document.getElementById('logContainer');
-    const fallbackModal = document.getElementById('fallbackModal');
-
-    function addLog(msg, colorClass = 'text-zinc-500') {
-        const time = new Date().toLocaleTimeString([], { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' });
-        const logEntry = document.createElement('div');
-        logEntry.className = `flex gap-2 ${colorClass}`;
-        logEntry.innerHTML = `<span class="text-zinc-700">[${time}]</span> <span>${msg}</span>`;
-        logContainer.appendChild(logEntry);
-        logContainer.scrollTop = logContainer.scrollHeight;
-        console.log(`[AutoHub Log] [${time}] ${msg}`);
-    }
-
-    async function getETHPrice() {
-        try {
-            const response = await fetch('https://api.binance.com/api/v3/ticker/price?symbol=ETHUSDT');
-            const data = await response.json();
-            return parseFloat(data.price);
-        } catch (e) {
-            return 2514.12; // Dynamic Fallback
-        }
-    }
-
-    async function updateBalance(provider, address) {
-        try {
-            const balanceBigInt = await provider.getBalance(address);
-            const balanceEth = ethers.formatEther(balanceBigInt);
-            const formattedEth = parseFloat(balanceEth).toFixed(4);
-            ethDisplay.innerText = formattedEth;
+        // Robust Universal Web3 Connection Logic
+        document.getElementById('connectButton').addEventListener('click', async () => {
+            const btn = document.getElementById('connectButton');
+            btn.innerText = "Connecting...";
             
-            const ethPrice = await getETHPrice();
-            const usdValue = (parseFloat(balanceEth) * ethPrice).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-            usdDisplay.innerText = `≈ $${usdValue} USD`;
-            
-            addLog(`DATA: Pulse check successful. ${formattedEth} ETH confirmed.`, 'text-zinc-400');
-        } catch (error) {
-            addLog(`ERROR: Telemetry failed. Balance unavailable.`, 'text-error');
-        }
-    }
-
-    /**
-     * Main Connection Handler
-     */
-    async function connectWallet() {
-        addLog('AUTH: Initiating Orbital Link Protocol...', 'text-primary');
-        
-        // Robust detection using EIP-6963 and standard window.ethereum
-        let providerInstance;
-        
-        // 1. Check for standard window.ethereum
-        if (typeof window.ethereum === 'undefined') {
-            addLog('SYSTEM: Critical Error - No provider detected.', 'text-error');
-            fallbackModal.classList.remove('hidden');
-            return;
-        }
-
-        try {
-            setBtnState('connecting');
-            
-            // Modern ethers v6 BrowserProvider
-            const provider = new ethers.BrowserProvider(window.ethereum);
-            
-            // Standard EIP-1102 connection request
-            const accounts = await provider.send("eth_requestAccounts", []);
-            
-            if (accounts.length === 0) {
-                throw new Error("No accounts found");
-            }
-
-            const address = accounts[0];
-            const shortAddress = `${address.substring(0, 6)}...${address.substring(address.length - 4)}`;
-            
-            setBtnState('connected', shortAddress);
-            addLog(`AUTH: Handshake complete. Connected to ${shortAddress}.`, 'text-primary');
-            
-            await updateBalance(provider, address);
-
-            // Event Listeners for State Persistence
-            window.ethereum.on('accountsChanged', (newAccounts) => {
-                addLog('AUTH: Provider identity rotation detected.');
-                if (newAccounts.length === 0) {
-                    location.reload();
-                } else {
-                    connectWallet();
+            // Mobile Deep-Linking & Wallet Detection
+            if (typeof window.ethereum !== 'undefined') {
+                try {
+                    const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+                    const account = accounts[0];
+                    btn.innerText = account.slice(0, 6) + '...' + account.slice(-4);
+                    btn.classList.remove('bg-primary-container');
+                    btn.classList.add('bg-zinc-900', 'border', 'border-zinc-800', 'text-primary');
+                } catch (error) {
+                    console.error("User denied connection", error);
+                    btn.innerText = "Connect Wallet";
                 }
-            });
-
-            window.ethereum.on('chainChanged', (chainId) => {
-                addLog(`SYSTEM: Network switch detected (Chain: ${parseInt(chainId, 16)}).`);
-                location.reload();
-            });
-
-        } catch (error) {
-            console.error("Wallet Connection Error:", error);
-            setBtnState('idle');
-            
-            if (error.code === 4001) {
-                addLog('AUTH: Request rejected by user.', 'text-error');
             } else {
-                addLog('AUTH: Connection error. Check provider state.', 'text-error');
-            }
-        }
-    }
-
-    /**
-     * UI Feedback Utility
-     */
-    function setBtnState(state, label = '') {
-        switch(state) {
-            case 'connecting':
-                connectBtn.disabled = true;
-                btnText.innerText = "Synchronizing...";
-                connectBtn.innerHTML = `
-                    <span class="material-symbols-outlined text-sm loader-spin">sync</span>
-                    <span id="btnText">Syncing...</span>
-                `;
-                break;
-            case 'connected':
-                connectBtn.disabled = true;
-                connectBtn.innerHTML = `
-                    <span class="material-symbols-outlined text-sm text-primary">verified</span>
-                    <span>${label}</span>
-                `;
-                connectBtn.classList.replace('bg-primary-container', 'bg-zinc-900');
-                connectBtn.classList.add('border', 'border-zinc-800');
-                break;
-            case 'idle':
-                connectBtn.disabled = false;
-                connectBtn.innerHTML = `<span id="btnText">Connect Wallet</span>`;
-                connectBtn.classList.replace('bg-zinc-900', 'bg-primary-container');
-                connectBtn.classList.remove('border', 'border-zinc-800');
-                break;
-        }
-    }
-
-    connectBtn.addEventListener('click', connectWallet);
-
-    // Persist Connection Check on Load
-    window.addEventListener('DOMContentLoaded', async () => {
-        addLog('SYSTEM: Orbital Command online. Awaiting auth.', 'text-zinc-600');
-        
-        if (typeof window.ethereum !== 'undefined') {
-            try {
-                const provider = new ethers.BrowserProvider(window.ethereum);
-                const accounts = await provider.listAccounts();
-                if (accounts.length > 0) {
-                    addLog('AUTH: Resuming existing session...', 'text-zinc-500');
-                    connectWallet();
+                // If no ethereum provider, attempt mobile deep-linking or redirect to site
+                if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+                    window.location.href = "https://metamask.app.link/dapp/" + window.location.host;
+                } else {
+                    alert("No Web3 wallet detected. Please install MetaMask or use a compatible browser.");
+                    btn.innerText = "Install Wallet";
+                    window.open('https://metamask.io/download/', '_blank');
                 }
-            } catch (err) {
-                console.warn("Session recovery failed:", err);
             }
+        });
+
+        // Listen for account changes
+        if (window.ethereum) {
+            window.ethereum.on('accountsChanged', (accounts) => {
+                const btn = document.getElementById('connectButton');
+                if (accounts.length > 0) {
+                    btn.innerText = accounts[0].slice(0, 6) + '...' + accounts[0].slice(-4);
+                } else {
+                    btn.innerText = "Connect Wallet";
+                    btn.classList.add('bg-primary-container');
+                    btn.classList.remove('bg-zinc-900', 'border', 'border-zinc-800', 'text-primary');
+                }
+            });
         }
-    });
-</script>
+    </script>
 </body></html>
