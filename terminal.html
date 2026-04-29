@@ -6,330 +6,335 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
         tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                      "on-secondary-container": "#a7b6cc",
-                      "primary": "#c2c1ff",
-                      "tertiary-container": "#646f84",
-                      "secondary-fixed": "#d4e4fa",
-                      "inverse-primary": "#4d4ad5",
-                      "surface-variant": "#2d3449",
-                      "secondary-container": "#39485a",
-                      "tertiary-fixed-dim": "#bcc7de",
-                      "on-tertiary-fixed-variant": "#3c475a",
-                      "on-surface": "#dae2fd",
-                      "outline": "#918fa0",
-                      "background": "#0b1326",
-                      "on-primary-fixed-variant": "#332dbc",
-                      "on-secondary-fixed": "#0d1c2d",
-                      "on-secondary-fixed-variant": "#39485a",
-                      "on-tertiary-fixed": "#111c2d",
-                      "tertiary": "#bcc7de",
-                      "surface": "#0b1326",
-                      "surface-container-highest": "#2d3449",
-                      "inverse-on-surface": "#283044",
-                      "on-background": "#dae2fd",
-                      "surface-container-low": "#131b2e",
-                      "on-tertiary-container": "#eff2ff",
-                      "secondary": "#b9c8de",
-                      "on-surface-variant": "#c7c4d7",
-                      "primary-container": "#5e5ce6",
-                      "surface-container-high": "#222a3d",
-                      "surface-container": "#171f33",
-                      "primary-fixed-dim": "#c2c1ff",
-                      "on-error": "#690005",
-                      "on-error-container": "#ffdad6",
-                      "on-tertiary": "#263143",
-                      "surface-tint": "#c2c1ff",
-                      "surface-bright": "#31394d",
-                      "tertiary-fixed": "#d8e3fb",
-                      "on-primary-container": "#f4f1ff",
-                      "surface-container-lowest": "#060e20",
-                      "outline-variant": "#464554",
-                      "primary-fixed": "#e2dfff",
-                      "on-secondary": "#233143",
-                      "on-primary": "#1800a7",
-                      "inverse-surface": "#dae2fd",
-                      "error": "#ffb4ab",
-                      "on-primary-fixed": "#0c006b",
-                      "secondary-fixed-dim": "#b9c8de",
-                      "surface-dim": "#0b1326",
-                      "error-container": "#93000a"
-              },
-              "borderRadius": {
-                      "DEFAULT": "0.25rem",
-                      "lg": "0.5rem",
-                      "xl": "0.75rem",
-                      "full": "9999px"
-              },
-              "spacing": {
-                      "margin": "40px",
-                      "container-max": "1440px",
-                      "stack-lg": "48px",
-                      "gutter": "24px",
-                      "unit": "8px",
-                      "stack-md": "24px",
-                      "stack-sm": "12px"
-              },
-              "fontFamily": {
-                      "body-sm": ["Manrope"],
-                      "label-caps": ["Manrope"],
-                      "body-md": ["Manrope"],
-                      "headline-md": ["Space Grotesk"],
-                      "body-lg": ["Manrope"],
-                      "display": ["Space Grotesk"],
-                      "headline-lg": ["Space Grotesk"]
-              },
-              "fontSize": {
-                      "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
-                      "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
-                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                      "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
-                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                      "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "500"}],
-                      "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "500"}]
-              }
-            },
-          },
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#93000a",
+                        "on-secondary": "#233143",
+                        "surface": "#0b1326",
+                        "secondary-fixed-dim": "#b9c8de",
+                        "on-tertiary-fixed": "#111c2d",
+                        "error": "#ffb4ab",
+                        "on-secondary-container": "#a7b6cc",
+                        "surface-tint": "#c2c1ff",
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed": "#d4e4fa",
+                        "outline-variant": "#464554",
+                        "tertiary-fixed-dim": "#bcc7de",
+                        "surface-variant": "#2d3449",
+                        "surface-container-highest": "#2d3449",
+                        "on-tertiary-fixed-variant": "#3c475a",
+                        "on-primary-container": "#f4f1ff",
+                        "surface-container-high": "#222a3d",
+                        "secondary": "#b9c8de",
+                        "surface-container": "#171f33",
+                        "primary-fixed-dim": "#c2c1ff",
+                        "on-tertiary": "#263143",
+                        "on-background": "#dae2fd",
+                        "surface-bright": "#31394d",
+                        "secondary-container": "#39485a",
+                        "inverse-primary": "#4d4ad5",
+                        "inverse-surface": "#dae2fd",
+                        "primary": "#c2c1ff",
+                        "on-surface-variant": "#c7c4d7",
+                        "on-tertiary-container": "#eff2ff",
+                        "on-surface": "#dae2fd",
+                        "on-secondary-fixed": "#0d1c2d",
+                        "on-primary-fixed-variant": "#332dbc",
+                        "inverse-on-surface": "#283044",
+                        "surface-dim": "#0b1326",
+                        "on-error": "#690005",
+                        "tertiary-fixed": "#d8e3fb",
+                        "tertiary": "#bcc7de",
+                        "surface-container-low": "#131b2e",
+                        "primary-container": "#5e5ce6",
+                        "background": "#0b1326",
+                        "primary-fixed": "#e2dfff",
+                        "on-primary-fixed": "#0c006b",
+                        "on-primary": "#1800a7",
+                        "tertiary-container": "#646f84",
+                        "on-secondary-fixed-variant": "#39485a",
+                        "surface-container-lowest": "#060e20",
+                        "outline": "#918fa0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "12px",
+                        "margin": "40px",
+                        "stack-md": "24px",
+                        "container-max": "1440px",
+                        "stack-lg": "48px",
+                        "gutter": "24px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Space Grotesk"],
+                        "label-caps": ["Manrope"],
+                        "headline-md": ["Space Grotesk"],
+                        "body-lg": ["Manrope"],
+                        "display": ["Space Grotesk"],
+                        "body-sm": ["Manrope"],
+                        "body-md": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                }
+            }
         }
-      </script>
+    </script>
 <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-            font-size: 20px;
-        }
         .terminal-glow {
-            text-shadow: 0 0 8px rgba(194, 193, 255, 0.3);
+            box-shadow: inset 0 0 20px rgba(94, 92, 230, 0.05);
         }
         .custom-scrollbar::-webkit-scrollbar {
             width: 4px;
         }
         .custom-scrollbar::-webkit-scrollbar-track {
-            background: transparent;
+            background: #0b1326;
         }
         .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #2d3449;
+            background: #464554;
             border-radius: 10px;
         }
-      </style>
+    </style>
 </head>
-<body class="bg-zinc-950 text-on-surface font-body-md selection:bg-primary/30 antialiased overflow-hidden">
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-white">
 <!-- TopAppBar -->
-<header class="fixed top-0 z-50 w-full bg-zinc-950/70 backdrop-blur-xl border-b border-zinc-800 flex justify-between items-center px-8 h-16">
-<div class="flex items-center gap-6">
-<span class="text-lg font-bold tracking-tighter text-zinc-100 font-['Space_Grotesk']">BEEGO-SPACE</span>
-<nav class="hidden md:flex items-center gap-8">
-<a class="text-violet-400 border-b-2 border-violet-500 pb-1 font-body-sm transition-colors duration-150" href="index.html">Status</a>
-<a class="text-zinc-400 hover:text-zinc-100 font-body-sm transition-colors duration-150" href="#">Logs</a>
-<a class="text-zinc-400 hover:text-zinc-100 font-body-sm transition-colors duration-150" href="#">Systems</a>
+<header class="fixed top-0 w-full z-50 border-b border-zinc-800/50 bg-zinc-950/80 backdrop-blur-2xl flex items-center justify-between px-8 h-16 w-full">
+<div class="flex items-center gap-8">
+<span class="text-lg font-bold tracking-tighter text-white font-['Space_Grotesk']">BEEGO-SPACE</span>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-zinc-400 font-medium font-['Space_Grotesk'] text-sm tracking-wide hover:text-violet-400 transition-colors duration-150" href="index.html">Home</a>
+<a class="text-white border-b-2 border-violet-500 pb-1 font-medium font-['Space_Grotesk'] text-sm tracking-wide hover:text-violet-400 transition-colors duration-150" href="terminal.html">Terminal</a>
+<a class="text-zinc-400 font-medium font-['Space_Grotesk'] text-sm tracking-wide hover:text-violet-400 transition-colors duration-150" href="network.html">Network</a>
+<a class="text-zinc-400 font-medium font-['Space_Grotesk'] text-sm tracking-wide hover:text-violet-400 transition-colors duration-150" href="automation.html">Automation</a>
 </nav>
 </div>
 <div class="flex items-center gap-4">
-<div class="hidden lg:block relative">
-<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-zinc-500" data-icon="search">search</span>
-<input class="bg-zinc-900 border-none rounded-lg pl-10 pr-4 py-1.5 text-sm w-64 focus:ring-1 focus:ring-violet-500 text-zinc-300 placeholder:text-zinc-600" placeholder="Search systems..." type="text"/>
-</div>
-<button class="p-2 text-zinc-400 hover:text-zinc-100 transition-colors duration-150 active:opacity-80 scale-98">
-<span class="material-symbols-outlined" data-icon="settings">settings</span>
-</button>
-<button class="p-2 text-zinc-400 hover:text-zinc-100 transition-colors duration-150 active:opacity-80 scale-98">
-<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
-</button>
+<button class="material-symbols-outlined text-zinc-400 hover:text-white transition-colors">account_circle</button>
+<button class="material-symbols-outlined text-zinc-400 hover:text-white transition-colors">settings</button>
+<button class="md:hidden material-symbols-outlined text-white">menu</button>
 </div>
 </header>
-<div class="flex h-screen pt-16">
-<!-- SideNavBar -->
-<aside class="fixed left-0 top-0 pt-20 h-screen w-64 bg-zinc-900 border-r border-zinc-800 flex flex-col z-40">
-<div class="px-6 mb-8">
-<div class="flex items-center gap-3 mb-4">
-<div class="w-10 h-10 rounded-lg bg-violet-500/10 flex items-center justify-center border border-violet-500/20">
-<span class="material-symbols-outlined text-violet-500" data-icon="terminal" data-weight="fill" style="font-variation-settings: 'FILL' 1;">terminal</span>
+<div class="flex pt-16 min-h-screen">
+<!-- SideNavBar (Desktop Only) -->
+<aside class="hidden md:flex flex-col h-[calc(100vh-64px)] w-64 border-r border-zinc-800 bg-zinc-950 p-4 sticky top-16">
+<div class="flex items-center gap-3 mb-8 px-2">
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-white" data-weight="fill">terminal</span>
 </div>
 <div>
-<div class="text-zinc-100 font-black font-['Space_Grotesk'] text-sm uppercase tracking-widest">COMMAND</div>
-<div class="text-zinc-500 text-[10px] font-label-caps uppercase">Station Alpha-01</div>
+<h2 class="text-white font-headline-md text-sm font-bold tracking-tight">BEEGO-SPACE</h2>
+<p class="text-zinc-500 text-xs font-label-caps">Orbital Command</p>
 </div>
 </div>
-</div>
-<nav class="flex-1 space-y-1 px-2">
-<a class="bg-zinc-800 text-violet-400 border-r-2 border-violet-500 flex items-center gap-3 px-4 py-3 transition-all duration-200 ease-in-out font-['Space_Grotesk'] text-sm uppercase tracking-widest" href="terminal.html">
-<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
-<span>Terminal</span>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-zinc-500 hover:text-zinc-200 hover:bg-zinc-900/50 transition-all rounded font-['Space_Grotesk']" href="index.html">
+<span class="material-symbols-outlined text-xl">home</span>
+<span class="text-sm">Home</span>
 </a>
-<a class="text-zinc-500 flex items-center gap-3 px-4 py-3 hover:bg-zinc-800/50 hover:text-zinc-200 transition-all duration-200 ease-in-out font-['Space_Grotesk'] text-sm uppercase tracking-widest" href="automation.html">
-<span class="material-symbols-outlined" data-icon="settings_input_component">settings_input_component</span>
-<span>Automation</span>
+<a class="flex items-center gap-3 px-3 py-2 bg-zinc-900 text-violet-500 border-l-2 border-violet-500 transition-all rounded font-['Space_Grotesk']" href="terminal.html">
+<span class="material-symbols-outlined text-xl" data-weight="fill">terminal</span>
+<span class="text-sm">Terminal</span>
 </a>
-<a class="text-zinc-500 flex items-center gap-3 px-4 py-3 hover:bg-zinc-800/50 hover:text-zinc-200 transition-all duration-200 ease-in-out font-['Space_Grotesk'] text-sm uppercase tracking-widest" href="network.html">
-<span class="material-symbols-outlined" data-icon="lan">lan</span>
-<span>Network</span>
+<a class="flex items-center gap-3 px-3 py-2 text-zinc-500 hover:text-zinc-200 hover:bg-zinc-900/50 transition-all rounded font-['Space_Grotesk']" href="network.html">
+<span class="material-symbols-outlined text-xl">hub</span>
+<span class="text-sm">Network</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-zinc-500 hover:text-zinc-200 hover:bg-zinc-900/50 transition-all rounded font-['Space_Grotesk']" href="automation.html">
+<span class="material-symbols-outlined text-xl">settings_input_component</span>
+<span class="text-sm">Automation</span>
 </a>
 </nav>
-<div class="p-6 border-t border-zinc-800">
-<button class="w-full bg-violet-500 text-white py-2.5 rounded-lg text-sm font-bold tracking-tight hover:bg-violet-400 active:scale-95 transition-all">
-                    Deploy Node
-                </button>
+<div class="mt-auto pt-4 border-t border-zinc-800 space-y-1">
+<a class="flex items-center gap-3 px-3 py-2 text-zinc-500 hover:text-zinc-200 hover:bg-zinc-900/50 transition-all rounded font-['Space_Grotesk']" href="#">
+<span class="material-symbols-outlined text-xl">help</span>
+<span class="text-sm font-label-caps">Support</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-zinc-500 hover:text-zinc-200 hover:bg-zinc-900/50 transition-all rounded font-['Space_Grotesk']" href="#">
+<span class="material-symbols-outlined text-xl">description</span>
+<span class="text-sm font-label-caps">Logs</span>
+</a>
 </div>
 </aside>
-<!-- Main Content Area -->
-<main class="flex-1 ml-64 flex flex-col bg-zinc-950 overflow-hidden">
-<!-- Header Section -->
-<div class="p-8 pb-4 flex justify-between items-end">
+<!-- Main Content (Canvas) -->
+<main class="flex-1 p-stack-lg max-w-container-max mx-auto w-full">
+<header class="mb-stack-lg flex flex-col md:flex-row md:items-end justify-between gap-gutter">
 <div>
-<h1 class="font-display text-display text-zinc-100 leading-none">Console</h1>
-<p class="text-zinc-500 font-body-sm mt-2">Active session: Node-X99. Deployment in progress.</p>
+<h1 class="font-display text-display text-white mb-2">Command Terminal</h1>
+<p class="text-zinc-400 font-body-lg">Real-time orbital processing &amp; kernel monitoring.</p>
 </div>
-<div class="flex gap-4">
-<div class="flex flex-col items-end">
-<span class="text-[10px] font-label-caps text-zinc-500 uppercase">Uptime</span>
-<span class="text-zinc-200 font-headline-md tracking-tighter">124:12:09</span>
-</div>
-<div class="w-px h-10 bg-zinc-800 mx-2"></div>
-<div class="flex flex-col items-end">
-<span class="text-[10px] font-label-caps text-zinc-500 uppercase">Latency</span>
-<span class="text-violet-400 font-headline-md tracking-tighter">14ms</span>
+<div class="flex items-center gap-4">
+<div class="px-4 py-2 bg-surface-container-high rounded border border-outline-variant flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-emerald-400"></div>
+<span class="font-label-caps text-on-surface">UPLINK ACTIVE: 4.2GB/S</span>
 </div>
 </div>
-</div>
-<!-- Bento Layout Content -->
-<div class="flex-1 grid grid-cols-12 gap-6 p-8 overflow-y-auto custom-scrollbar">
-<!-- Terminal Console -->
-<div class="col-span-8 bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden flex flex-col shadow-2xl">
-<div class="bg-zinc-800/50 px-4 py-2 border-b border-zinc-800 flex items-center justify-between">
-<div class="flex items-center gap-2">
-<div class="flex gap-1.5">
-<div class="w-2.5 h-2.5 rounded-full bg-red-500/50"></div>
-<div class="w-2.5 h-2.5 rounded-full bg-amber-500/50"></div>
-<div class="w-2.5 h-2.5 rounded-full bg-green-500/50"></div>
-</div>
-<span class="ml-4 text-[11px] font-label-caps text-zinc-500 uppercase tracking-widest">system_bash_0.1</span>
-</div>
-<span class="material-symbols-outlined text-zinc-600 text-sm" data-icon="fullscreen">fullscreen</span>
-</div>
-<div class="flex-1 p-6 font-mono text-sm space-y-2 overflow-y-auto custom-scrollbar bg-black/20">
-<div class="flex gap-4">
-<span class="text-zinc-700">08:42:11</span>
-<span class="text-violet-400">[SYSTEM]</span>
-<span class="text-zinc-300">Initializing Beego-Space precision vectors...</span>
-</div>
-<div class="flex gap-4">
-<span class="text-zinc-700">08:42:12</span>
-<span class="text-emerald-400">[SUCCESS]</span>
-<span class="text-zinc-300">Gravity compensation module engaged at 9.81m/s²</span>
-</div>
-<div class="flex gap-4">
-<span class="text-zinc-700">08:42:15</span>
-<span class="text-violet-400">[SYSTEM]</span>
-<span class="text-zinc-300">Establishing handshake with Alpha-01 satellite array.</span>
-</div>
-<div class="flex gap-4">
-<span class="text-zinc-700">08:42:18</span>
-<span class="text-amber-400">[WARN]</span>
-<span class="text-zinc-300">Atmospheric interference detected at 14,000ft. Re-routing signals.</span>
-</div>
-<div class="flex gap-4">
-<span class="text-zinc-700">08:42:20</span>
-<span class="text-violet-400">[INFO]</span>
-<span class="text-zinc-300">Allocating memory buffers for real-time telemetry processing.</span>
-</div>
-<div class="flex gap-4">
-<span class="text-zinc-700">08:42:25</span>
-<span class="text-emerald-400">[SUCCESS]</span>
-<span class="text-zinc-300">Node cluster synchronised. Beego-Core active.</span>
-</div>
-<div class="pt-4 flex gap-2">
-<span class="text-violet-500">beego_space@root:~$</span>
-<span class="text-zinc-100 animate-pulse">_</span>
-</div>
-</div>
-</div>
-<!-- Stats Panel -->
-<div class="col-span-4 space-y-6">
-<!-- Core Pulse -->
-<div class="bg-zinc-900 border border-zinc-800 rounded-xl p-6">
-<div class="flex justify-between items-start mb-6">
-<div>
-<h3 class="text-zinc-100 font-headline-md font-bold tracking-tight">Core Pulse</h3>
-<p class="text-zinc-500 text-xs font-label-caps mt-1">BEEGO-CORE UTILIZATION</p>
-</div>
-<span class="text-violet-400 font-mono text-sm">42%</span>
-</div>
-<div class="h-24 flex items-end gap-1 mb-4">
-<div class="flex-1 bg-violet-500/20 h-[30%] rounded-sm"></div>
-<div class="flex-1 bg-violet-500/20 h-[45%] rounded-sm"></div>
-<div class="flex-1 bg-violet-500/40 h-[60%] rounded-sm"></div>
-<div class="flex-1 bg-violet-500/20 h-[35%] rounded-sm"></div>
-<div class="flex-1 bg-violet-500/30 h-[50%] rounded-sm"></div>
-<div class="flex-1 bg-violet-500/50 h-[80%] rounded-sm"></div>
-<div class="flex-1 bg-violet-500/20 h-[40%] rounded-sm"></div>
-<div class="flex-1 bg-violet-500/60 h-[70%] rounded-sm"></div>
-<div class="flex-1 bg-violet-500/20 h-[25%] rounded-sm"></div>
-<div class="flex-1 bg-violet-500/90 h-[95%] rounded-sm"></div>
-<div class="flex-1 bg-violet-500/20 h-[30%] rounded-sm"></div>
-</div>
-<div class="flex justify-between text-[10px] font-label-caps text-zinc-600">
-<span>T-30MIN</span>
-<span>CURRENT</span>
-</div>
-</div>
-<!-- Memory Load -->
-<div class="bg-zinc-900 border border-zinc-800 rounded-xl p-6">
-<div class="flex justify-between items-start mb-4">
-<div>
-<h3 class="text-zinc-100 font-headline-md font-bold tracking-tight">Memory Load</h3>
-<p class="text-zinc-500 text-xs font-label-caps mt-1">ECC REGISTERED RAM</p>
-</div>
-</div>
+</header>
+<!-- Bento Grid Console Layout -->
+<div class="grid grid-cols-12 gap-gutter">
+<!-- System Stats Sidebar -->
+<div class="col-span-12 lg:col-span-3 space-y-gutter">
+<div class="p-6 bg-surface-container rounded border border-outline-variant">
+<h3 class="font-headline-md text-sm text-white mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">monitoring</span>
+                            System Health
+                        </h3>
 <div class="space-y-4">
 <div>
-<div class="flex justify-between text-[10px] font-label-caps text-zinc-400 mb-1">
-<span>BANK A [PRIMARY]</span>
-<span>8.4GB / 16GB</span>
+<div class="flex justify-between text-xs font-label-caps text-zinc-400 mb-2">
+<span>CPU LOAD</span>
+<span>24%</span>
 </div>
-<div class="w-full bg-zinc-800 h-1 rounded-full overflow-hidden">
-<div class="bg-violet-500 h-full w-[52%]"></div>
+<div class="h-1 w-full bg-zinc-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-1/4"></div>
 </div>
 </div>
 <div>
-<div class="flex justify-between text-[10px] font-label-caps text-zinc-400 mb-1">
-<span>BANK B [REDUNDANT]</span>
-<span>2.1GB / 16GB</span>
+<div class="flex justify-between text-xs font-label-caps text-zinc-400 mb-2">
+<span>MEMORY</span>
+<span>8.2 / 32GB</span>
 </div>
-<div class="w-full bg-zinc-800 h-1 rounded-full overflow-hidden">
-<div class="bg-zinc-600 h-full w-[13%]"></div>
-</div>
-</div>
+<div class="h-1 w-full bg-zinc-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[25%]"></div>
 </div>
 </div>
-<!-- System Health Visual -->
-<div class="relative bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden aspect-video">
-<img alt="Beego-Core architectural chip visualization" class="absolute inset-0 w-full h-full object-cover opacity-80" src="https://lh3.googleusercontent.com/aida/ADBb0uibllT6eBU_nWJaXMmRmVMU8U8C7MtrHGB1HKheHwWiX-BVTn0fkPt2YAteGCszHmwNF-lBv7urMR6daOkpzhFSVlHzLXVOf_ZYRsNft4t8zKj5RkxhZNhPy5-FEPmWgpgGUmYtrLgbDmMYeyyeuhXFwvHuz80PYq7E5YjXvGu0gAjtPWjZq64fN2TNXHPZUcfNiPuQINyvHvUuAJW-pvqNTZ8HypNHIsIBy3cdw3ySxDRm0k1iBmvyr41-KPKz-526q6FO3JcV"/>
-<div class="absolute inset-0 bg-gradient-to-t from-zinc-950/60 via-transparent to-transparent"></div>
+<div>
+<div class="flex justify-between text-xs font-label-caps text-zinc-400 mb-2">
+<span>BANDWIDTH</span>
+<span>62%</span>
+</div>
+<div class="h-1 w-full bg-zinc-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[62%]"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-6 bg-surface-container-high rounded border border-outline-variant">
+<h3 class="font-headline-md text-sm text-white mb-4">Active Processes</h3>
+<ul class="space-y-3 font-label-caps text-[10px] tracking-widest text-zinc-400">
+<li class="flex items-center justify-between border-b border-zinc-800 pb-2">
+<span class="text-zinc-200">ORBIT_KERN_01</span>
+<span class="text-emerald-400">RUNNING</span>
+</li>
+<li class="flex items-center justify-between border-b border-zinc-800 pb-2">
+<span class="text-zinc-200">SIGNAL_DECODE</span>
+<span class="text-emerald-400">RUNNING</span>
+</li>
+<li class="flex items-center justify-between border-b border-zinc-800 pb-2">
+<span class="text-zinc-200">SYNC_GATEWAY</span>
+<span class="text-amber-400">IDLE</span>
+</li>
+<li class="flex items-center justify-between">
+<span class="text-zinc-200">LOG_STREAMER</span>
+<span class="text-emerald-400">RUNNING</span>
+</li>
+</ul>
+</div>
+<div class="rounded-xl overflow-hidden aspect-video border border-outline-variant relative group">
+<img class="w-full h-full object-cover grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-70 transition-all duration-700" data-alt="Deep space satellite view of earth with digital grid overlay and data points representing orbital network nodes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAKIi5gd5pJ5faB21YZmBfSe-5JvY0bkNdo7Aku9pj_GfvVXWsQoDWdzNXd3h0hiHc4g4RWnYelz7dLFT62OaYi_8m9IdFQpCj0pb9-Ijn21wtC2QyJ6y9o_i2B6PEckm-HmpnLhwTQvhIPUDydBgYpCQHXeNe0Xy8-aguF1Pg4naqzVwkaX-6DtaGW8vAKFXHhb_F_kyOjVu3ueKEZA-ZOGr2ypfiB8NUGKlf4SIE99M--b3HR8lNtn-85u9BRqM7FkIBjEMmRQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-zinc-950 to-transparent"></div>
 <div class="absolute bottom-4 left-4">
+<p class="text-[10px] font-label-caps text-white">Live Orbital Feed</p>
+<p class="text-[8px] font-label-caps text-zinc-400">SAT-ID: BEEGO-04-A</p>
+</div>
+</div>
+</div>
+<!-- Terminal Interface -->
+<div class="col-span-12 lg:col-span-9 flex flex-col h-[700px]">
+<div class="flex-1 bg-zinc-950 rounded-xl border border-zinc-800 overflow-hidden flex flex-col terminal-glow">
+<!-- Terminal Header -->
+<div class="bg-zinc-900 px-6 py-3 border-b border-zinc-800 flex items-center justify-between">
 <div class="flex items-center gap-2">
-<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-<span class="text-xs font-label-caps text-zinc-100">Live Hardware Telemetry</span>
+<div class="flex gap-1.5">
+<div class="w-3 h-3 rounded-full bg-zinc-700"></div>
+<div class="w-3 h-3 rounded-full bg-zinc-700"></div>
+<div class="w-3 h-3 rounded-full bg-zinc-700"></div>
+</div>
+<span class="ml-4 font-label-caps text-xs text-zinc-400">ssh admin@beego-space-01 — zsh — 144x40</span>
+</div>
+<div class="flex items-center gap-4 text-zinc-500">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+<span class="material-symbols-outlined text-sm">add_box</span>
+</div>
+</div>
+<!-- Terminal Body -->
+<div class="flex-1 p-6 font-mono text-sm overflow-y-auto custom-scrollbar">
+<div class="space-y-1">
+<p class="text-zinc-500 mb-4 font-label-caps">Beego-Space OS [Version 4.2.0-Orbital-LTS]</p>
+<p class="text-zinc-400"><span class="text-primary font-bold">beego@orbital-cmd</span>:<span class="text-secondary">~</span>$ system-check --verbose</p>
+<p class="text-emerald-500">[INFO] Initializing system check sequence...</p>
+<p class="text-emerald-500">[OK] Kernel sub-systems online and verified.</p>
+<p class="text-emerald-500">[OK] Satellite uplink established at 4.2 Gbps.</p>
+<p class="text-emerald-500">[OK] Security protocol RSA-4096 active.</p>
+<p class="text-zinc-400 mt-2"><span class="text-primary font-bold">beego@orbital-cmd</span>:<span class="text-secondary">~</span>$ tail -f /var/log/beego-space/automation.log</p>
+<p class="text-zinc-500">2024-05-24 14:22:01 - TRIGGER: Automation "Stationary Rotate" initiated.</p>
+<p class="text-zinc-500">2024-05-24 14:22:03 - ACTION: Adjusting reaction wheels for axis-alpha.</p>
+<p class="text-zinc-500">2024-05-24 14:22:05 - STATUS: Adjustment complete. Delta-V: 0.001 m/s.</p>
+<p class="text-zinc-500">2024-05-24 14:22:12 - MONITOR: Power levels stable at 98.4%.</p>
+<p class="text-zinc-500">2024-05-24 14:23:45 - WARNING: Latency spike detected on Hub-Node-4.</p>
+<p class="text-zinc-500">2024-05-24 14:23:48 - RESOLVE: Rerouting signal via Hub-Node-2 secondary.</p>
+<p class="text-zinc-500">2024-05-24 14:24:01 - HEARTBEAT: All systems operational.</p>
+<p class="text-zinc-400 mt-4"><span class="text-primary font-bold">beego@orbital-cmd</span>:<span class="text-secondary">~</span>$ <span class="animate-pulse">_</span></p>
+</div>
+</div>
+<!-- Terminal Footer/Input -->
+<div class="p-4 bg-zinc-950 border-t border-zinc-900">
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 text-primary material-symbols-outlined">chevron_right</span>
+<input class="w-full bg-zinc-900 border border-zinc-800 rounded-lg pl-12 pr-4 py-3 text-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all font-mono text-sm" placeholder="Type a command..." type="text"/>
 </div>
 </div>
 </div>
+<!-- Terminal Controls -->
+<div class="mt-gutter flex gap-gutter">
+<button class="flex-1 bg-primary text-on-primary py-4 rounded-xl font-label-caps tracking-widest text-xs font-bold hover:bg-primary/90 transition-all active:scale-95">
+                            RESTART KERNEL
+                        </button>
+<button class="flex-1 border border-outline-variant text-white py-4 rounded-xl font-label-caps tracking-widest text-xs font-bold hover:bg-white/5 transition-all active:scale-95">
+                            EXPORT LOGS (.TXT)
+                        </button>
+<button class="px-6 border border-error-container text-error py-4 rounded-xl font-label-caps tracking-widest text-xs font-bold hover:bg-error-container/20 transition-all active:scale-95">
+                            EMERGENCY SHUTDOWN
+                        </button>
 </div>
 </div>
-<!-- Footer -->
-<footer class="bg-zinc-950 border-t border-zinc-900 flex justify-between items-center px-12 py-6 w-full">
-<div class="text-zinc-600 font-['Space_Grotesk'] text-[10px] tracking-widest uppercase">
-                    © 2024 BEEGO-SPACE COMPUTING CO.
-                </div>
-<div class="flex gap-8">
-<a class="text-zinc-600 hover:text-violet-400 transition-opacity duration-150 font-['Space_Grotesk'] text-[10px] tracking-widest uppercase" href="#">Privacy</a>
-<a class="text-zinc-600 hover:text-violet-400 transition-opacity duration-150 font-['Space_Grotesk'] text-[10px] tracking-widest uppercase" href="#">Security</a>
-<a class="text-zinc-600 hover:text-violet-400 transition-opacity duration-150 font-['Space_Grotesk'] text-[10px] tracking-widest uppercase" href="#">Support</a>
-<a class="text-zinc-600 hover:text-violet-400 transition-opacity duration-150 font-['Space_Grotesk'] text-[10px] tracking-widest uppercase" href="#">API</a>
 </div>
-</footer>
 </main>
 </div>
+<!-- Mobile Bottom NavBar -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-zinc-950 border-t border-zinc-800 flex items-center justify-around z-50">
+<a class="flex flex-col items-center gap-1 text-zinc-500" href="index.html">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-label-caps">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-violet-500" href="terminal.html">
+<span class="material-symbols-outlined" data-weight="fill">terminal</span>
+<span class="text-[10px] font-label-caps">Terminal</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-zinc-500" href="network.html">
+<span class="material-symbols-outlined">hub</span>
+<span class="text-[10px] font-label-caps">Network</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-zinc-500" href="automation.html">
+<span class="material-symbols-outlined">settings_input_component</span>
+<span class="text-[10px] font-label-caps">Auto</span>
+</a>
+</nav>
 </body></html>
