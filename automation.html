@@ -112,6 +112,13 @@
             backdrop-filter: blur(12px);
             border: 1px solid rgba(145, 143, 160, 0.1);
         }
+        @keyframes orbit-spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .loader-spin {
+            animation: orbit-spin 2s linear infinite;
+        }
     </style>
 </head>
 <body class="font-body-md text-on-surface overflow-hidden">
@@ -186,9 +193,9 @@
 <button class="p-2 text-zinc-400 hover:bg-zinc-900/50 rounded-lg transition-colors">
 <span class="material-symbols-outlined" data-icon="notifications">notifications</span>
 </button>
-<button class="bg-primary-container text-white px-4 py-2 rounded-lg font-['Space_Grotesk'] uppercase tracking-widest text-[10px] font-bold active:scale-95 transition-transform ml-2" id="connectWalletBtn">
-                            Connect Wallet
-                        </button>
+<button class="bg-primary-container text-white px-4 py-2 rounded-lg font-['Space_Grotesk'] uppercase tracking-widest text-[10px] font-bold active:scale-95 transition-transform ml-2 flex items-center gap-2" id="connectWalletBtn">
+<span id="btnText">Connect Wallet</span>
+</button>
 </div>
 </div>
 </header>
@@ -388,11 +395,37 @@
 </nav>
 </div>
 </div>
+<!-- Modal for No Provider Fallback -->
+<div class="fixed inset-0 z-50 flex items-center justify-center hidden p-4" id="fallbackModal">
+<div class="absolute inset-0 bg-zinc-950/80 backdrop-blur-md"></div>
+<div class="relative glass-card w-full max-w-md p-8 rounded-3xl border border-zinc-800 shadow-2xl">
+<div class="flex flex-col items-center text-center gap-6">
+<div class="w-16 h-16 rounded-2xl bg-error/10 flex items-center justify-center border border-error/20">
+<span class="material-symbols-outlined text-error text-3xl">account_balance_wallet</span>
+</div>
+<div class="space-y-2">
+<h3 class="text-xl font-display font-bold text-white">Wallet Not Detected</h3>
+<p class="text-zinc-400 text-sm leading-relaxed">We couldn't detect an EVM provider like MetaMask or Rabby in your browser. Orbital Precision requires an active injection to facilitate transactions.</p>
+</div>
+<div class="w-full flex flex-col gap-3">
+<a class="w-full py-3 bg-primary-container hover:bg-primary text-white rounded-xl font-bold text-xs uppercase tracking-widest transition-all" href="https://metamask.io/download/" target="_blank">Install MetaMask</a>
+<button class="w-full py-3 bg-zinc-900 hover:bg-zinc-800 text-zinc-400 rounded-xl font-bold text-xs uppercase tracking-widest border border-zinc-800 transition-all" onclick="document.getElementById('fallbackModal').classList.add('hidden')">Cancel</button>
+</div>
+</div>
+</div>
+</div>
 <script>
+    /**
+     * AUTO-HUB ROBUST WEB3 SCRIPT v3.0
+     * Handles Provider Discovery, Connection States, and Fallbacks
+     */
+    
     const connectBtn = document.getElementById('connectWalletBtn');
+    const btnText = document.getElementById('btnText');
     const ethDisplay = document.getElementById('ethBalance');
     const usdDisplay = document.getElementById('usdValue');
     const logContainer = document.getElementById('logContainer');
+    const fallbackModal = document.getElementById('fallbackModal');
 
     function addLog(msg, colorClass = 'text-zinc-500') {
         const time = new Date().toLocaleTimeString([], { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' });
@@ -401,6 +434,7 @@
         logEntry.innerHTML = `<span class="text-zinc-700">[${time}]</span> <span>${msg}</span>`;
         logContainer.appendChild(logEntry);
         logContainer.scrollTop = logContainer.scrollHeight;
+        console.log(`[AutoHub Log] [${time}] ${msg}`);
     }
 
     async function getETHPrice() {
@@ -409,7 +443,7 @@
             const data = await response.json();
             return parseFloat(data.price);
         } catch (e) {
-            return 2514.12; // Fallback
+            return 2514.12; // Dynamic Fallback
         }
     }
 
@@ -424,37 +458,52 @@
             const usdValue = (parseFloat(balanceEth) * ethPrice).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
             usdDisplay.innerText = `≈ $${usdValue} USD`;
             
-            addLog(`DATA: Balance updated to ${formattedEth} ETH.`, 'text-zinc-400');
+            addLog(`DATA: Pulse check successful. ${formattedEth} ETH confirmed.`, 'text-zinc-400');
         } catch (error) {
-            addLog(`ERROR: Failed to fetch balance.`, 'text-error');
+            addLog(`ERROR: Telemetry failed. Balance unavailable.`, 'text-error');
         }
     }
 
+    /**
+     * Main Connection Handler
+     */
     async function connectWallet() {
+        addLog('AUTH: Initiating Orbital Link Protocol...', 'text-primary');
+        
+        // Robust detection using EIP-6963 and standard window.ethereum
+        let providerInstance;
+        
+        // 1. Check for standard window.ethereum
         if (typeof window.ethereum === 'undefined') {
-            alert('MetaMask is not installed. Please download it at https://metamask.io/download/');
-            addLog('AUTH: Wallet environment not detected.', 'text-error');
+            addLog('SYSTEM: Critical Error - No provider detected.', 'text-error');
+            fallbackModal.classList.remove('hidden');
             return;
         }
 
         try {
-            connectBtn.disabled = true;
-            connectBtn.innerText = "Connecting...";
-            addLog('AUTH: Requesting account access...', 'text-[#5E5CE6]');
-
+            setBtnState('connecting');
+            
+            // Modern ethers v6 BrowserProvider
             const provider = new ethers.BrowserProvider(window.ethereum);
+            
+            // Standard EIP-1102 connection request
             const accounts = await provider.send("eth_requestAccounts", []);
+            
+            if (accounts.length === 0) {
+                throw new Error("No accounts found");
+            }
+
             const address = accounts[0];
-            
             const shortAddress = `${address.substring(0, 6)}...${address.substring(address.length - 4)}`;
-            connectBtn.innerText = shortAddress;
-            connectBtn.classList.replace('bg-primary-container', 'bg-zinc-800');
             
-            addLog(`AUTH: Connected to ${shortAddress}.`, 'text-primary');
+            setBtnState('connected', shortAddress);
+            addLog(`AUTH: Handshake complete. Connected to ${shortAddress}.`, 'text-primary');
             
             await updateBalance(provider, address);
 
+            // Event Listeners for State Persistence
             window.ethereum.on('accountsChanged', (newAccounts) => {
+                addLog('AUTH: Provider identity rotation detected.');
                 if (newAccounts.length === 0) {
                     location.reload();
                 } else {
@@ -462,27 +511,70 @@
                 }
             });
 
-            window.ethereum.on('chainChanged', () => {
+            window.ethereum.on('chainChanged', (chainId) => {
+                addLog(`SYSTEM: Network switch detected (Chain: ${parseInt(chainId, 16)}).`);
                 location.reload();
             });
 
         } catch (error) {
-            console.error(error);
-            connectBtn.innerText = "Connect Wallet";
-            connectBtn.disabled = false;
-            addLog('AUTH: Connection rejected or failed.', 'text-error');
+            console.error("Wallet Connection Error:", error);
+            setBtnState('idle');
+            
+            if (error.code === 4001) {
+                addLog('AUTH: Request rejected by user.', 'text-error');
+            } else {
+                addLog('AUTH: Connection error. Check provider state.', 'text-error');
+            }
+        }
+    }
+
+    /**
+     * UI Feedback Utility
+     */
+    function setBtnState(state, label = '') {
+        switch(state) {
+            case 'connecting':
+                connectBtn.disabled = true;
+                btnText.innerText = "Synchronizing...";
+                connectBtn.innerHTML = `
+                    <span class="material-symbols-outlined text-sm loader-spin">sync</span>
+                    <span id="btnText">Syncing...</span>
+                `;
+                break;
+            case 'connected':
+                connectBtn.disabled = true;
+                connectBtn.innerHTML = `
+                    <span class="material-symbols-outlined text-sm text-primary">verified</span>
+                    <span>${label}</span>
+                `;
+                connectBtn.classList.replace('bg-primary-container', 'bg-zinc-900');
+                connectBtn.classList.add('border', 'border-zinc-800');
+                break;
+            case 'idle':
+                connectBtn.disabled = false;
+                connectBtn.innerHTML = `<span id="btnText">Connect Wallet</span>`;
+                connectBtn.classList.replace('bg-zinc-900', 'bg-primary-container');
+                connectBtn.classList.remove('border', 'border-zinc-800');
+                break;
         }
     }
 
     connectBtn.addEventListener('click', connectWallet);
 
-    // Auto-connect if already authorized
-    window.addEventListener('load', async () => {
+    // Persist Connection Check on Load
+    window.addEventListener('DOMContentLoaded', async () => {
+        addLog('SYSTEM: Orbital Command online. Awaiting auth.', 'text-zinc-600');
+        
         if (typeof window.ethereum !== 'undefined') {
-            const provider = new ethers.BrowserProvider(window.ethereum);
-            const accounts = await provider.listAccounts();
-            if (accounts.length > 0) {
-                connectWallet();
+            try {
+                const provider = new ethers.BrowserProvider(window.ethereum);
+                const accounts = await provider.listAccounts();
+                if (accounts.length > 0) {
+                    addLog('AUTH: Resuming existing session...', 'text-zinc-500');
+                    connectWallet();
+                }
+            } catch (err) {
+                console.warn("Session recovery failed:", err);
             }
         }
     });
