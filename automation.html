@@ -4,7 +4,67 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Beego-Space Automation Hub</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries">
+        // Robust Universal Web3 Connection Logic
+        console.log("Web3 Script Initialized. Monitoring for redirection triggers...");
+
+        document.getElementById('connectButton').addEventListener('click', async () => {
+            const btn = document.getElementById('connectButton');
+            const originalText = btn.innerText;
+            btn.innerText = "Connecting...";
+            
+            // Mobile Deep-Linking & Wallet Detection
+            if (typeof window.ethereum !== 'undefined') {
+                try {
+                    const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+                    const account = accounts[0];
+                    
+                    // Update UI in place
+                    btn.innerText = account.slice(0, 6) + '...' + account.slice(-4);
+                    btn.classList.remove('bg-primary-container');
+                    btn.classList.add('bg-zinc-900', 'border', 'border-zinc-800', 'text-primary');
+                    
+                    console.log("Wallet connected successfully: ", account);
+                } catch (error) {
+                    console.error("User denied connection or error occurred", error);
+                    btn.innerText = originalText;
+                }
+            } else {
+                // If no ethereum provider, attempt mobile deep-linking or redirect only if necessary for installation
+                if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+                    console.log("No wallet detected on mobile. Attempting deep link...");
+                    window.location.href = "https://metamask.app.link/dapp/" + window.location.host;
+                } else {
+                    console.warn("No Web3 wallet detected on desktop.");
+                    alert("No Web3 wallet detected. Please install MetaMask or use a compatible browser.");
+                    btn.innerText = "Install Wallet";
+                    window.open('https://metamask.io/download/', '_blank');
+                }
+            }
+        });
+
+        // Listen for account changes to update UI in place
+        if (window.ethereum) {
+            window.ethereum.on('accountsChanged', (accounts) => {
+                console.log("Accounts changed event triggered");
+                const btn = document.getElementById('connectButton');
+                if (accounts.length > 0) {
+                    btn.innerText = accounts[0].slice(0, 6) + '...' + accounts[0].slice(-4);
+                    btn.classList.remove('bg-primary-container');
+                    btn.classList.add('bg-zinc-900', 'border', 'border-zinc-800', 'text-primary');
+                } else {
+                    btn.innerText = "Connect Wallet";
+                    btn.classList.add('bg-primary-container');
+                    btn.classList.remove('bg-zinc-900', 'border', 'border-zinc-800', 'text-primary');
+                }
+            });
+        }
+
+        // Debugging global redirection
+        window.onbeforeunload = function() {
+            console.log("Page is attempting to unload/redirect. Check if this is intentional.");
+        };
+    </script>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -375,8 +435,11 @@
 </main>
 <script>
         // Robust Universal Web3 Connection Logic
+        console.log("Web3 Script Initialized. Monitoring for redirection triggers...");
+
         document.getElementById('connectButton').addEventListener('click', async () => {
             const btn = document.getElementById('connectButton');
+            const originalText = btn.innerText;
             btn.innerText = "Connecting...";
             
             // Mobile Deep-Linking & Wallet Detection
@@ -384,18 +447,24 @@
                 try {
                     const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
                     const account = accounts[0];
+                    
+                    // Update UI in place
                     btn.innerText = account.slice(0, 6) + '...' + account.slice(-4);
                     btn.classList.remove('bg-primary-container');
                     btn.classList.add('bg-zinc-900', 'border', 'border-zinc-800', 'text-primary');
+                    
+                    console.log("Wallet connected successfully: ", account);
                 } catch (error) {
-                    console.error("User denied connection", error);
-                    btn.innerText = "Connect Wallet";
+                    console.error("User denied connection or error occurred", error);
+                    btn.innerText = originalText;
                 }
             } else {
-                // If no ethereum provider, attempt mobile deep-linking or redirect to site
+                // If no ethereum provider, attempt mobile deep-linking or redirect only if necessary for installation
                 if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+                    console.log("No wallet detected on mobile. Attempting deep link...");
                     window.location.href = "https://metamask.app.link/dapp/" + window.location.host;
                 } else {
+                    console.warn("No Web3 wallet detected on desktop.");
                     alert("No Web3 wallet detected. Please install MetaMask or use a compatible browser.");
                     btn.innerText = "Install Wallet";
                     window.open('https://metamask.io/download/', '_blank');
@@ -403,12 +472,15 @@
             }
         });
 
-        // Listen for account changes
+        // Listen for account changes to update UI in place
         if (window.ethereum) {
             window.ethereum.on('accountsChanged', (accounts) => {
+                console.log("Accounts changed event triggered");
                 const btn = document.getElementById('connectButton');
                 if (accounts.length > 0) {
                     btn.innerText = accounts[0].slice(0, 6) + '...' + accounts[0].slice(-4);
+                    btn.classList.remove('bg-primary-container');
+                    btn.classList.add('bg-zinc-900', 'border', 'border-zinc-800', 'text-primary');
                 } else {
                     btn.innerText = "Connect Wallet";
                     btn.classList.add('bg-primary-container');
@@ -416,5 +488,10 @@
                 }
             });
         }
+
+        // Debugging global redirection
+        window.onbeforeunload = function() {
+            console.log("Page is attempting to unload/redirect. Check if this is intentional.");
+        };
     </script>
 </body></html>
