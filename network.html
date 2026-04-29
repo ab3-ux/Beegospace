@@ -3,329 +3,366 @@
 <html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>BEEGO-SPACE - Network Hub</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "on-secondary-container": "#a7b6cc",
-                        "primary": "#c2c1ff",
-                        "tertiary-container": "#646f84",
-                        "secondary-fixed": "#d4e4fa",
-                        "inverse-primary": "#4d4ad5",
-                        "surface-variant": "#2d3449",
-                        "secondary-container": "#39485a",
-                        "tertiary-fixed-dim": "#bcc7de",
-                        "on-tertiary-fixed-variant": "#3c475a",
-                        "on-surface": "#dae2fd",
-                        "outline": "#918fa0",
-                        "background": "#0b1326",
-                        "on-primary-fixed-variant": "#332dbc",
-                        "on-secondary-fixed": "#0d1c2d",
-                        "on-secondary-fixed-variant": "#39485a",
-                        "on-tertiary-fixed": "#111c2d",
-                        "tertiary": "#bcc7de",
-                        "surface": "#0b1326",
-                        "surface-container-highest": "#2d3449",
-                        "inverse-on-surface": "#283044",
-                        "on-background": "#dae2fd",
-                        "surface-container-low": "#131b2e",
-                        "on-tertiary-container": "#eff2ff",
-                        "secondary": "#b9c8de",
-                        "on-surface-variant": "#c7c4d7",
-                        "primary-container": "#5e5ce6",
-                        "surface-container-high": "#222a3d",
-                        "surface-container": "#171f33",
-                        "primary-fixed-dim": "#c2c1ff",
-                        "on-error": "#690005",
-                        "on-error-container": "#ffdad6",
-                        "on-tertiary": "#263143",
-                        "surface-tint": "#c2c1ff",
-                        "surface-bright": "#31394d",
-                        "tertiary-fixed": "#d8e3fb",
-                        "on-primary-container": "#f4f1ff",
-                        "surface-container-lowest": "#060e20",
-                        "outline-variant": "#464554",
-                        "primary-fixed": "#e2dfff",
-                        "on-secondary": "#233143",
-                        "on-primary": "#1800a7",
-                        "inverse-surface": "#dae2fd",
-                        "error": "#ffb4ab",
-                        "on-primary-fixed": "#0c006b",
-                        "secondary-fixed-dim": "#b9c8de",
-                        "surface-dim": "#0b1326",
-                        "error-container": "#93000a"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                    "spacing": {
-                        "margin": "40px",
-                        "container-max": "1440px",
-                        "stack-lg": "48px",
-                        "gutter": "24px",
-                        "unit": "8px",
-                        "stack-md": "24px",
-                        "stack-sm": "12px"
-                    },
-                    "fontFamily": {
-                        "body-sm": ["Manrope"],
-                        "label-caps": ["Manrope"],
-                        "body-md": ["Manrope"],
-                        "headline-md": ["Space Grotesk"],
-                        "body-lg": ["Manrope"],
-                        "display": ["Space Grotesk"],
-                        "headline-lg": ["Space Grotesk"]
-                    },
-                    "fontSize": {
-                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
-                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
-                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
-                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "500"}],
-                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "500"}]
-                    }
-                },
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#93000a",
+                    "on-secondary": "#233143",
+                    "surface": "#0b1326",
+                    "secondary-fixed-dim": "#b9c8de",
+                    "on-tertiary-fixed": "#111c2d",
+                    "error": "#ffb4ab",
+                    "on-secondary-container": "#a7b6cc",
+                    "surface-tint": "#c2c1ff",
+                    "on-error-container": "#ffdad6",
+                    "secondary-fixed": "#d4e4fa",
+                    "outline-variant": "#464554",
+                    "tertiary-fixed-dim": "#bcc7de",
+                    "surface-variant": "#2d3449",
+                    "surface-container-highest": "#2d3449",
+                    "on-tertiary-fixed-variant": "#3c475a",
+                    "on-primary-container": "#f4f1ff",
+                    "surface-container-high": "#222a3d",
+                    "secondary": "#b9c8de",
+                    "surface-container": "#171f33",
+                    "primary-fixed-dim": "#c2c1ff",
+                    "on-tertiary": "#263143",
+                    "on-background": "#dae2fd",
+                    "surface-bright": "#31394d",
+                    "secondary-container": "#39485a",
+                    "inverse-primary": "#4d4ad5",
+                    "inverse-surface": "#dae2fd",
+                    "primary": "#c2c1ff",
+                    "on-surface-variant": "#c7c4d7",
+                    "on-tertiary-container": "#eff2ff",
+                    "on-surface": "#dae2fd",
+                    "on-secondary-fixed": "#0d1c2d",
+                    "on-primary-fixed-variant": "#332dbc",
+                    "inverse-on-surface": "#283044",
+                    "surface-dim": "#0b1326",
+                    "on-error": "#690005",
+                    "tertiary-fixed": "#d8e3fb",
+                    "tertiary": "#bcc7de",
+                    "surface-container-low": "#131b2e",
+                    "primary-container": "#5e5ce6",
+                    "background": "#0b1326",
+                    "primary-fixed": "#e2dfff",
+                    "on-primary-fixed": "#0c006b",
+                    "on-primary": "#1800a7",
+                    "tertiary-container": "#646f84",
+                    "on-secondary-fixed-variant": "#39485a",
+                    "surface-container-lowest": "#060e20",
+                    "outline": "#918fa0"
             },
-        }
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-sm": "12px",
+                    "margin": "40px",
+                    "stack-md": "24px",
+                    "container-max": "1440px",
+                    "stack-lg": "48px",
+                    "gutter": "24px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Space Grotesk"],
+                    "label-caps": ["Manrope"],
+                    "headline-md": ["Space Grotesk"],
+                    "body-lg": ["Manrope"],
+                    "display": ["Space Grotesk"],
+                    "body-sm": ["Manrope"],
+                    "body-md": ["Manrope"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
     </script>
 <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
         }
-        body {
-            background-color: #060e20; /* surface-container-lowest */
-        }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #464554; border-radius: 10px; }
     </style>
 </head>
-<body class="font-body-md text-on-background selection:bg-primary-container selection:text-on-primary-container">
-<!-- TopAppBar Shell -->
-<header class="fixed top-0 z-50 flex justify-between items-center px-8 h-16 w-full bg-zinc-950/70 backdrop-blur-xl border-b border-zinc-800 font-['Space_Grotesk'] tracking-tight">
-<div class="flex items-center gap-8">
-<a class="text-lg font-bold tracking-tighter text-zinc-100 uppercase hover:text-primary transition-colors" href="index.html">BEEGO-SPACE</a>
-<nav class="hidden md:flex gap-6">
-<a class="text-zinc-400 hover:text-zinc-100 transition-colors duration-150" href="index.html">Status</a>
-<a class="text-zinc-400 hover:text-zinc-100 transition-colors duration-150" href="logs.html">Logs</a>
-<a class="text-violet-400 border-b-2 border-violet-500 pb-1" href="systems.html">Systems</a>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-white">
+<!-- TopAppBar -->
+<header class="bg-zinc-950/80 backdrop-blur-2xl text-violet-500 font-['Space_Grotesk'] text-sm tracking-wide fixed top-0 w-full z-50 border-b border-zinc-800/50 flex items-center justify-between px-8 h-16 w-full">
+<div class="text-lg font-bold tracking-tighter text-white uppercase">BEEGO-SPACE</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-zinc-400 font-medium hover:text-violet-400 transition-colors duration-150 active:scale-95 transition-transform" href="index.html">Home</a>
+<a class="text-zinc-400 font-medium hover:text-violet-400 transition-colors duration-150 active:scale-95 transition-transform" href="terminal.html">Terminal</a>
+<a class="text-white border-b-2 border-violet-500 pb-1 font-medium active:scale-95 transition-transform" href="network.html">Network</a>
+<a class="text-zinc-400 font-medium hover:text-violet-400 transition-colors duration-150 active:scale-95 transition-transform" href="automation.html">Automation</a>
 </nav>
-</div>
 <div class="flex items-center gap-4">
-<button class="text-zinc-400 hover:text-zinc-100 transition-colors">
-<span class="material-symbols-outlined">settings</span>
-</button>
-<button class="text-zinc-400 hover:text-zinc-100 transition-colors">
-<span class="material-symbols-outlined">account_circle</span>
-</button>
+<span class="material-symbols-outlined text-zinc-400 cursor-pointer hover:text-white transition-colors">account_circle</span>
+<span class="material-symbols-outlined text-zinc-400 cursor-pointer hover:text-white transition-colors">settings</span>
 </div>
 </header>
-<!-- SideNavBar Shell -->
-<aside class="fixed left-0 top-0 hidden md:flex flex-col pt-20 h-screen w-64 border-r border-zinc-800 bg-zinc-900 z-40">
-<div class="px-6 mb-8">
+<div class="flex pt-16 min-h-screen">
+<!-- SideNavBar (Desktop Only) -->
+<aside class="hidden lg:flex bg-zinc-950 font-['Space_Grotesk'] h-full w-64 border-r border-zinc-800 flex flex-col h-screen p-4 sticky top-16">
+<div class="mb-stack-lg px-2">
 <div class="flex items-center gap-3 mb-2">
-<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center border border-zinc-800">
-<span class="material-symbols-outlined text-primary text-sm">hub</span>
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">hub</span>
 </div>
 <div>
-<p class="font-['Space_Grotesk'] text-zinc-100 font-black text-xs tracking-widest uppercase">COMMAND</p>
-<p class="text-[10px] text-zinc-500 uppercase tracking-widest">Station Alpha-01</p>
+<div class="text-white font-bold text-sm">Orbital Command</div>
+<div class="text-zinc-500 text-xs">v4.0.2-Stable</div>
 </div>
 </div>
 </div>
-<nav class="flex-1 space-y-1">
-<a class="text-zinc-500 flex items-center gap-3 px-6 py-3 font-['Space_Grotesk'] text-sm uppercase tracking-widest hover:bg-zinc-800/50 hover:text-zinc-200 transition-all" href="terminal.html">
-<span class="material-symbols-outlined">terminal</span> Terminal
-            </a>
-<a class="text-zinc-500 flex items-center gap-3 px-6 py-3 font-['Space_Grotesk'] text-sm uppercase tracking-widest hover:bg-zinc-800/50 hover:text-zinc-200 transition-all" href="automation.html">
-<span class="material-symbols-outlined">settings_input_component</span> Automation
-            </a>
-<a class="bg-zinc-800 text-violet-400 border-r-2 border-violet-500 flex items-center gap-3 px-6 py-3 font-['Space_Grotesk'] text-sm uppercase tracking-widest transition-all" href="network.html">
-<span class="material-symbols-outlined">lan</span> Network
-            </a>
-</nav>
-<div class="p-6">
-<button class="w-full bg-primary-container text-on-primary-container py-3 rounded text-label-caps font-semibold uppercase tracking-wider hover:opacity-90 active:scale-[0.98] transition-all">
-                Deploy Node
-            </button>
+<div class="space-y-1 flex-grow">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-zinc-500 hover:text-zinc-200 hover:bg-zinc-900/50 transition-all duration-200 ease-in-out" href="index.html">
+<span class="material-symbols-outlined">home</span>
+<span class="text-sm font-medium">Home</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-zinc-500 hover:text-zinc-200 hover:bg-zinc-900/50 transition-all duration-200 ease-in-out" href="terminal.html">
+<span class="material-symbols-outlined">terminal</span>
+<span class="text-sm font-medium">Terminal</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-zinc-900 text-violet-500 border-l-2 border-violet-500 transition-all duration-200 ease-in-out" href="network.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">hub</span>
+<span class="text-sm font-medium">Network</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-zinc-500 hover:text-zinc-200 hover:bg-zinc-900/50 transition-all duration-200 ease-in-out" href="automation.html">
+<span class="material-symbols-outlined">settings_input_component</span>
+<span class="text-sm font-medium">Automation</span>
+</a>
+</div>
+<div class="pt-4 mt-4 border-t border-zinc-800 space-y-1">
+<a class="flex items-center gap-3 px-4 py-2 text-zinc-500 hover:text-zinc-200 transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">help</span>
+<span class="text-xs uppercase tracking-widest font-label-caps">Support</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2 text-zinc-500 hover:text-zinc-200 transition-colors" href="#">
+<span class="material-symbols-outlined text-sm">description</span>
+<span class="text-xs uppercase tracking-widest font-label-caps">Logs</span>
+</a>
 </div>
 </aside>
-<!-- Main Canvas -->
-<main class="md:pl-64 pt-16 min-h-screen">
-<div class="max-w-[1440px] mx-auto p-margin space-y-stack-lg">
+<!-- Main Content -->
+<main class="flex-grow p-gutter md:p-margin bg-background">
 <!-- Header Section -->
-<div class="flex flex-col md:flex-row md:items-end justify-between gap-gutter">
+<div class="mb-stack-lg flex flex-col md:flex-row md:items-end justify-between gap-stack-md">
 <div>
-<h1 class="font-display text-display text-on-surface">Network Hub</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Global synchronization of orbital telemetry and ground-station uplinks.</p>
+<h1 class="font-display text-display text-on-background mb-2">Network Hub</h1>
+<p class="text-on-surface-variant font-body-lg max-w-2xl">Real-time visualization of orbital node clusters and active security encryption protocols.</p>
 </div>
-<div class="flex items-center gap-4 bg-surface-container-low p-4 rounded-lg border border-outline-variant/20">
-<div class="text-right">
-<p class="font-label-caps text-label-caps text-zinc-500">SYSTEM UPTIME</p>
-<p class="font-headline-md text-headline-md text-primary">99.998%</p>
-</div>
-<div class="w-[1px] h-10 bg-outline-variant/30"></div>
-<div class="text-right">
-<p class="font-label-caps text-label-caps text-zinc-500">ACTIVE NODES</p>
-<p class="font-headline-md text-headline-md text-on-surface">1,402</p>
+<div class="flex gap-stack-sm">
+<button class="px-6 py-2 bg-primary-container text-white rounded-lg font-label-caps uppercase tracking-wider text-xs flex items-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-sm">refresh</span> Re-Sync Cluster
+                    </button>
+<button class="px-6 py-2 border border-outline-variant text-on-surface-variant rounded-lg font-label-caps uppercase tracking-wider text-xs flex items-center gap-2 hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined text-sm">download</span> Export
+                    </button>
 </div>
 </div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Global Node Map (Large Area) -->
+<div class="md:col-span-8 bg-surface-container-low border border-zinc-800 rounded-xl overflow-hidden flex flex-col min-h-[500px]">
+<div class="p-stack-md border-b border-zinc-800 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-violet-500">public</span>
+<span class="font-headline-md text-on-surface">Global Distribution</span>
 </div>
-<!-- Visualization Grid -->
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
-<!-- Globe Visualization (Bento Main) -->
-<div class="lg:col-span-8 bg-surface-container border border-outline-variant/20 rounded-xl overflow-hidden relative group">
-<div class="absolute top-6 left-6 z-10">
-<span class="bg-zinc-950/50 backdrop-blur px-3 py-1 rounded-full border border-zinc-800 text-[10px] tracking-[0.2em] font-bold text-primary flex items-center gap-2">
-<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
-                            LIVE TOPOLOGY
-                        </span>
-</div>
-<div class="aspect-[16/10] w-full bg-[#060e20] flex items-center justify-center overflow-hidden"><img alt="Beego-Core Microchip Topology" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" src="https://lh3.googleusercontent.com/aida/ADBb0uibllT6eBU_nWJaXMmRmVMU8U8C7MtrHGB1HKheHwWiX-BVTn0fkPt2YAteGCszHmwNF-lBv7urMR6daOkpzhFSVlHzLXVOf_ZYRsNft4t8zKj5RkxhZNhPy5-FEPmWgpgGUmYtrLgbDmMYeyyeuhXFwvHuz80PYq7E5YjXvGu0gAjtPWjZq64fN2TNXHPZUcfNiPuQINyvHvUuAJW-pvqNTZ8HypNHIsIBy3cdw3ySxDRm0k1iBmvyr41-KPKz-526q6FO3JcV"/></div>
-</div>
-<!-- Critical Nodes List -->
-<div class="lg:col-span-4 bg-surface-container border border-outline-variant/20 rounded-xl p-6 space-y-6">
-<div class="flex items-center justify-between">
-<h3 class="font-headline-md text-headline-md text-on-surface">Critical Nodes</h3>
-<span class="material-symbols-outlined text-outline">more_vert</span>
-</div>
-<div class="space-y-4">
-<!-- Node Item -->
-<div class="flex items-center justify-between p-4 bg-surface-container-high rounded-lg border border-outline-variant/10 group hover:border-primary/30 transition-colors">
 <div class="flex items-center gap-4">
-<div class="w-2 h-10 bg-primary rounded-full"></div>
-<div>
-<p class="font-headline-md text-body-md text-on-surface">Station Alpha-01</p>
-<p class="font-body-sm text-body-sm text-on-surface-variant">GEO-Sync / North Atlantic</p>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="text-xs font-label-caps text-on-surface-variant uppercase">Active</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="text-xs font-label-caps text-on-surface-variant uppercase">Alert</span>
 </div>
 </div>
-<div class="text-right">
-<span class="font-label-caps text-[10px] text-primary px-2 py-0.5 rounded border border-primary/20">ONLINE</span>
-<p class="text-[10px] text-zinc-500 mt-1">42ms Latency</p>
+</div>
+<div class="flex-grow relative bg-zinc-950/40">
+<img alt="Network Map" class="w-full h-full object-cover opacity-60 grayscale-[0.5] mix-blend-screen" data-alt="Technical global map with neon blue and violet node connections on dark background showing data flow pathways" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_RhmHqBQtqKC17xkvxo4_5_WHbqWvPOLuAuq-6vkgjI5pbnsuh_w6SO7prXbiyJfzU-91Q83RAe2vlaToE-Ukd85pCnqIxDqtGYyaTJHjFb5YSTr1iwty_3nTZUfUYi5dILyE8cn45TgJzpTWt8bXLsLYXvpr4M6CVriHbukap4yYV3iVXouOwFNA6KC4IVWom1i7MfMsluxgkNo1iBc-yIHCtr-HaBLnyXzQbnK0bGQYknY6WJPt6W92TC5bcHMdBy1NCsi68w"/>
+<!-- Simulated Data Overlays -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="w-full h-full p-stack-lg flex flex-col justify-between">
+<div class="flex justify-between">
+<div class="bg-surface/80 backdrop-blur-md p-stack-sm rounded border border-zinc-800 pointer-events-auto">
+<div class="text-[10px] font-label-caps text-zinc-500 uppercase">Sector 7G</div>
+<div class="text-sm font-bold text-white">L01-ALPHA-CON</div>
+<div class="text-[10px] text-primary">SYNCED - 12ms</div>
+</div>
+<div class="bg-surface/80 backdrop-blur-md p-stack-sm rounded border border-zinc-800 pointer-events-auto">
+<div class="text-[10px] font-label-caps text-zinc-500 uppercase">Pacific Rim</div>
+<div class="text-sm font-bold text-white">NOD-WEST-98</div>
+<div class="text-[10px] text-primary">SYNCED - 45ms</div>
 </div>
 </div>
-<div class="flex items-center justify-between p-4 bg-surface-container-high rounded-lg border border-outline-variant/10 group hover:border-primary/30 transition-colors">
-<div class="flex items-center gap-4">
-<div class="w-2 h-10 bg-primary rounded-full"></div>
-<div>
-<p class="font-headline-md text-body-md text-on-surface">Hub Beijing-09</p>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Terrestrial / APAC</p>
+<div class="flex justify-center">
+<div class="bg-surface/80 backdrop-blur-md p-stack-sm rounded border border-zinc-800 pointer-events-auto flex items-center gap-4">
+<div class="text-center">
+<div class="text-[10px] font-label-caps text-zinc-500">UPLINK</div>
+<div class="text-xs font-bold text-white">2.4 TB/s</div>
 </div>
-</div>
-<div class="text-right">
-<span class="font-label-caps text-[10px] text-primary px-2 py-0.5 rounded border border-primary/20">ONLINE</span>
-<p class="text-[10px] text-zinc-500 mt-1">118ms Latency</p>
-</div>
-</div>
-<div class="flex items-center justify-between p-4 bg-surface-container-high rounded-lg border border-outline-variant/10 group hover:border-error/30 transition-colors">
-<div class="flex items-center gap-4">
-<div class="w-2 h-10 bg-error rounded-full"></div>
-<div>
-<p class="font-headline-md text-body-md text-on-surface">Station Delta-04</p>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Orbital / Low Earth</p>
-</div>
-</div>
-<div class="text-right">
-<span class="font-label-caps text-[10px] text-error px-2 py-0.5 rounded border border-error/20">OFFLINE</span>
-<p class="text-[10px] text-zinc-500 mt-1">N/A Latency</p>
-</div>
-</div>
-<div class="flex items-center justify-between p-4 bg-surface-container-high rounded-lg border border-outline-variant/10 group hover:border-primary/30 transition-colors">
-<div class="flex items-center gap-4">
-<div class="w-2 h-10 bg-primary rounded-full"></div>
-<div>
-<p class="font-headline-md text-body-md text-on-surface">Hub Berlin-V2</p>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Terrestrial / EMEA</p>
-</div>
-</div>
-<div class="text-right">
-<span class="font-label-caps text-[10px] text-primary px-2 py-0.5 rounded border border-primary/20">ONLINE</span>
-<p class="text-[10px] text-zinc-500 mt-1">12ms Latency</p>
+<div class="w-px h-6 bg-zinc-800"></div>
+<div class="text-center">
+<div class="text-[10px] font-label-caps text-zinc-500">STABILITY</div>
+<div class="text-xs font-bold text-white">99.98%</div>
 </div>
 </div>
 </div>
 </div>
 </div>
-<!-- System Logs Table -->
-<section class="bg-surface-container border border-outline-variant/20 rounded-xl overflow-hidden">
-<div class="p-6 border-b border-outline-variant/10 flex justify-between items-center">
-<h3 class="font-headline-md text-headline-md text-on-surface">Network Event Logs</h3>
-<div class="flex gap-2">
-<button class="px-4 py-2 bg-surface-container-high text-label-caps text-on-surface-variant rounded border border-outline-variant/20 hover:bg-surface-variant transition-colors">Download CSV</button>
-<button class="px-4 py-2 bg-primary-container text-on-primary-container text-label-caps rounded hover:opacity-90 transition-opacity">Clear Logs</button>
 </div>
+</div>
+<!-- Security Protocols (Side Card) -->
+<div class="md:col-span-4 flex flex-col gap-gutter">
+<div class="bg-surface-container-low border border-zinc-800 rounded-xl p-stack-md flex-grow">
+<div class="flex items-center gap-3 mb-stack-md">
+<span class="material-symbols-outlined text-violet-500">gpp_good</span>
+<span class="font-headline-md text-on-surface">Security Protocols</span>
+</div>
+<div class="space-y-stack-md">
+<div class="group cursor-pointer">
+<div class="flex items-center justify-between mb-2">
+<span class="text-sm font-medium text-white">Quantum Encryption</span>
+<span class="text-[10px] font-label-caps px-2 py-0.5 rounded bg-primary-container/20 text-primary uppercase">Active</span>
+</div>
+<div class="w-full h-1 bg-zinc-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[88%]"></div>
+</div>
+<div class="flex justify-between mt-1">
+<span class="text-[10px] text-zinc-500">AES-Q256 Cluster</span>
+<span class="text-[10px] text-zinc-500">88% Entropy</span>
+</div>
+</div>
+<div class="group cursor-pointer">
+<div class="flex items-center justify-between mb-2">
+<span class="text-sm font-medium text-white">Firewall Burst</span>
+<span class="text-[10px] font-label-caps px-2 py-0.5 rounded bg-surface-variant text-zinc-400 uppercase">Standby</span>
+</div>
+<div class="w-full h-1 bg-zinc-800 rounded-full overflow-hidden">
+<div class="h-full bg-zinc-600 w-[24%]"></div>
+</div>
+<div class="flex justify-between mt-1">
+<span class="text-[10px] text-zinc-500">Deep Packet Inspect</span>
+<span class="text-[10px] text-zinc-500">Idle</span>
+</div>
+</div>
+<div class="group cursor-pointer">
+<div class="flex items-center justify-between mb-2">
+<span class="text-sm font-medium text-white">Neural IDS</span>
+<span class="text-[10px] font-label-caps px-2 py-0.5 rounded bg-primary-container/20 text-primary uppercase">Active</span>
+</div>
+<div class="w-full h-1 bg-zinc-800 rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[94%]"></div>
+</div>
+<div class="flex justify-between mt-1">
+<span class="text-[10px] text-zinc-500">Anomaly Detection</span>
+<span class="text-[10px] text-zinc-500">Optimized</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-primary-container rounded-xl p-stack-md text-white relative overflow-hidden group">
+<div class="relative z-10">
+<div class="text-xs font-label-caps uppercase tracking-widest opacity-80 mb-1">System Alert</div>
+<div class="text-lg font-bold mb-stack-sm">Unauthorized probe detected in Sector 4.</div>
+<button class="px-4 py-2 bg-white text-primary-container rounded-lg font-label-caps text-xs uppercase hover:bg-zinc-100 transition-colors">
+                                Lockdown Sector
+                            </button>
+</div>
+<span class="material-symbols-outlined absolute -right-4 -bottom-4 text-9xl opacity-10 rotate-12 group-hover:rotate-0 transition-transform duration-500">warning</span>
+</div>
+</div>
+<!-- Recent Network Events (Bottom Wide) -->
+<div class="md:col-span-12 bg-surface-container-low border border-zinc-800 rounded-xl overflow-hidden">
+<div class="p-stack-md border-b border-zinc-800 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-zinc-400">history</span>
+<span class="font-headline-md text-on-surface">System Logs</span>
+</div>
+<button class="text-xs font-label-caps text-primary uppercase hover:underline">View All Records</button>
 </div>
 <div class="overflow-x-auto">
 <table class="w-full text-left border-collapse">
 <thead>
-<tr class="bg-surface-container-low">
-<th class="px-8 py-4 font-label-caps text-label-caps text-zinc-500 uppercase">Timestamp</th>
-<th class="px-8 py-4 font-label-caps text-label-caps text-zinc-500 uppercase">Event Type</th>
-<th class="px-8 py-4 font-label-caps text-label-caps text-zinc-500 uppercase">Node ID</th>
-<th class="px-8 py-4 font-label-caps text-label-caps text-zinc-500 uppercase">Payload</th>
-<th class="px-8 py-4 font-label-caps text-label-caps text-zinc-500 uppercase text-right">Status</th>
+<tr class="border-b border-zinc-800">
+<th class="px-6 py-4 font-label-caps text-zinc-500 uppercase text-[11px]">Timestamp</th>
+<th class="px-6 py-4 font-label-caps text-zinc-500 uppercase text-[11px]">Event Type</th>
+<th class="px-6 py-4 font-label-caps text-zinc-500 uppercase text-[11px]">Source Node</th>
+<th class="px-6 py-4 font-label-caps text-zinc-500 uppercase text-[11px]">Status</th>
+<th class="px-6 py-4 font-label-caps text-zinc-500 uppercase text-[11px]">Payload</th>
 </tr>
 </thead>
-<tbody class="divide-y divide-outline-variant/5">
-<tr class="hover:bg-surface-container-high/50 transition-colors">
-<td class="px-8 py-6 font-body-sm text-zinc-400">2024.10.12 14:02:11</td>
-<td class="px-8 py-6 font-body-md text-on-surface">Handshake Protocol</td>
-<td class="px-8 py-6 font-body-sm text-primary font-mono">NODE-A01-Z</td>
-<td class="px-8 py-6 font-body-sm text-zinc-500">Encryption Layer 7 Validated...</td>
-<td class="px-8 py-6 text-right">
-<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
-</td>
+<tbody class="divide-y divide-zinc-800/50">
+<tr class="hover:bg-zinc-900/30 transition-colors">
+<td class="px-6 py-4 text-xs font-mono text-zinc-400">14:02:44.221</td>
+<td class="px-6 py-4 text-sm font-medium text-white">Node Handshake</td>
+<td class="px-6 py-4 text-xs font-mono text-primary">LND-HQ-01</td>
+<td class="px-6 py-4"><span class="text-[10px] px-2 py-0.5 rounded bg-green-500/10 text-green-400 border border-green-500/20">SUCCESS</span></td>
+<td class="px-6 py-4 text-xs text-zinc-500">Certificate Validation Complete</td>
 </tr>
-<tr class="hover:bg-surface-container-high/50 transition-colors">
-<td class="px-8 py-6 font-body-sm text-zinc-400">2024.10.12 14:01:55</td>
-<td class="px-8 py-6 font-body-md text-on-surface">Packet Retransmission</td>
-<td class="px-8 py-6 font-body-sm text-primary font-mono">HUB-BJ-09</td>
-<td class="px-8 py-6 font-body-sm text-zinc-500">CRC Mismatch on Sector 4...</td>
-<td class="px-8 py-6 text-right">
-<span class="material-symbols-outlined text-tertiary text-sm">warning</span>
-</td>
+<tr class="hover:bg-zinc-900/30 transition-colors">
+<td class="px-6 py-4 text-xs font-mono text-zinc-400">13:58:12.004</td>
+<td class="px-6 py-4 text-sm font-medium text-white">DHCP Allocation</td>
+<td class="px-6 py-4 text-xs font-mono text-primary">TKY-BR-44</td>
+<td class="px-6 py-4"><span class="text-[10px] px-2 py-0.5 rounded bg-green-500/10 text-green-400 border border-green-500/20">SUCCESS</span></td>
+<td class="px-6 py-4 text-xs text-zinc-500">IP assigned 10.0.4.155</td>
 </tr>
-<tr class="hover:bg-surface-container-high/50 transition-colors">
-<td class="px-8 py-6 font-body-sm text-zinc-400">2024.10.12 13:58:20</td>
-<td class="px-8 py-6 font-body-md text-on-surface">System Breach Alert</td>
-<td class="px-8 py-6 font-body-sm text-primary font-mono">EXT-NODE-77</td>
-<td class="px-8 py-6 font-body-sm text-zinc-500">Unauthorized SSH Attempt...</td>
-<td class="px-8 py-6 text-right">
-<span class="material-symbols-outlined text-error text-sm">error</span>
-</td>
-</tr>
-<tr class="hover:bg-surface-container-high/50 transition-colors">
-<td class="px-8 py-6 font-body-sm text-zinc-400">2024.10.12 13:45:12</td>
-<td class="px-8 py-6 font-body-md text-on-surface">Sync Cycle Complete</td>
-<td class="px-8 py-6 font-body-sm text-primary font-mono">GLOBAL-SYNC</td>
-<td class="px-8 py-6 font-body-sm text-zinc-500">Database reconciliation successful.</td>
-<td class="px-8 py-6 text-right">
-<span class="material-symbols-outlined text-primary text-sm">check_circle</span>
-</td>
+<tr class="hover:bg-zinc-900/30 transition-colors">
+<td class="px-6 py-4 text-xs font-mono text-zinc-400">13:45:01.889</td>
+<td class="px-6 py-4 text-sm font-medium text-white">Firewall Reject</td>
+<td class="px-6 py-4 text-xs font-mono text-error">UNK-NODE-X</td>
+<td class="px-6 py-4"><span class="text-[10px] px-2 py-0.5 rounded bg-error-container/20 text-error border border-error-container/30">BLOCKED</span></td>
+<td class="px-6 py-4 text-xs text-zinc-500">Malformed header signature</td>
 </tr>
 </tbody>
 </table>
 </div>
-</section>
+</div>
 </div>
 </main>
-<!-- Footer Shell -->
-<footer class="md:pl-64 w-full bg-zinc-950 border-t border-zinc-900 mt-stack-lg relative z-50">
-<div class="flex flex-col md:flex-row justify-between items-center px-12 py-6 w-full gap-4">
-<span class="font-['Space_Grotesk'] text-[10px] tracking-widest uppercase text-zinc-600">© 2024 BEEGO-SPACE COMPUTING CO.</span>
-<div class="flex gap-8">
-<a class="font-['Space_Grotesk'] text-[10px] tracking-widest uppercase text-zinc-600 hover:text-violet-400 transition-colors" href="#">Privacy</a>
-<a class="font-['Space_Grotesk'] text-[10px] tracking-widest uppercase text-zinc-600 hover:text-violet-400 transition-colors" href="#">Security</a>
-<a class="font-['Space_Grotesk'] text-[10px] tracking-widest uppercase text-zinc-600 hover:text-violet-400 transition-colors" href="#">Support</a>
-<a class="font-['Space_Grotesk'] text-[10px] tracking-widest uppercase text-zinc-600 hover:text-violet-400 transition-colors" href="#">API</a>
 </div>
-</div>
-</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-zinc-950/90 backdrop-blur-xl border-t border-zinc-800/50 flex justify-around items-center h-16 z-50">
+<a class="flex flex-col items-center gap-1 text-zinc-500" href="index.html">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-label-caps">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-zinc-500" href="terminal.html">
+<span class="material-symbols-outlined">terminal</span>
+<span class="text-[10px] font-label-caps">Terminal</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-violet-500" href="network.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">hub</span>
+<span class="text-[10px] font-label-caps">Network</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-zinc-500" href="automation.html">
+<span class="material-symbols-outlined">settings_input_component</span>
+<span class="text-[10px] font-label-caps">Automation</span>
+</a>
+</nav>
 </body></html>
