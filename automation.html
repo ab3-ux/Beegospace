@@ -119,12 +119,11 @@
 <header class="fixed top-0 w-full z-50 border-b border-zinc-800/50 bg-zinc-950/80 backdrop-blur-2xl px-8 h-16 flex items-center justify-between">
 <div class="flex items-center gap-8">
 <span class="text-lg font-bold tracking-tighter text-white font-headline-lg">BEEGO-SPACE</span>
-<nav class="hidden md:flex gap-6 items-center">
-<a class="text-zinc-400 font-medium font-['Space_Grotesk'] text-sm tracking-wide hover:text-violet-400 transition-colors duration-150" href="index.html">Home</a>
+<nav class="hidden md:flex gap-6 items-center"><a class="text-zinc-400 font-medium font-['Space_Grotesk'] text-sm tracking-wide hover:text-violet-400 transition-colors duration-150" href="index.html">Home</a>
 <a class="text-zinc-400 font-medium font-['Space_Grotesk'] text-sm tracking-wide hover:text-violet-400 transition-colors duration-150" href="terminal.html">Terminal</a>
 <a class="text-zinc-400 font-medium font-['Space_Grotesk'] text-sm tracking-wide hover:text-violet-400 transition-colors duration-150" href="network.html">Network</a>
 <a class="text-white border-b-2 border-violet-500 pb-1 font-['Space_Grotesk'] text-sm tracking-wide" href="automation.html">Automation</a>
-</nav>
+<a class="text-zinc-400 font-medium font-['Space_Grotesk'] text-sm tracking-wide hover:text-violet-400 transition-colors duration-150" href="config.html">Configuration</a></nav>
 </div>
 <div class="flex items-center gap-4">
 <button class="material-symbols-outlined text-zinc-400 hover:text-white transition-colors">account_circle</button>
@@ -160,6 +159,9 @@
 <a class="flex items-center gap-3 px-3 py-2 bg-zinc-900 text-violet-500 border-l-2 border-violet-500 font-['Space_Grotesk']" href="automation.html">
 <span class="material-symbols-outlined" data-icon="settings_input_component">settings_input_component</span>
 <span>Automation</span>
+</a><a class="flex items-center gap-3 px-3 py-2 text-zinc-500 hover:text-zinc-200 hover:bg-zinc-900/50 transition-all rounded-lg font-['Space_Grotesk']" href="config.html">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Configuration</span>
 </a>
 </nav>
 <div class="pt-4 border-t border-zinc-800 space-y-1">
@@ -348,8 +350,7 @@
 </main>
 </div>
 <!-- Mobile Navigation (BottomNavBar) -->
-<nav class="md:hidden fixed bottom-0 left-0 w-full glass-panel flex justify-around items-center h-16 border-t border-zinc-800 z-50">
-<a class="flex flex-col items-center gap-1 text-zinc-500" href="index.html">
+<nav class="md:hidden fixed bottom-0 left-0 w-full glass-panel flex justify-around items-center h-16 border-t border-zinc-800 z-50"><a class="flex flex-col items-center gap-1 text-zinc-500" href="index.html">
 <span class="material-symbols-outlined">home</span>
 <span class="text-[10px] font-label-caps">Home</span>
 </a>
@@ -365,7 +366,10 @@
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings_input_component</span>
 <span class="text-[10px] font-label-caps">Automation</span>
 </a>
-</nav>
+<a class="flex flex-col items-center gap-1 text-zinc-500" href="config.html">
+<span class="material-symbols-outlined">settings</span>
+<span class="text-[10px] font-label-caps">Config</span>
+</a></nav>
 <!-- FAB (Contextual for Automation Hub) -->
 <button class="fixed bottom-24 right-8 w-14 h-14 bg-primary-container rounded-full shadow-lg flex items-center justify-center text-white active:scale-90 transition-transform md:bottom-12">
 <span class="material-symbols-outlined text-3xl">add</span>
