@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Astraeus Node | Rule Configuration</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "inverse-surface": "#dae2fd",
+                      "primary-fixed": "#e2dfff",
+                      "on-surface": "#dae2fd",
+                      "on-primary-fixed-variant": "#332dbc",
+                      "surface-bright": "#31394d",
+                      "on-secondary-fixed": "#0d1c2d",
+                      "on-primary-fixed": "#0c006b",
+                      "on-primary-container": "#f4f1ff",
+                      "surface-container-high": "#222a3d",
+                      "surface-container-low": "#131b2e",
+                      "surface": "#0b1326",
+                      "primary-fixed-dim": "#c2c1ff",
+                      "primary-container": "#5e5ce6",
+                      "error": "#ffb4ab",
+                      "on-tertiary-fixed": "#111c2d",
+                      "on-surface-variant": "#c7c4d7",
+                      "on-error": "#690005",
+                      "error-container": "#93000a",
+                      "surface-container-lowest": "#060e20",
+                      "on-secondary-fixed-variant": "#39485a",
+                      "on-error-container": "#ffdad6",
+                      "primary": "#c2c1ff",
+                      "surface-tint": "#c2c1ff",
+                      "surface-container": "#171f33",
+                      "background": "#0b1326",
+                      "on-tertiary-container": "#eff2ff",
+                      "tertiary": "#bcc7de",
+                      "secondary-container": "#39485a",
+                      "outline": "#918fa0",
+                      "surface-variant": "#2d3449",
+                      "inverse-primary": "#4d4ad5",
+                      "secondary": "#b9c8de",
+                      "tertiary-fixed-dim": "#bcc7de",
+                      "on-tertiary": "#263143",
+                      "on-secondary-container": "#a7b6cc",
+                      "secondary-fixed": "#d4e4fa",
+                      "on-background": "#dae2fd",
+                      "surface-dim": "#0b1326",
+                      "tertiary-fixed": "#d8e3fb",
+                      "tertiary-container": "#646f84",
+                      "outline-variant": "#464554",
+                      "surface-container-highest": "#2d3449",
+                      "on-tertiary-fixed-variant": "#3c475a",
+                      "on-secondary": "#233143",
+                      "secondary-fixed-dim": "#b9c8de",
+                      "on-primary": "#1800a7",
+                      "inverse-on-surface": "#283044"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-sm": "12px",
+                      "margin": "40px",
+                      "stack-md": "24px",
+                      "unit": "8px",
+                      "container-max": "1440px",
+                      "stack-lg": "48px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "headline-md": ["Space Grotesk"],
+                      "display": ["Space Grotesk"],
+                      "headline-lg": ["Space Grotesk"],
+                      "body-lg": ["Manrope"],
+                      "body-sm": ["Manrope"],
+                      "body-md": ["Manrope"],
+                      "label-caps": ["Manrope"]
+              },
+              "fontSize": {
+                      "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                      "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0b1326; /* theme surface color */
+        }
+        .technical-mesh {
+            background-image: radial-gradient(circle at 2px 2px, #171f33 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface technical-mesh min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-8 bg-zinc-950/80 backdrop-blur-2xl border-b border-zinc-800/50 h-16 font-space-grotesk tracking-tight">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold text-[#5E5CE6] tracking-tighter">Astraeus Node</span>
+<nav class="hidden md:flex items-center space-x-6">
+<a class="text-zinc-400 font-medium hover:text-zinc-100 transition-colors duration-150" href="index.html">Overview</a>
+<a class="text-[#5E5CE6] font-bold border-b-2 border-[#5E5CE6] transition-colors duration-150" href="automation.html">Automations</a>
+<a class="text-zinc-400 font-medium hover:text-zinc-100 transition-colors duration-150" href="terminal.html">Terminal</a>
+<a class="text-zinc-400 font-medium hover:text-zinc-100 transition-colors duration-150" href="network.html">Network</a>
+</nav>
+</div>
+<div class="flex items-center space-x-4">
+<button class="text-zinc-400 hover:text-zinc-100 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-zinc-400 hover:text-zinc-100 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-zinc-800 bg-zinc-900">
+<img alt="User profile" data-alt="A professional close-up headshot of a person with neutral lighting, set against a dark, minimalist architectural background. The image is crisp and clean, reflecting a high-end, modern executive aesthetic with deep shadows and subtle highlights that match the Orbital Precision design system's technical and calm capability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfnkDCgRz3Cj2fP06sBXOlt7cRTt3-Hq2oFp9AvjPHHedWbfWG3wyisWnM9CRqQtBNygxP-7dG15w1ai-uj4xE44lrlgUUUM66-B5gDRhplYkPjmJ9AlWamQNkos767yuirfVUiFRFzIfLOFxz4CJRc5qtMo3vGCSgjkatnzisuwNIHGiDq0EeqI9zcvwSv7rfW9lxkj8QqoHv7gycg6wB1Ulrekib-6LBfT24IYcA787L6NDNpt3qYxZ31rBh7pVN_v4oFFd26w"/>
+</div>
+</div>
+</header>
+<!-- SideNavBar (Desktop Only) -->
+<aside class="hidden md:flex fixed left-0 top-16 h-[calc(100vh-64px)] w-64 border-r border-zinc-800 bg-zinc-950 flex-col py-6 px-4 space-y-2 font-space-grotesk text-sm antialiased">
+<div class="mb-8 px-2">
+<h2 class="text-lg font-bold text-zinc-100">Orbital Command</h2>
+<p class="text-xs text-zinc-500 font-mono">V2.4.0-Stable</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center space-x-3 px-4 py-3 rounded-lg text-zinc-500 hover:text-zinc-200 hover:bg-zinc-900/50 transition-all duration-150 ease-in-out" href="index.html">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 rounded-lg bg-zinc-900 text-[#5E5CE6] border-r-2 border-[#5E5CE6] transition-all duration-150 ease-in-out" href="automation.html">
+<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+<span>Automations</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 rounded-lg text-zinc-500 hover:text-zinc-200 hover:bg-zinc-900/50 transition-all duration-150 ease-in-out" href="liquidity.html">
+<span class="material-symbols-outlined" data-icon="waves">waves</span>
+<span>Liquidity</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 rounded-lg text-zinc-500 hover:text-zinc-200 hover:bg-zinc-900/50 transition-all duration-150 ease-in-out" href="analytics.html">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span>Analytics</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 rounded-lg text-zinc-500 hover:text-zinc-200 hover:bg-zinc-900/50 transition-all duration-150 ease-in-out" href="security.html">
+<span class="material-symbols-outlined" data-icon="shield">shield</span>
+<span>Security</span>
+</a>
+</nav>
+<button class="w-full py-3 bg-[#5E5CE6] text-white rounded-lg font-bold hover:bg-opacity-90 active:scale-95 transition-all">
+            Create New Rule
+        </button>
+<div class="pt-6 border-t border-zinc-800 space-y-1">
+<a class="flex items-center space-x-3 px-4 py-2 text-zinc-500 hover:text-zinc-200 text-xs uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="menu_book">menu_book</span>
+<span>Docs</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-2 text-zinc-500 hover:text-zinc-200 text-xs uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined text-sm" data-icon="contact_support">contact_support</span>
+<span>Support</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="md:ml-64 mt-16 pb-24 md:pb-8 px-6 md:px-margin max-w-container-max mx-auto">
+<header class="py-stack-lg">
+<span class="font-label-caps text-primary-container mb-unit block">SYSTEM CONFIGURATION</span>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Rule Architect</h1>
+<p class="text-on-surface-variant font-body-md mt-unit max-w-2xl">Define autonomous logic protocols for your orbital node. Execute verified multi-step triggers with mathematical precision.</p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Step 01: Trigger Selection -->
+<section class="lg:col-span-8 space-y-stack-md">
+<div class="bg-surface-container-low border border-zinc-800/50 rounded-xl p-stack-md">
+<div class="flex items-center justify-between mb-stack-md">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 flex items-center justify-center bg-primary-container text-on-primary-container rounded-full font-bold">01</span>
+<h3 class="font-headline-md text-headline-md">Trigger Selection</h3>
+</div>
+<span class="material-symbols-outlined text-primary-container" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-unit mb-stack-md">
+<!-- Selected Price Card -->
+<div class="p-stack-sm rounded-lg border-2 border-primary-container bg-primary-container/10 cursor-pointer">
+<span class="material-symbols-outlined text-primary-container mb-2" data-icon="trending_up">trending_up</span>
+<h4 class="font-bold text-on-surface">Price</h4>
+<p class="text-xs text-on-surface-variant">Asset volatility trigger</p>
+</div>
+<div class="p-stack-sm rounded-lg border border-zinc-800 bg-surface-container-highest/30 hover:border-zinc-700 cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-zinc-500 mb-2" data-icon="schedule">schedule</span>
+<h4 class="font-bold text-zinc-300">Time</h4>
+<p class="text-xs text-zinc-500">Temporal scheduling</p>
+</div>
+<div class="p-stack-sm rounded-lg border border-zinc-800 bg-surface-container-highest/30 hover:border-zinc-700 cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-zinc-500 mb-2" data-icon="event_note">event_note</span>
+<h4 class="font-bold text-zinc-300">Event</h4>
+<p class="text-xs text-zinc-500">Contract callback</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+<div class="space-y-unit">
+<label class="font-label-caps text-on-surface-variant uppercase tracking-tighter">Asset Pair</label>
+<div class="relative">
+<select class="w-full bg-zinc-950 border border-zinc-800 rounded-lg p-3 text-on-surface focus:ring-1 focus:ring-primary-container outline-none appearance-none">
+<option>ETH / USDC</option>
+<option>BTC / USDC</option>
+<option>SOL / USDC</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-zinc-500" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<div class="space-y-unit">
+<label class="font-label-caps text-on-surface-variant uppercase tracking-tighter">Threshold Value</label>
+<div class="flex items-center bg-zinc-950 border border-zinc-800 rounded-lg overflow-hidden focus-within:ring-1 focus-within:ring-primary-container">
+<span class="pl-3 text-zinc-500 font-mono">$</span>
+<input class="w-full bg-transparent border-none p-3 text-on-surface outline-none font-mono" type="number" value="1850.00"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Step 02: Action Configuration -->
+<div class="bg-surface-container-low border border-zinc-800/50 rounded-xl p-stack-md">
+<div class="flex items-center gap-3 mb-stack-md">
+<span class="w-8 h-8 flex items-center justify-center bg-zinc-800 text-zinc-400 rounded-full font-bold">02</span>
+<h3 class="font-headline-md text-headline-md">Action Configuration</h3>
+</div>
+<div class="flex p-1 bg-zinc-950 rounded-xl border border-zinc-800 mb-stack-md">
+<button class="flex-1 py-2 rounded-lg bg-zinc-800 text-zinc-100 font-medium">Swap</button>
+<button class="flex-1 py-2 rounded-lg text-zinc-500 hover:text-zinc-300">Transfer</button>
+<button class="flex-1 py-2 rounded-lg text-zinc-500 hover:text-zinc-300">Liquidate</button>
+</div>
+<div class="bg-zinc-950/50 border border-dashed border-zinc-800 rounded-xl p-stack-md">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="font-label-caps text-zinc-500 mb-2">LOGIC PREVIEW</h4>
+<code class="text-primary font-mono text-sm">if (ETH_PRICE &lt;= 1850.00) { execute_swap(ETH, USDC, ALL); }</code>
+</div>
+<div class="flex items-center gap-2 px-3 py-1 bg-green-500/10 text-green-400 rounded-full border border-green-500/20 text-xs">
+<span class="material-symbols-outlined text-sm" data-icon="verified">verified</span>
+                                Logic Verified
+                            </div>
+</div>
+</div>
+</div>
+<!-- Step 03: Gas & Priority -->
+<div class="bg-surface-container-low border border-zinc-800/50 rounded-xl p-stack-md">
+<div class="flex items-center gap-3 mb-stack-md">
+<span class="w-8 h-8 flex items-center justify-center bg-zinc-800 text-zinc-400 rounded-full font-bold">03</span>
+<h3 class="font-headline-md text-headline-md">Gas &amp; Priority</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-unit">
+<div class="flex flex-col p-stack-sm rounded-lg border border-zinc-800 hover:border-zinc-700 transition-all cursor-pointer bg-zinc-900/30">
+<span class="font-bold text-on-surface">Eco</span>
+<span class="text-xs text-zinc-500">~15 min | 12 Gwei</span>
+</div>
+<div class="flex flex-col p-stack-sm rounded-lg border-2 border-primary-container bg-primary-container/10 transition-all cursor-pointer">
+<div class="flex justify-between">
+<span class="font-bold text-on-surface">Standard</span>
+<span class="material-symbols-outlined text-primary-container text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="text-xs text-zinc-300">~3 min | 24 Gwei</span>
+</div>
+<div class="flex flex-col p-stack-sm rounded-lg border border-zinc-800 hover:border-zinc-700 transition-all cursor-pointer bg-zinc-900/30">
+<span class="font-bold text-on-surface">Urgent</span>
+<span class="text-xs text-zinc-500">&lt; 30s | 80 Gwei</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Context Panel -->
+<aside class="lg:col-span-4 space-y-stack-md">
+<div class="bg-surface-container-low border border-zinc-800/50 rounded-xl overflow-hidden sticky top-24">
+<div class="h-48 relative overflow-hidden">
+<img alt="Microchip image" class="w-full h-full object-cover grayscale opacity-60 hover:grayscale-0 transition-all duration-700" data-alt="A macro-photographic close-up of a high-performance silicon microchip with glowing violet and deep blue light tracing through its intricate circuitry pathways. The image is captured with a shallow depth of field, emphasizing the technical precision and geometric beauty of the hardware. The overall atmosphere is dark, futuristic, and premium, perfectly aligning with a high-end orbital node interface aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfPVgjf_S6PQbMHqB-1qb3As46VzmUydLBxWagqJ9JwmS0_bIV2Xm-QRkhQKMy0YepT2xKSyqryA7Fbr4M49lusse3mPO_Z3TayrvwzhyTUQZ_R0csk6EDteSqMBxhwU3TIGljZYPiAMfSPwkUhEESGNID3i_qozaUmFplgAbqDe2KKcpVBPlP1xt0p9nvUeNW2gr95rQTZUlBGFyoWH7aIHzcs3b9Y02t506IMpLKmOLggg7LbwNZl6bT91op_tfXFi39saRupw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent"></div>
+</div>
+<div class="p-stack-md space-y-stack-md">
+<div>
+<h4 class="font-headline-md text-on-surface mb-unit">Node Health</h4>
+<div class="space-y-3">
+<div class="flex justify-between text-sm">
+<span class="text-zinc-500">System Load</span>
+<span class="text-on-surface font-mono">12.4%</span>
+</div>
+<div class="w-full bg-zinc-950 h-1 rounded-full overflow-hidden">
+<div class="bg-primary-container w-[12.4%] h-full"></div>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-zinc-500">Latency</span>
+<span class="text-green-400 font-mono">24ms</span>
+</div>
+</div>
+</div>
+<div class="pt-stack-md border-t border-zinc-800">
+<h4 class="font-headline-md text-on-surface mb-unit">Execution Proof</h4>
+<div class="bg-zinc-950 p-4 rounded-lg">
+<p class="text-xs text-zinc-500 font-mono leading-relaxed">
+                                    [0x4...F2] Protocol init...<br/>
+                                    [SYNC] Orbital mesh active<br/>
+                                    [STAT] All systems operational
+                                </p>
+</div>
+</div>
+<button class="w-full py-4 bg-[#5E5CE6] text-white rounded-xl font-bold active:scale-95 transition-transform shadow-lg shadow-[#5E5CE6]/20">
+                            DEPLOY RULE
+                        </button>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-zinc-950/90 backdrop-blur-xl border-t border-zinc-800 shadow-2xl font-space-grotesk text-[10px] uppercase tracking-widest">
+<a class="flex flex-col items-center justify-center text-zinc-500 active:bg-zinc-800 py-1 transition-all" href="index.html">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span>Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#5E5CE6] bg-[#5E5CE6]/10 rounded-lg px-4 py-1 transition-all" href="automation.html">
+<span class="material-symbols-outlined mb-1" data-icon="smart_button">smart_button</span>
+<span>Rules</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 active:bg-zinc-800 py-1 transition-all" href="liquidity.html">
+<span class="material-symbols-outlined mb-1" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span>Assets</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 active:bg-zinc-800 py-1 transition-all" href="profile.html">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span>Profile</span>
+</a>
+</nav>
+</body></html>
