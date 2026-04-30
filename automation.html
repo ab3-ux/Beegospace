@@ -7,7 +7,6 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
         tailwind.config = {
           darkMode: "class",
@@ -132,11 +131,18 @@
             background: #464554;
             border-radius: 2px;
         }
+        @keyframes orbit-spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .sync-icon {
+            animation: orbit-spin 2s linear infinite;
+        }
     </style>
 </head>
 <body class="font-body-md text-body-md overflow-hidden">
 <!-- Microchip Core Background -->
-<img alt="Remastered Microchip" class="microchip-bg" data-alt="A highly detailed, remastered microchip architecture captured in a macro perspective. The circuitry glows with faint electric violet and cyan pulses against a dark, matte obsidian substrate. Technical precision is emphasized through sharp, geometric etched lines and microscopic gold contact points. The overall aesthetic is clean, professional, and evocative of high-performance orbital computing systems, utilizing a sophisticated dark-mode palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEvyRoHcTUNg3zhgld9cWk3JYQSzPkde4wLdmzCJI9yhOt4J1W8Cl3OJ2dwmO0h9GMy-47JqKZGr9iDFHKkbpfq3Z6V_anuaE13V6GZvbCqJ6AcNrmhnxqRhvJsSVWFkmhZ2ds_1kuFIa6n-TqijwsQOEa4_tU51vf3KE1doPkVIJH8eRCkcNdPWgOPduE-SO0KfihOmXGVcfvQPEvbs3damv6memqlgADbXkrkyAl3K7BACHt3ONEnnUUfFzyACm77SuI4Eu6Hg"/>
+<img alt="Remastered Microchip" class="microchip-bg" src="https://lh3.googleusercontent.com/aida/ADBb0ugGHFJ4fdmSna-DLE6P9jJ2hcXdIfEAVnzowdDvxJDYKRDAEhATMbDWeBIKqb6Ys7ULVrotXl732VA2f4Mjy0PzagA63CCzqYLMQ4vrtEB6cz6f6AqXj5zjZ_16_RWVkx_Uca09Pf7VdHdD6JwSXm6zcfNRqV-Gq5vHuo_eBxIXyoxSWist2HewtvEjxEqbUIgN2Dl60aJj9ItzNGkjs2owLxbLWWIemwuG8zFwSBQhX9qruC91ayguCA"/>
 <!-- Top Navigation Bar -->
 <header class="flex justify-between items-center h-16 px-8 w-full fixed top-0 z-50 bg-zinc-950/70 backdrop-blur-xl border-b border-zinc-800">
 <div class="flex items-center gap-4">
@@ -149,10 +155,11 @@
 </div>
 </div>
 <div class="flex items-center gap-4">
-<button class="flex items-center gap-2 bg-primary-container text-on-primary-container px-4 py-2 rounded-lg font-label-caps active:scale-95 transition-transform" id="connectButton" onclick="console.log('Connect Clicked'); alert('Attempting to connect to MetaMask...');">
-<span class="material-symbols-outlined text-[18px]">account_balance_wallet</span>
-                CONNECT WALLET
-            </button>
+<button class="flex items-center gap-2 bg-primary-container text-on-primary-container px-4 py-2 rounded-lg font-label-caps active:scale-95 transition-all relative overflow-hidden group" id="connectButton" onclick="forceConnect()">
+<span class="material-symbols-outlined text-[18px] group-[.pending]:hidden">account_balance_wallet</span>
+<span class="material-symbols-outlined text-[18px] hidden group-[.pending]:inline-block sync-icon">sync</span>
+<span class="group-[.pending]:opacity-50">CONNECT WALLET</span>
+</button>
 <div class="flex items-center gap-2">
 <span class="material-symbols-outlined text-zinc-400 cursor-pointer hover:text-white transition-colors">notifications</span>
 <span class="material-symbols-outlined text-zinc-400 cursor-pointer hover:text-white transition-colors">settings</span>
@@ -215,7 +222,7 @@
 <div class="glass-panel px-6 py-4 rounded-xl flex items-center gap-8">
 <div class="flex flex-col">
 <span class="text-label-caps text-zinc-500">WALLET_ADDRESS</span>
-<span class="font-headline-md text-base text-zinc-200">0x71...E20c</span>
+<span class="font-headline-md text-base text-zinc-200" id="displayWallet">0x71...E20c</span>
 </div>
 <div class="h-8 w-px bg-zinc-800"></div>
 <div class="flex flex-col">
@@ -229,18 +236,26 @@
 <!-- Core Actions Panel -->
 <div class="col-span-12 lg:col-span-8 glass-panel rounded-xl p-8 flex flex-col justify-between border-zinc-800">
 <div class="mb-12">
-<h2 class="font-headline-lg text-white mb-6">Automation Hub</h2>
+<div class="flex items-center justify-between mb-6">
+<h2 class="font-headline-lg text-white">Automation Hub</h2>
+<div class="flex flex-col items-end">
+<button class="text-[10px] font-label-caps text-zinc-500 hover:text-zinc-300 transition-colors underline underline-offset-4" onclick="alert('Troubleshooting: Check if your browser is blocking pop-ups. Ensure MetaMask is unlocked and refresh.')">
+                                    CONNECTION_TROUBLESHOOT
+                                </button>
+</div>
+</div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<button class="flex flex-col items-center justify-center p-6 rounded-xl bg-primary-container text-white hover:opacity-90 transition-all active:scale-95 aspect-square" id="rebalanceBtn" onclick="console.log('Rebalance Clicked'); alert('Executing Liquidity Rebalance Protocol...');">
-<span class="material-symbols-outlined text-4xl mb-4">balance</span>
-<span class="font-label-caps text-sm">REBALANCE</span>
+<button class="flex flex-col items-center justify-center p-6 rounded-xl bg-primary-container text-white hover:opacity-90 transition-all active:scale-95 aspect-square relative overflow-hidden group/btn" id="rebalanceBtn" onclick="forceConnect()">
+<span class="material-symbols-outlined text-4xl mb-4 group-[.pending]/btn:hidden">balance</span>
+<span class="material-symbols-outlined text-4xl mb-4 hidden group-[.pending]/btn:inline-block sync-icon">sync</span>
+<span class="font-label-caps text-sm group-[.pending]/btn:opacity-50">FORCE CONNECT</span>
 </button>
 <button class="flex flex-col items-center justify-center p-6 rounded-xl bg-zinc-900 border border-zinc-800 text-white hover:bg-zinc-800 transition-all active:scale-95 aspect-square" id="depositBtn" onclick="console.log('Deposit Clicked'); alert('Initializing Vault Deposit sequence...');">
-<span class="material-symbols-outlined text-4xl mb-4">south_west</span>
+<span class="material-symbols-outlined text-4xl mb-4 text-zinc-400">south_west</span>
 <span class="font-label-caps text-sm">DEPOSIT</span>
 </button>
 <button class="flex flex-col items-center justify-center p-6 rounded-xl bg-zinc-900 border border-zinc-800 text-white hover:bg-zinc-800 transition-all active:scale-95 aspect-square" id="withdrawBtn" onclick="console.log('Withdraw Clicked'); alert('Preparing Withdrawal Authorization...');">
-<span class="material-symbols-outlined text-4xl mb-4">north_east</span>
+<span class="material-symbols-outlined text-4xl mb-4 text-zinc-400">north_east</span>
 <span class="font-label-caps text-sm">WITHDRAW</span>
 </button>
 </div>
@@ -250,7 +265,7 @@
 <h3 class="font-headline-md text-zinc-200">Live Execution Logs</h3>
 <span class="text-label-caps text-zinc-500">AUTO_REFRESH ON</span>
 </div>
-<div class="bg-zinc-950/80 rounded-lg p-4 font-mono text-xs text-emerald-500/80 h-48 overflow-y-auto terminal-scroll">
+<div class="bg-zinc-950/80 rounded-lg p-4 font-mono text-xs text-emerald-500/80 h-48 overflow-y-auto terminal-scroll" id="terminal">
 <div class="mb-1">[14:22:01] SYSTEM_INITIALIZED: Kernel v2.0.4 loading...</div>
 <div class="mb-1 text-zinc-500">[14:22:03] NETWORK_SYNC: Synchronizing with Ethereum Mainnet</div>
 <div class="mb-1">[14:22:05] WALLET_SCAN: Found 0x71...E20c active</div>
@@ -269,7 +284,7 @@
                             <span class="bg-violet-500/10 text-violet-400 px-2 py-0.5 rounded text-[10px] font-label-caps">4 TOTAL</span>
 </h3>
 <div class="space-y-4">
-<div class="flex items-center justify-between p-3 rounded-lg bg-zinc-900/30 border border-zinc-800/50">
+<div class="flex items-center justify-between p-3 rounded-lg bg-zinc-900/30 border border-zinc-800/50 hover:bg-zinc-900 transition-colors cursor-pointer group">
 <div class="flex items-center gap-3">
 <div class="w-8 h-8 rounded bg-violet-500/20 flex items-center justify-center">
 <span class="material-symbols-outlined text-violet-400 text-sm">token</span>
@@ -279,9 +294,9 @@
 <span class="text-[10px] text-zinc-500">0x4a...f912</span>
 </div>
 </div>
-<span class="material-symbols-outlined text-zinc-600 text-lg">open_in_new</span>
+<span class="material-symbols-outlined text-zinc-600 text-lg group-hover:text-white transition-colors">open_in_new</span>
 </div>
-<div class="flex items-center justify-between p-3 rounded-lg bg-zinc-900/30 border border-zinc-800/50">
+<div class="flex items-center justify-between p-3 rounded-lg bg-zinc-900/30 border border-zinc-800/50 hover:bg-zinc-900 transition-colors cursor-pointer group">
 <div class="flex items-center gap-3">
 <div class="w-8 h-8 rounded bg-violet-500/20 flex items-center justify-center">
 <span class="material-symbols-outlined text-violet-400 text-sm">hub</span>
@@ -291,9 +306,9 @@
 <span class="text-[10px] text-zinc-500">0xde...92b1</span>
 </div>
 </div>
-<span class="material-symbols-outlined text-zinc-600 text-lg">open_in_new</span>
+<span class="material-symbols-outlined text-zinc-600 text-lg group-hover:text-white transition-colors">open_in_new</span>
 </div>
-<div class="flex items-center justify-between p-3 rounded-lg bg-zinc-900/30 border border-zinc-800/50">
+<div class="flex items-center justify-between p-3 rounded-lg bg-zinc-900/30 border border-zinc-800/50 hover:bg-zinc-900 transition-colors cursor-pointer group">
 <div class="flex items-center gap-3">
 <div class="w-8 h-8 rounded bg-violet-500/20 flex items-center justify-center">
 <span class="material-symbols-outlined text-violet-400 text-sm">lock</span>
@@ -303,7 +318,7 @@
 <span class="text-[10px] text-zinc-500">0x88...14c2</span>
 </div>
 </div>
-<span class="material-symbols-outlined text-zinc-600 text-lg">open_in_new</span>
+<span class="material-symbols-outlined text-zinc-600 text-lg group-hover:text-white transition-colors">open_in_new</span>
 </div>
 </div>
 </div>
@@ -316,9 +331,12 @@
 <p class="text-on-error-container text-xs opacity-80 leading-relaxed mb-4">
                                     MetaMask not detected in browser. Please install the extension or ensure the provider is enabled to link your assets.
                                 </p>
-<button class="text-[10px] font-label-caps px-3 py-1.5 border border-error/40 text-error rounded hover:bg-error/10 transition-colors">
-                                    RE-SCAN WINDOW.ETHEREUM
-                                </button>
+<div class="flex flex-col gap-2">
+<button class="text-[10px] font-label-caps px-3 py-1.5 border border-error/40 text-error rounded hover:bg-error/10 transition-colors" onclick="location.reload()">
+                                        RE-SCAN WINDOW.ETHEREUM
+                                    </button>
+<span class="text-[9px] text-zinc-500 font-label-caps opacity-60">Pop-up blockers may prevent authentication.</span>
+</div>
 </div>
 </div>
 </div>
@@ -326,23 +344,81 @@
 </div>
 </div>
 </main>
-<!-- Hidden non-blocking detection script -->
 <script>
-        // Non-blocking ethereum detection
-        (function() {
-            window.addEventListener('load', () => {
-                setTimeout(() => {
-                    if (typeof window.ethereum !== 'undefined') {
-                        console.log('MetaMask/Ethereum Provider detected.');
-                        const warning = document.getElementById('metaMaskWarning');
-                        if (warning) {
-                            warning.classList.add('hidden');
-                        }
-                    } else {
-                        console.warn('Ethereum provider not found.');
-                    }
-                }, 500);
-            });
-        })();
+        async function forceConnect() {
+            const btn = document.getElementById('connectButton');
+            const hubBtn = document.getElementById('rebalanceBtn');
+            const terminal = document.getElementById('terminal');
+            
+            const logToTerminal = (msg, color = 'text-zinc-500') => {
+                const time = new Date().toLocaleTimeString('en-GB', { hour12: false });
+                const div = document.createElement('div');
+                div.className = `mb-1 ${color}`;
+                div.textContent = `[${time}] ${msg}`;
+                terminal.insertBefore(div, terminal.lastElementChild);
+                terminal.scrollTop = terminal.scrollHeight;
+            };
+
+            if (typeof window.ethereum === 'undefined') {
+                logToTerminal('ERROR: ETHEREUM_PROVIDER_NOT_FOUND', 'text-error');
+                alert('No wallet detected. Please install MetaMask and try again.');
+                return;
+            }
+
+            try {
+                // Set pending state
+                btn.classList.add('pending');
+                hubBtn.classList.add('pending');
+                logToTerminal('INITIALIZING: Aggressive provider handshake...', 'text-violet-400');
+
+                // Force request accounts
+                const accounts = await window.ethereum.request({ 
+                    method: 'eth_requestAccounts' 
+                });
+
+                if (accounts && accounts.length > 0) {
+                    const addr = accounts[0];
+                    const shortAddr = addr.slice(0, 6) + '...' + addr.slice(-4);
+                    
+                    logToTerminal(`SUCCESS: Authorized as ${shortAddr}`, 'text-emerald-400');
+                    document.getElementById('displayWallet').textContent = shortAddr;
+                    
+                    // Update main button UI
+                    btn.innerHTML = `
+                        <span class="material-symbols-outlined text-[18px] text-emerald-400">verified</span>
+                        <span>${shortAddr.toUpperCase()}</span>
+                    `;
+                    btn.classList.remove('bg-primary-container', 'text-on-primary-container');
+                    btn.classList.add('bg-emerald-500/10', 'text-emerald-400', 'border', 'border-emerald-500/30');
+
+                    // Update Hub button
+                    hubBtn.innerHTML = `
+                        <span class="material-symbols-outlined text-4xl mb-4 text-emerald-400">task_alt</span>
+                        <span class="font-label-caps text-sm">CONNECTED</span>
+                    `;
+                }
+
+            } catch (error) {
+                logToTerminal(`USER_REJECTED: Connection protocol aborted`, 'text-error');
+                console.error(error);
+                if (error.code === 4001) {
+                    alert('Connection rejected by user. Please unlock MetaMask to continue.');
+                }
+            } finally {
+                btn.classList.remove('pending');
+                hubBtn.classList.remove('pending');
+            }
+        }
+
+        // Auto-check on load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                if (typeof window.ethereum !== 'undefined') {
+                    const warning = document.getElementById('metaMaskWarning');
+                    if (warning) warning.classList.add('hidden');
+                    console.log('Provider detected.');
+                }
+            }, 500);
+        });
     </script>
 </body></html>
