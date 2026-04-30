@@ -2,500 +2,307 @@
 
 <html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>ORBITAL_AUTO | Beego-Space Hub</title>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>BEEGO-SPACE | Orbital Precision Hub</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
         tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                      "secondary-fixed-dim": "#b9c8de",
-                      "primary": "#c2c1ff",
-                      "surface-container-high": "#222a3d",
-                      "tertiary-fixed": "#d8e3fb",
-                      "surface": "#0b1326",
-                      "surface-container-lowest": "#060e20",
-                      "surface-container-low": "#131b2e",
-                      "on-background": "#dae2fd",
-                      "inverse-primary": "#4d4ad5",
-                      "tertiary-container": "#646f84",
-                      "outline-variant": "#464554",
-                      "surface-container-highest": "#2d3449",
-                      "secondary-container": "#39485a",
-                      "secondary": "#b9c8de",
-                      "inverse-on-surface": "#283044",
-                      "background": "#0b1326",
-                      "surface-tint": "#c2c1ff",
-                      "primary-fixed": "#e2dfff",
-                      "primary-container": "#5e5ce6",
-                      "outline": "#918fa0",
-                      "inverse-surface": "#dae2fd",
-                      "error": "#ffb4ab",
-                      "on-tertiary-container": "#eff2ff",
-                      "on-secondary-container": "#a7b6cc",
-                      "on-tertiary-fixed-variant": "#3c475a",
-                      "on-tertiary-fixed": "#111c2d",
-                      "error-container": "#93000a",
-                      "surface-bright": "#31394d",
-                      "primary-fixed-dim": "#c2c1ff",
-                      "surface-dim": "#0b1326",
-                      "on-secondary-fixed": "#0d1c2d",
-                      "on-primary-fixed-variant": "#332dbc",
-                      "surface-variant": "#2d3449",
-                      "on-primary-container": "#f4f1ff",
-                      "on-error-container": "#ffdad6",
-                      "on-primary": "#1800a7",
-                      "surface-container": "#171f33",
-                      "on-tertiary": "#263143",
-                      "on-secondary": "#233143",
-                      "on-primary-fixed": "#0c006b",
-                      "on-secondary-fixed-variant": "#39485a",
-                      "on-surface-variant": "#c7c4d7",
-                      "on-error": "#690005",
-                      "tertiary-fixed-dim": "#bcc7de",
-                      "tertiary": "#bcc7de",
-                      "secondary-fixed": "#d4e4fa",
-                      "on-surface": "#dae2fd"
-              },
-              "borderRadius": {
-                      "DEFAULT": "0.25rem",
-                      "lg": "0.5rem",
-                      "xl": "0.75rem",
-                      "full": "9999px"
-              },
-              "spacing": {
-                      "stack-sm": "12px",
-                      "stack-md": "24px",
-                      "stack-lg": "48px",
-                      "gutter": "24px",
-                      "container-max": "1440px",
-                      "unit": "8px",
-                      "margin": "40px"
-              },
-              "fontFamily": {
-                      "label-caps": ["Manrope"],
-                      "headline-md": ["Space Grotesk"],
-                      "body-md": ["Manrope"],
-                      "body-lg": ["Manrope"],
-                      "headline-lg": ["Space Grotesk"],
-                      "body-sm": ["Manrope"],
-                      "display": ["Space Grotesk"]
-              },
-              "fontSize": {
-                      "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
-                      "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
-                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                      "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "500"}],
-                      "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
-                      "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "500"}]
-              }
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#dae2fd",
+                        "on-primary-fixed-variant": "#332dbc",
+                        "secondary-container": "#39485a",
+                        "on-error": "#690005",
+                        "surface-tint": "#c2c1ff",
+                        "inverse-primary": "#4d4ad5",
+                        "background": "#0b1326",
+                        "surface-variant": "#2d3449",
+                        "on-secondary-fixed": "#0d1c2d",
+                        "tertiary-container": "#646f84",
+                        "primary-fixed-dim": "#c2c1ff",
+                        "primary-fixed": "#e2dfff",
+                        "on-surface-variant": "#c7c4d7",
+                        "on-surface": "#dae2fd",
+                        "on-primary": "#1800a7",
+                        "surface-container": "#171f33",
+                        "error": "#ffb4ab",
+                        "on-tertiary-container": "#eff2ff",
+                        "on-secondary-fixed-variant": "#39485a",
+                        "outline": "#918fa0",
+                        "on-primary-container": "#f4f1ff",
+                        "inverse-on-surface": "#283044",
+                        "surface-bright": "#31394d",
+                        "tertiary": "#bcc7de",
+                        "outline-variant": "#464554",
+                        "surface-dim": "#0b1326",
+                        "secondary-fixed": "#d4e4fa",
+                        "secondary": "#b9c8de",
+                        "primary-container": "#5e5ce6",
+                        "on-tertiary-fixed-variant": "#3c475a",
+                        "error-container": "#93000a",
+                        "primary": "#c2c1ff",
+                        "tertiary-fixed-dim": "#bcc7de",
+                        "surface-container-lowest": "#060e20",
+                        "on-secondary-container": "#a7b6cc",
+                        "on-tertiary-fixed": "#111c2d",
+                        "secondary-fixed-dim": "#b9c8de",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-high": "#222a3d",
+                        "tertiary-fixed": "#d8e3fb",
+                        "on-background": "#dae2fd",
+                        "surface-container-highest": "#2d3449",
+                        "on-tertiary": "#263143",
+                        "on-primary-fixed": "#0c006b",
+                        "surface": "#0b1326",
+                        "surface-container-low": "#131b2e",
+                        "on-secondary": "#233143"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Space Grotesk"],
+                        "display": ["Space Grotesk"],
+                        "label-caps": ["Manrope"],
+                        "body-md": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "body-sm": ["Manrope"],
+                        "headline-md": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                        "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}]
+                    }
+                },
             },
-          },
         }
     </script>
 <style>
-        body {
-            background-color: #0b1326;
-            color: #dae2fd;
-            -webkit-font-smoothing: antialiased;
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
-        .microchip-bg {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            opacity: 0.12;
-            filter: grayscale(1) brightness(0.6) contrast(1.1);
-            mix-blend-mode: lighten;
-            object-fit: cover;
+        body {
+            background-color: #060e20;
+            overflow-x: hidden;
         }
         .glass-panel {
-            background: rgba(19, 27, 46, 0.7);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(145, 143, 160, 0.15);
-        }
-        .terminal-scroll::-webkit-scrollbar {
-            width: 4px;
-        }
-        .terminal-scroll::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        .terminal-scroll::-webkit-scrollbar-thumb {
-            background: #464554;
-            border-radius: 2px;
-        }
-        @keyframes orbit-spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        .sync-icon {
-            animation: orbit-spin 2s linear infinite;
-        }
-        .mobile-nav-overlay {
-            transition: opacity 0.3s ease;
-        }
-        #sidebar.hidden-mobile {
-            transform: translateX(-100%);
-        }
-        @media (min-width: 1024px) {
-            #sidebar.hidden-mobile {
-                transform: translateX(0);
-            }
-        }
-        #sidebar {
-            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: rgba(23, 31, 51, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(145, 143, 160, 0.1);
         }
     </style>
 </head>
-<body class="font-body-md text-body-md overflow-x-hidden">
-<!-- Updated Background to {{DATA:IMAGE:IMAGE_41}} -->
-<img alt="Beego Core Microchip" class="microchip-bg" src="https://lh3.googleusercontent.com/aida/ADBb0uibllT6eBU_nWJaXMmRmVMU8U8C7MtrHGB1HKheHwWiX-BVTn0fkPt2YAteGCszHmwNF-lBv7urMR6daOkpzhFSVlHzLXVOf_ZYRsNft4t8zKj5RkxhZNhPy5-FEPmWgpgGUmYtrLgbDmMYeyyeuhXFwvHuz80PYq7E5YjXvGu0gAjtPWjZq64fN2TNXHPZUcfNiPuQINyvHvUuAJW-pvqNTZ8HypNHIsIBy3cdw3ySxDRm0k1iBmvyr41-KPKz-526q6FO3JcV"/>
-<!-- Mobile Menu Toggle (Only visible on small screens) -->
-<div class="lg:hidden fixed bottom-6 right-6 z-[60]">
-<button class="w-14 h-14 rounded-full bg-primary-container text-white shadow-lg flex items-center justify-center active:scale-90 transition-transform" onclick="toggleSidebar()">
-<span class="material-symbols-outlined" id="menuIcon">menu</span>
-</button>
+<body class="text-on-background font-body-md antialiased">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/80 backdrop-blur-xl border-b border-zinc-800/50 flex justify-between items-center h-16 px-6 w-full">
+<div class="flex items-center gap-3">
+<img alt="BEEGO" class="w-8 h-8 rounded-lg" data-alt="A macro photograph of a high-tech microprocessor chip with intricate violet glowing circuits on a matte black ceramic substrate. The lighting is cold and clinical, highlighting the surgical precision of the hardware components. The aesthetic is ultra-modern and premium, fitting for an orbital command center dashboard. Deep blacks and electric violet hues dominate the frame." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5uTb1VDYRE3oAYqPjFxmHYs1cdRB_AgJbJhJTP_eFhzP4lEwhrLHRpaN-1IoNu44q1c0zlNOPNRssyCpfzbZJK7HCfWD7O6s1V6OyxIj0vj-MBdiqNLh_R5U5fP8qydQUj9BpdHIs2j7jajd7w-KxcgO3S7-AJ3FqrzvmYiZ2Y3uoC3tgZslPBKzdGTTMsP6G9MhT5-jfw0AgStimRbjHFcT8iT6pVQTX7p8Y9pon7HRtNgHRUJTnVK_Jij6SVQ6eBKYt4F90qw"/>
+<span class="text-xl font-bold tracking-tighter text-zinc-100 font-['Space_Grotesk']">BEEGO-SPACE</span>
 </div>
-<!-- Top Navigation Bar -->
-<header class="flex justify-between items-center h-16 px-4 md:px-8 w-full fixed top-0 z-50 bg-zinc-950/80 backdrop-blur-xl border-b border-zinc-800/50">
 <div class="flex items-center gap-4">
-<span class="text-lg md:text-xl font-bold tracking-tighter text-white font-display">ORBITAL_AUTO</span>
-<div class="h-4 w-px bg-zinc-800 hidden md:block"></div>
-<div class="hidden md:flex items-center gap-6">
-<span class="text-violet-400 font-bold font-label-caps cursor-pointer">DASHBOARD</span>
-<span class="text-zinc-400 hover:text-white transition-colors duration-150 font-label-caps cursor-pointer">PROTOCOL</span>
-<span class="text-zinc-400 hover:text-white transition-colors duration-150 font-label-caps cursor-pointer">NETWORK</span>
-</div>
-</div>
-<div class="flex items-center gap-3 md:gap-4">
-<button class="flex items-center gap-2 bg-primary-container text-on-primary-container px-3 md:px-4 py-2 rounded-lg font-label-caps text-[10px] md:text-xs active:scale-95 transition-all relative overflow-hidden group whitespace-nowrap" id="connectButton" onclick="forceConnect()">
-<span class="material-symbols-outlined text-[16px] md:text-[18px] group-[.pending]:hidden">account_balance_wallet</span>
-<span class="material-symbols-outlined text-[16px] md:text-[18px] hidden group-[.pending]:inline-block sync-icon">sync</span>
-<span class="group-[.pending]:opacity-50">CONNECT WALLET</span>
-</button>
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-zinc-400 cursor-pointer hover:text-white transition-colors hidden sm:block">notifications</span>
-<span class="material-symbols-outlined text-zinc-400 cursor-pointer hover:text-white transition-colors">settings</span>
-</div>
+<button class="bg-primary-container text-on-primary-container px-4 py-2 rounded font-label-caps text-xs tracking-widest hover:opacity-90 active:scale-95 transition-all duration-150 cursor-pointer">
+                Connect Wallet
+            </button>
 </div>
 </header>
-<!-- Side Navigation Bar -->
-<nav class="fixed left-0 top-16 h-[calc(100vh-64px)] w-64 flex flex-col py-6 bg-zinc-950 border-r border-zinc-800/50 z-40 hidden-mobile lg:translate-x-0" id="sidebar">
-<div class="px-6 mb-8">
-<div class="text-xs font-label-caps text-zinc-500 mb-1">SYSTEM_STATUS</div>
-<div class="flex items-center gap-2">
-<div class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
-<span class="font-headline-md text-sm text-zinc-200">Terminal v2.0.4-stable</span>
+<!-- SideNavBar (Desktop Only) -->
+<aside class="fixed left-0 top-0 h-full w-64 hidden md:flex flex-col py-8 gap-y-4 bg-zinc-950 border-r border-zinc-900 z-40">
+<div class="px-6 mb-8 mt-12">
+<h2 class="text-2xl font-black text-zinc-100 font-['Space_Grotesk']">BEEGO</h2>
+<p class="text-zinc-500 text-[10px] uppercase tracking-[0.2em] font-label-caps">Orbital Precision Hub</p>
 </div>
-</div>
-<div class="flex flex-col gap-1">
-<a class="flex items-center gap-4 px-6 py-3 text-violet-400 border-r-2 border-violet-500 bg-zinc-900/50 font-label-caps" href="#">
-<span class="material-symbols-outlined">dashboard</span>
-                Dashboard
-            </a>
-<a class="flex items-center gap-4 px-6 py-3 text-zinc-500 hover:bg-zinc-900 hover:text-zinc-200 transition-all font-label-caps" href="#">
-<span class="material-symbols-outlined">smart_toy</span>
-                Automation
-            </a>
-<a class="flex items-center gap-4 px-6 py-3 text-zinc-500 hover:bg-zinc-900 hover:text-zinc-200 transition-all font-label-caps" href="#">
-<span class="material-symbols-outlined">account_balance_wallet</span>
-                Assets
-            </a>
-<a class="flex items-center gap-4 px-6 py-3 text-zinc-500 hover:bg-zinc-900 hover:text-zinc-200 transition-all font-label-caps" href="#">
-<span class="material-symbols-outlined">receipt_long</span>
-                History
-            </a>
-<a class="flex items-center gap-4 px-6 py-3 text-zinc-500 hover:bg-zinc-900 hover:text-zinc-200 transition-all font-label-caps" href="#">
-<span class="material-symbols-outlined">monitoring</span>
-                Analytics
-            </a>
-</div>
-<div class="mt-auto px-6">
-<div class="glass-panel p-4 rounded-xl border border-zinc-800/50">
-<div class="text-[10px] font-label-caps text-zinc-500 mb-2">NETWORK_LOAD</div>
-<div class="w-full bg-zinc-800 h-1 rounded-full overflow-hidden">
-<div class="bg-violet-500 h-full w-[34%]"></div>
-</div>
-<div class="flex justify-between mt-2 text-[10px] font-label-caps text-zinc-400">
-<span>34.2 Gwei</span>
-<span>99.9% Uptime</span>
-</div>
-</div>
-</div>
+<nav class="flex flex-col w-full">
+<a class="flex items-center gap-4 px-6 py-4 text-violet-400 border-r-2 border-violet-500 bg-zinc-900/40 font-['Space_Grotesk'] text-sm uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Command Center</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 text-zinc-500 hover:bg-zinc-900 hover:text-zinc-200 transition-colors duration-200 font-['Space_Grotesk'] text-sm uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+<span>Automations</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 text-zinc-500 hover:bg-zinc-900 hover:text-zinc-200 transition-colors duration-200 font-['Space_Grotesk'] text-sm uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span>Telemetry</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 text-zinc-500 hover:bg-zinc-900 hover:text-zinc-200 transition-colors duration-200 font-['Space_Grotesk'] text-sm uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined" data-icon="rocket_launch">rocket_launch</span>
+<span>Orbital Fleet</span>
+</a>
+<a class="flex items-center gap-4 px-6 py-4 text-zinc-500 hover:bg-zinc-900 hover:text-zinc-200 transition-colors duration-200 font-['Space_Grotesk'] text-sm uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+<span>System Logs</span>
+</a>
 </nav>
-<!-- Main Content Canvas -->
-<main class="lg:ml-64 mt-16 p-6 md:p-10 min-h-[calc(100vh-64px)] overflow-y-auto">
-<div class="max-w-container-max mx-auto">
-<!-- Header Section -->
-<div class="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-12 gap-6">
+</aside>
+<!-- Main Content Area -->
+<main class="pt-20 pb-24 md:pb-8 md:pl-64 min-h-screen">
+<div class="max-w-7xl mx-auto px-6 lg:px-12">
+<!-- Hero / Control Center -->
+<section class="mt-8 mb-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
 <div>
-<h1 class="font-display text-3xl md:text-display text-white mb-2">Control Center</h1>
-<p class="text-on-surface-variant font-body-md md:font-body-lg max-w-2xl">Manage your automated orbital assets and contract distributions from a single, unified interface.</p>
+<h1 class="font-display text-display text-on-surface mb-2">Control Center</h1>
+<p class="text-on-surface-variant font-body-lg max-w-2xl">Manage your orbital assets and automated liquidity protocols with mathematical precision.</p>
 </div>
-<div class="glass-panel px-4 py-3 md:px-6 md:py-4 rounded-xl flex items-center gap-4 md:gap-8 overflow-x-auto whitespace-nowrap">
-<div class="flex flex-col">
-<span class="text-[10px] font-label-caps text-zinc-500">WALLET_ADDRESS</span>
-<span class="font-headline-md text-sm md:text-base text-zinc-200" id="displayWallet">0x--...----</span>
-</div>
-<div class="h-8 w-px bg-zinc-800"></div>
-<div class="flex flex-col">
-<span class="text-[10px] font-label-caps text-zinc-500">ETH_BALANCE</span>
-<span class="font-headline-md text-sm md:text-base text-primary" id="displayBalance">0.000 ETH</span>
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label-caps text-xs tracking-widest uppercase">System Status: Optimal</span>
 </div>
 </div>
+<!-- Action Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Primary Action -->
+<button class="md:col-span-2 group relative overflow-hidden bg-primary-container rounded-xl p-8 flex flex-col justify-between min-h-[240px] transition-transform active:scale-[0.98]">
+<div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-9xl">sync_alt</span>
 </div>
-<!-- Bento Grid Layout -->
-<div class="grid grid-cols-12 gap-gutter">
-<!-- Core Actions Panel -->
-<div class="col-span-12 lg:col-span-8 glass-panel rounded-xl p-6 md:p-8 flex flex-col justify-between border-zinc-800">
-<div class="mb-8 md:mb-12">
+<div class="relative z-10">
+<span class="font-label-caps text-xs text-on-primary-container/70 uppercase tracking-[0.2em] mb-2 block">Protocol Maintenance</span>
+<h3 class="font-display text-headline-lg text-on-primary-container">REBALANCE</h3>
+</div>
+<div class="relative z-10 flex items-center justify-between">
+<p class="text-on-primary-container/80 text-sm max-w-[200px]">Optimally redistribute assets across orbital nodes for maximum efficiency.</p>
+<div class="w-12 h-12 rounded-full border border-on-primary-container/30 flex items-center justify-center">
+<span class="material-symbols-outlined">arrow_forward</span>
+</div>
+</div>
+</button>
+<!-- Secondary Actions -->
+<div class="grid grid-cols-1 gap-6">
+<button class="glass-panel group rounded-xl p-6 flex flex-col justify-between transition-all hover:bg-zinc-900/60 active:scale-[0.98]">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary text-3xl">south_west</span>
+<span class="font-label-caps text-[10px] text-zinc-500">LIQUIDITY IN</span>
+</div>
+<div>
+<h3 class="font-display text-headline-md text-zinc-100">DEPOSIT</h3>
+</div>
+</button>
+<button class="glass-panel group rounded-xl p-6 flex flex-col justify-between transition-all hover:bg-zinc-900/60 active:scale-[0.98]">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary text-3xl">north_east</span>
+<span class="font-label-caps text-[10px] text-zinc-500">LIQUIDITY OUT</span>
+</div>
+<div>
+<h3 class="font-display text-headline-md text-zinc-100">WITHDRAW</h3>
+</div>
+</button>
+</div>
+</div>
+</section>
+<!-- Data & Logs Section -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-16">
+<!-- Active Contracts -->
+<div>
 <div class="flex items-center justify-between mb-6">
-<h2 class="font-headline-md md:font-headline-lg text-white">Automation Hub</h2>
-<div class="flex flex-col items-end">
-<button class="text-[10px] font-label-caps text-zinc-500 hover:text-zinc-300 transition-colors underline underline-offset-4" onclick="toggleWarning()">
-                                    CONNECTION_TROUBLESHOOT
-                                </button>
+<h2 class="font-display text-headline-md text-zinc-100">Active Contracts</h2>
+<button class="text-primary font-label-caps text-[10px] tracking-widest hover:underline">VIEW ALL</button>
 </div>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
-<button class="flex flex-col items-center justify-center p-6 rounded-xl bg-primary-container text-white hover:opacity-90 transition-all active:scale-95 aspect-square relative overflow-hidden group/btn" id="rebalanceBtn" onclick="forceConnect()">
-<span class="material-symbols-outlined text-4xl mb-4 group-[.pending]/btn:hidden">balance</span>
-<span class="material-symbols-outlined text-4xl mb-4 hidden group-[.pending]/btn:inline-block sync-icon">sync</span>
-<span class="font-label-caps text-sm group-[.pending]/btn:opacity-50">REBALANCE</span>
-</button>
-<button class="flex flex-col items-center justify-center p-6 rounded-xl bg-zinc-900/50 border border-zinc-800 text-white hover:bg-zinc-800 transition-all active:scale-95 aspect-square" id="depositBtn">
-<span class="material-symbols-outlined text-4xl mb-4 text-zinc-400">south_west</span>
-<span class="font-label-caps text-sm">DEPOSIT</span>
-</button>
-<button class="flex flex-col items-center justify-center p-6 rounded-xl bg-zinc-900/50 border border-zinc-800 text-white hover:bg-zinc-800 transition-all active:scale-95 aspect-square" id="withdrawBtn">
-<span class="material-symbols-outlined text-4xl mb-4 text-zinc-400">north_east</span>
-<span class="font-label-caps text-sm">WITHDRAW</span>
-</button>
-</div>
-</div>
-<div>
-<div class="flex items-center justify-between mb-4">
-<h3 class="font-headline-md text-zinc-200">Live Execution Logs</h3>
-<span class="text-[10px] font-label-caps text-zinc-500">AUTO_REFRESH ON</span>
-</div>
-<div class="bg-zinc-950/80 rounded-lg p-4 font-mono text-[11px] text-emerald-500/80 h-40 md:h-48 overflow-y-auto terminal-scroll" id="terminal">
-<div class="mb-1 text-zinc-500">[SYSTEM] Scanning for secure provider...</div>
-<div class="mb-1">[14:22:01] SYSTEM_INITIALIZED: Kernel v2.0.4 loading...</div>
-<div class="mb-1 text-zinc-500">[14:22:03] NETWORK_SYNC: Synchronizing with Ethereum Mainnet</div>
-<div class="mb-1 animate-pulse">_</div>
-</div>
-</div>
-</div>
-<!-- Asset List Panel -->
-<div class="col-span-12 lg:col-span-4 flex flex-col gap-gutter">
-<!-- Thirdweb Contracts -->
-<div class="glass-panel rounded-xl p-6 border-zinc-800 flex-1">
-<h3 class="font-headline-md text-zinc-200 mb-6 flex items-center justify-between">
-                            Active Contracts
-                            <span class="bg-violet-500/10 text-violet-400 px-2 py-0.5 rounded text-[10px] font-label-caps">4 TOTAL</span>
-</h3>
 <div class="space-y-4">
-<div class="flex items-center justify-between p-3 rounded-lg bg-zinc-900/30 border border-zinc-800/50 hover:bg-zinc-900 transition-colors cursor-pointer group">
-<div class="flex items-center gap-3">
-<div class="w-8 h-8 rounded bg-violet-500/20 flex items-center justify-center">
-<span class="material-symbols-outlined text-violet-400 text-sm">token</span>
+<!-- Contract Item -->
+<div class="glass-panel p-5 rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded bg-zinc-900 flex items-center justify-center border border-zinc-800">
+<span class="material-symbols-outlined text-zinc-400">deployed_code</span>
 </div>
-<div class="flex flex-col">
-<span class="text-sm font-medium text-white">Yield_Optimizer_v1</span>
-<span class="text-[10px] text-zinc-500">0x4a...f912</span>
-</div>
-</div>
-<span class="material-symbols-outlined text-zinc-600 text-lg group-hover:text-white transition-colors">open_in_new</span>
-</div>
-<div class="flex items-center justify-between p-3 rounded-lg bg-zinc-900/30 border border-zinc-800/50 hover:bg-zinc-900 transition-colors cursor-pointer group">
-<div class="flex items-center gap-3">
-<div class="w-8 h-8 rounded bg-violet-500/20 flex items-center justify-center">
-<span class="material-symbols-outlined text-violet-400 text-sm">hub</span>
-</div>
-<div class="flex flex-col">
-<span class="text-sm font-medium text-white">Cross_Chain_Relay</span>
-<span class="text-[10px] text-zinc-500">0xde...92b1</span>
-</div>
-</div>
-<span class="material-symbols-outlined text-zinc-600 text-lg group-hover:text-white transition-colors">open_in_new</span>
-</div>
-<div class="flex items-center justify-between p-3 rounded-lg bg-zinc-900/30 border border-zinc-800/50 hover:bg-zinc-900 transition-colors cursor-pointer group">
-<div class="flex items-center gap-3">
-<div class="w-8 h-8 rounded bg-violet-500/20 flex items-center justify-center">
-<span class="material-symbols-outlined text-violet-400 text-sm">lock</span>
-</div>
-<div class="flex flex-col">
-<span class="text-sm font-medium text-white">Escrow_Vault_Main</span>
-<span class="text-[10px] text-zinc-500">0x88...14c2</span>
-</div>
-</div>
-<span class="material-symbols-outlined text-zinc-600 text-lg group-hover:text-white transition-colors">open_in_new</span>
-</div>
-</div>
-</div>
-<!-- MetaMask Compatibility Card -->
-<div class="bg-error-container/10 border border-error/20 p-6 rounded-xl hidden" id="metaMaskWarning">
-<div class="flex items-start gap-4">
-<span class="material-symbols-outlined text-error">warning</span>
 <div>
-<h4 class="text-error font-headline-md text-sm mb-1">Provider Detection</h4>
-<p class="text-on-error-container text-[11px] opacity-80 leading-relaxed mb-4">
-                                    MetaMask not detected. Please ensure the extension is enabled to link your assets.
-                                </p>
-<div class="flex flex-col gap-2">
-<button class="text-[10px] font-label-caps px-3 py-1.5 border border-error/40 text-error rounded hover:bg-error/10 transition-colors" onclick="location.reload()">
-                                        RE-SCAN WINDOW.ETHEREUM
-                                    </button>
+<h4 class="text-zinc-100 font-medium">BEEGO-ALPHA-V4</h4>
+<p class="text-zinc-500 text-xs font-label-caps">STABLE YIELD OPTIMIZER</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-zinc-100 font-mono text-sm">4.28 ETH</p>
+<p class="text-primary text-[10px] font-label-caps">+12.4% APR</p>
+</div>
+</div>
+<!-- Contract Item -->
+<div class="glass-panel p-5 rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded bg-zinc-900 flex items-center justify-center border border-zinc-800">
+<span class="material-symbols-outlined text-zinc-400">token</span>
+</div>
+<div>
+<h4 class="text-zinc-100 font-medium">ORBIT-DELTA-IX</h4>
+<p class="text-zinc-500 text-xs font-label-caps">CROSS-CHAIN ARBITRAGE</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-zinc-100 font-mono text-sm">12,400 USDC</p>
+<p class="text-primary text-[10px] font-label-caps">+8.2% APR</p>
+</div>
+</div>
+<!-- Contract Item -->
+<div class="glass-panel p-5 rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded bg-zinc-900 flex items-center justify-center border border-zinc-800">
+<span class="material-symbols-outlined text-zinc-400">hub</span>
+</div>
+<div>
+<h4 class="text-zinc-100 font-medium">OMEGA-CORE</h4>
+<p class="text-zinc-500 text-xs font-label-caps">LIQUIDITY PROVISIONING</p>
+</div>
+</div>
+<div class="text-right">
+<p class="text-zinc-100 font-mono text-sm">1.15 BTC</p>
+<p class="text-primary text-[10px] font-label-caps">+5.1% APR</p>
 </div>
 </div>
 </div>
 </div>
+<!-- Live Execution Logs -->
+<div>
+<div class="flex items-center justify-between mb-6">
+<h2 class="font-display text-headline-md text-zinc-100">Live Execution Logs</h2>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="text-zinc-500 text-[10px] font-label-caps">STREAMING LIVE</span>
 </div>
 </div>
+<div class="bg-zinc-950/50 border border-zinc-900 rounded-xl overflow-hidden font-mono text-[12px] p-6 h-[260px]">
+<div class="space-y-3 opacity-80">
+<p class="text-zinc-500"><span class="text-violet-400">[14:22:01]</span> INITIALIZING HANDSHAKE WITH NODE_04...</p>
+<p class="text-zinc-300"><span class="text-violet-400">[14:22:04]</span> AUTHENTICATION SUCCESSFUL. ROLE: OPERATOR_PRIMARY.</p>
+<p class="text-zinc-500"><span class="text-violet-400">[14:22:08]</span> FETCHING REAL-TIME TELEMETRY DATA...</p>
+<p class="text-emerald-400"><span class="text-violet-400">[14:22:12]</span> ARBITRAGE OPPORTUNITY DETECTED: DEX_A &lt;-&gt; DEX_C</p>
+<p class="text-zinc-300"><span class="text-violet-400">[14:22:15]</span> EXECUTING FLASH LOAN CONTRACT 0x4A...2C9F</p>
+<p class="text-zinc-500"><span class="text-violet-400">[14:22:19]</span> TRANSACTION PENDING ON ETHEREUM MAINNET...</p>
+<p class="text-emerald-400"><span class="text-violet-400">[14:22:25]</span> SUCCESS. PROFIT: +0.42 ETH NET.</p>
+<p class="text-zinc-300"><span class="text-violet-400">[14:22:30]</span> UPDATING SYSTEM STATE INVARIANT CHECK...</p>
+</div>
+</div>
+</div>
+</section>
 </div>
 </main>
-<script>
-        const terminal = document.getElementById('terminal');
-        const warning = document.getElementById('metaMaskWarning');
-        const sidebar = document.getElementById('sidebar');
-        const menuIcon = document.getElementById('menuIcon');
-        
-        function toggleSidebar() {
-            sidebar.classList.toggle('hidden-mobile');
-            menuIcon.textContent = sidebar.classList.contains('hidden-mobile') ? 'menu' : 'close';
-        }
-
-        function toggleWarning() {
-            warning.classList.toggle('hidden');
-        }
-
-        const logToTerminal = (msg, color = 'text-zinc-500') => {
-            const time = new Date().toLocaleTimeString('en-GB', { hour12: false });
-            const div = document.createElement('div');
-            div.className = `mb-1 ${color}`;
-            div.textContent = `[${time}] ${msg}`;
-            terminal.insertBefore(div, terminal.lastElementChild);
-            terminal.scrollTop = terminal.scrollHeight;
-        };
-
-        // Improved Web3 Detection Pattern
-        async function getProvider() {
-            return new Promise((resolve) => {
-                // Check immediately
-                if (window.ethereum) {
-                    return resolve(window.ethereum);
-                }
-
-                // Wait for onload + 500ms delay to ensure injection
-                window.addEventListener('load', () => {
-                    setTimeout(() => {
-                        if (window.ethereum) {
-                            resolve(window.ethereum);
-                        } else {
-                            resolve(null);
-                        }
-                    }, 500);
-                });
-
-                // Fallback for cases where load already happened
-                if (document.readyState === 'complete') {
-                    setTimeout(() => {
-                        resolve(window.ethereum || null);
-                    }, 500);
-                }
-            });
-        }
-
-        async function forceConnect() {
-            const btn = document.getElementById('connectButton');
-            const hubBtn = document.getElementById('rebalanceBtn');
-            const provider = await getProvider();
-
-            if (!provider) {
-                logToTerminal('ERROR: ETHEREUM_PROVIDER_NOT_FOUND', 'text-error');
-                warning.classList.remove('hidden');
-                return;
-            }
-
-            try {
-                btn.classList.add('pending');
-                hubBtn.classList.add('pending');
-                logToTerminal('INITIALIZING: Secure handshake with provider...', 'text-violet-400');
-
-                // Request accounts
-                const accounts = await provider.request({ 
-                    method: 'eth_requestAccounts' 
-                });
-
-                if (accounts && accounts.length > 0) {
-                    const addr = accounts[0];
-                    const shortAddr = addr.slice(0, 6) + '...' + addr.slice(-4);
-                    
-                    // Fetch balance
-                    const balanceHex = await provider.request({
-                        method: 'eth_getBalance',
-                        params: [addr, 'latest']
-                    });
-                    const balanceEth = (parseInt(balanceHex, 16) / 1e18).toFixed(3);
-
-                    logToTerminal(`SUCCESS: Authorized as ${shortAddr}`, 'text-emerald-400');
-                    document.getElementById('displayWallet').textContent = shortAddr;
-                    document.getElementById('displayBalance').textContent = `${balanceEth} ETH`;
-                    
-                    // Update main button UI
-                    btn.innerHTML = `
-                        <span class="material-symbols-outlined text-[18px] text-emerald-400">verified</span>
-                        <span>${shortAddr.toUpperCase()}</span>
-                    `;
-                    btn.classList.remove('bg-primary-container', 'text-on-primary-container');
-                    btn.classList.add('bg-emerald-500/10', 'text-emerald-400', 'border', 'border-emerald-500/30');
-
-                    // Update Hub button
-                    hubBtn.innerHTML = `
-                        <span class="material-symbols-outlined text-4xl mb-4 text-emerald-400">task_alt</span>
-                        <span class="font-label-caps text-sm">CONNECTED</span>
-                    `;
-                    hubBtn.classList.remove('bg-primary-container');
-                    hubBtn.classList.add('bg-zinc-900/50', 'border', 'border-emerald-500/30');
-                    
-                    warning.classList.add('hidden');
-                }
-
-            } catch (error) {
-                logToTerminal(`USER_REJECTED: Connection protocol aborted`, 'text-error');
-                console.error(error);
-            } finally {
-                btn.classList.remove('pending');
-                hubBtn.classList.remove('pending');
-            }
-        }
-
-        // Initialize detection on window load
-        window.addEventListener('load', async () => {
-            logToTerminal('CORE_SCAN: Detecting blockchain gateways...', 'text-zinc-500');
-            const provider = await getProvider();
-            
-            if (provider) {
-                logToTerminal('GATEWAY_READY: Web3 environment detected', 'text-emerald-400/70');
-                const accounts = await provider.request({ method: 'eth_accounts' }).catch(() => []);
-                if (accounts.length > 0) {
-                    forceConnect();
-                }
-            } else {
-                logToTerminal('GATEWAY_MISSING: No provider detected after scan', 'text-zinc-600');
-            }
-        });
-
-        // Functional IDs placeholders
-        document.getElementById('depositBtn').onclick = () => alert('Initializing Secure Vault Deposit...');
-        document.getElementById('withdrawBtn').onclick = () => alert('Requesting Withdrawal Authorization...');
-    </script>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 md:hidden rounded-t-lg bg-zinc-950/90 backdrop-blur-2xl border-t border-zinc-800 shadow-[0_-4px_20px_rgba(0,0,0,0.5)] flex justify-around items-center px-4 pb-safe pt-2">
+<a class="flex flex-col items-center justify-center text-violet-400 py-1 font-['Space_Grotesk'] text-[10px] uppercase" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span>Hub</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 py-1 font-['Space_Grotesk'] text-[10px] uppercase active:bg-zinc-900" href="#">
+<span class="material-symbols-outlined" data-icon="settings_input_component">settings_input_component</span>
+<span>Auto</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 py-1 font-['Space_Grotesk'] text-[10px] uppercase active:bg-zinc-900" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span>Wallet</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 py-1 font-['Space_Grotesk'] text-[10px] uppercase active:bg-zinc-900" href="#">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span>Alerts</span>
+</a>
+</nav>
+<!-- Background Decoration -->
+<div class="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
+<div class="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-violet-600/5 blur-[120px] rounded-full"></div>
+<div class="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary-container/5 blur-[100px] rounded-full"></div>
+</div>
 </body></html>
