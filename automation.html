@@ -266,11 +266,9 @@
 <span class="text-label-caps text-zinc-500">AUTO_REFRESH ON</span>
 </div>
 <div class="bg-zinc-950/80 rounded-lg p-4 font-mono text-xs text-emerald-500/80 h-48 overflow-y-auto terminal-scroll" id="terminal">
+<div class="mb-1 text-zinc-500">[SYSTEM] Scanning for secure provider...</div>
 <div class="mb-1">[14:22:01] SYSTEM_INITIALIZED: Kernel v2.0.4 loading...</div>
 <div class="mb-1 text-zinc-500">[14:22:03] NETWORK_SYNC: Synchronizing with Ethereum Mainnet</div>
-<div class="mb-1">[14:22:05] WALLET_SCAN: Found 0x71...E20c active</div>
-<div class="mb-1">[14:23:44] CONTRACT_POLLING: 4 active Thirdweb instances detected</div>
-<div class="mb-1 text-white">[14:25:12] HEARTBEAT: All systems within normal parameters</div>
 <div class="mb-1 animate-pulse">_</div>
 </div>
 </div>
@@ -322,8 +320,8 @@
 </div>
 </div>
 </div>
-<!-- MetaMask Compatibility Card -->
-<div class="bg-error-container/20 border border-error/20 p-6 rounded-xl" id="metaMaskWarning">
+<!-- MetaMask Compatibility Card - Initially hidden -->
+<div class="bg-error-container/20 border border-error/20 p-6 rounded-xl hidden" id="metaMaskWarning">
 <div class="flex items-start gap-4">
 <span class="material-symbols-outlined text-error">warning</span>
 <div>
@@ -345,23 +343,59 @@
 </div>
 </main>
 <script>
+        const terminal = document.getElementById('terminal');
+        const warning = document.getElementById('metaMaskWarning');
+        
+        const logToTerminal = (msg, color = 'text-zinc-500') => {
+            const time = new Date().toLocaleTimeString('en-GB', { hour12: false });
+            const div = document.createElement('div');
+            div.className = `mb-1 ${color}`;
+            div.textContent = `[${time}] ${msg}`;
+            terminal.insertBefore(div, terminal.lastElementChild);
+            terminal.scrollTop = terminal.scrollHeight;
+        };
+
+        // Robust provider detection
+        async function getProvider() {
+            if (window.ethereum) return window.ethereum;
+            
+            // Wait for ethereum#initialized event (EIP-6963 compatible or older MM)
+            return new Promise((resolve) => {
+                if (window.ethereum) {
+                    resolve(window.ethereum);
+                } else {
+                    const handleInitialized = () => {
+                        window.removeEventListener('ethereum#initialized', handleInitialized);
+                        resolve(window.ethereum);
+                    };
+                    window.addEventListener('ethereum#initialized', handleInitialized, { once: true });
+                    
+                    // Fallback interval check
+                    let attempts = 0;
+                    const interval = setInterval(() => {
+                        attempts++;
+                        if (window.ethereum) {
+                            clearInterval(interval);
+                            window.removeEventListener('ethereum#initialized', handleInitialized);
+                            resolve(window.ethereum);
+                        } else if (attempts >= 10) { // After ~1 second of checks
+                            clearInterval(interval);
+                            window.removeEventListener('ethereum#initialized', handleInitialized);
+                            resolve(null);
+                        }
+                    }, 100);
+                }
+            });
+        }
+
         async function forceConnect() {
             const btn = document.getElementById('connectButton');
             const hubBtn = document.getElementById('rebalanceBtn');
-            const terminal = document.getElementById('terminal');
-            
-            const logToTerminal = (msg, color = 'text-zinc-500') => {
-                const time = new Date().toLocaleTimeString('en-GB', { hour12: false });
-                const div = document.createElement('div');
-                div.className = `mb-1 ${color}`;
-                div.textContent = `[${time}] ${msg}`;
-                terminal.insertBefore(div, terminal.lastElementChild);
-                terminal.scrollTop = terminal.scrollHeight;
-            };
+            const provider = await getProvider();
 
-            if (typeof window.ethereum === 'undefined') {
+            if (!provider) {
                 logToTerminal('ERROR: ETHEREUM_PROVIDER_NOT_FOUND', 'text-error');
-                alert('No wallet detected. Please install MetaMask and try again.');
+                warning.classList.remove('hidden');
                 return;
             }
 
@@ -369,10 +403,10 @@
                 // Set pending state
                 btn.classList.add('pending');
                 hubBtn.classList.add('pending');
-                logToTerminal('INITIALIZING: Aggressive provider handshake...', 'text-violet-400');
+                logToTerminal('INITIALIZING: Secure handshake with provider...', 'text-violet-400');
 
                 // Force request accounts
-                const accounts = await window.ethereum.request({ 
+                const accounts = await provider.request({ 
                     method: 'eth_requestAccounts' 
                 });
 
@@ -396,6 +430,8 @@
                         <span class="material-symbols-outlined text-4xl mb-4 text-emerald-400">task_alt</span>
                         <span class="font-label-caps text-sm">CONNECTED</span>
                     `;
+                    
+                    warning.classList.add('hidden');
                 }
 
             } catch (error) {
@@ -410,15 +446,24 @@
             }
         }
 
-        // Auto-check on load
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                if (typeof window.ethereum !== 'undefined') {
-                    const warning = document.getElementById('metaMaskWarning');
-                    if (warning) warning.classList.add('hidden');
-                    console.log('Provider detected.');
+        // Auto-check on load with a slight delay for injection
+        window.addEventListener('load', async () => {
+            logToTerminal('CORE_SCAN: Detecting blockchain gateways...', 'text-zinc-500');
+            const provider = await getProvider();
+            
+            if (provider) {
+                logToTerminal('GATEWAY_READY: Web3 environment detected', 'text-emerald-400/70');
+                // Optionally auto-connect or just wait for user action
+                // Some users prefer to check if already connected
+                const accounts = await provider.request({ method: 'eth_accounts' }).catch(() => []);
+                if (accounts.length > 0) {
+                    forceConnect();
                 }
-            }, 500);
+            } else {
+                // After 1 second and 10 attempts in getProvider(), show warning
+                logToTerminal('GATEWAY_MISSING: No provider detected after 1.0s scan', 'text-zinc-600');
+                warning.classList.remove('hidden');
+            }
         });
     </script>
 </body></html>
