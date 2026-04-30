@@ -2,388 +2,262 @@
 
 <html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>BEEGO-SPACE | Web3 Engine</title>
-<!-- Tailwind CSS -->
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&amp;family=Space+Grotesk:wght@500;700;900&amp;display=swap" rel="stylesheet"/>
-<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Thirdweb SDK -->
-<script src="https://unpkg.com/@thirdweb-dev/sdk@latest/dist/thirdweb-sdk.browser.js"></script>
 <script id="tailwind-config">
-        tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                      "on-tertiary-fixed-variant": "#3c475a",
-                      "on-tertiary-fixed": "#111c2d",
-                      "error-container": "#93000a",
-                      "surface-bright": "#31394d",
-                      "outline-variant": "#464554",
-                      "surface-container-highest": "#2d3449",
-                      "secondary-container": "#39485a",
-                      "secondary": "#b9c8de",
-                      "inverse-on-surface": "#283044",
-                      "background": "#0b1326",
-                      "surface-tint": "#c2c1ff",
-                      "primary-fixed": "#e2dfff",
-                      "primary-container": "#5e5ce6",
-                      "outline": "#918fa0",
-                      "inverse-surface": "#dae2fd",
-                      "error": "#ffb4ab",
-                      "on-tertiary-container": "#eff2ff",
-                      "on-secondary-container": "#a7b6cc",
-                      "surface-container-high": "#222a3d",
-                      "tertiary-fixed": "#d8e3fb",
-                      "surface": "#0b1326",
-                      "surface-container-lowest": "#060e20",
-                      "surface-container-low": "#131b2e",
-                      "on-background": "#dae2fd",
-                      "inverse-primary": "#4d4ad5",
-                      "tertiary-container": "#646f84",
-                      "secondary-fixed-dim": "#b9c8de",
-                      "primary": "#c2c1ff",
-                      "on-surface-variant": "#c7c4d7",
-                      "on-error": "#690005",
-                      "tertiary-fixed-dim": "#bcc7de",
-                      "tertiary": "#bcc7de",
-                      "secondary-fixed": "#d4e4fa",
-                      "on-surface": "#dae2fd",
-                      "on-tertiary": "#263143",
-                      "on-secondary": "#233143",
-                      "on-primary-fixed": "#0c006b",
-                      "on-secondary-fixed-variant": "#39485a",
-                      "on-error-container": "#ffdad6",
-                      "on-primary": "#1800a7",
-                      "surface-container": "#171f33",
-                      "primary-fixed-dim": "#c2c1ff",
-                      "surface-dim": "#0b1326",
-                      "on-secondary-fixed": "#0d1c2d",
-                      "on-primary-fixed-variant": "#332dbc",
-                      "surface-variant": "#2d3449",
-                      "on-primary-container": "#f4f1ff"
-              },
-              "borderRadius": {
-                      "DEFAULT": "0.25rem",
-                      "lg": "0.5rem",
-                      "xl": "0.75rem",
-                      "full": "9999px"
-              },
-              "spacing": {
-                      "margin": "40px",
-                      "unit": "8px",
-                      "stack-sm": "12px",
-                      "stack-md": "24px",
-                      "stack-lg": "48px",
-                      "gutter": "24px",
-                      "container-max": "1440px"
-              },
-              "fontFamily": {
-                      "label-caps": ["Manrope"],
-                      "headline-md": ["Space Grotesk"],
-                      "body-md": ["Manrope"],
-                      "body-lg": ["Manrope"],
-                      "headline-lg": ["Space Grotesk"],
-                      "body-sm": ["Manrope"],
-                      "display": ["Space Grotesk"]
-              },
-              "fontSize": {
-                      "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
-                      "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
-                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                      "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "500"}],
-                      "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
-                      "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "500"}]
-              }
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#171f33",
+                    "surface-container-low": "#131b2e",
+                    "primary-container": "#5e5ce6",
+                    "tertiary-fixed": "#d8e3fb",
+                    "on-primary": "#1800a7",
+                    "outline-variant": "#464554",
+                    "primary": "#c2c1ff",
+                    "background": "#0b1326",
+                    "primary-fixed": "#e2dfff",
+                    "surface-tint": "#c2c1ff",
+                    "secondary-fixed": "#d4e4fa",
+                    "on-tertiary-container": "#eff2ff",
+                    "on-tertiary": "#263143",
+                    "tertiary-container": "#646f84",
+                    "on-secondary-fixed": "#0d1c2d",
+                    "on-background": "#dae2fd",
+                    "surface-variant": "#2d3449",
+                    "on-error-container": "#ffdad6",
+                    "outline": "#918fa0",
+                    "on-surface": "#dae2fd",
+                    "inverse-surface": "#dae2fd",
+                    "on-primary-container": "#f4f1ff",
+                    "surface-bright": "#31394d",
+                    "primary-fixed-dim": "#c2c1ff",
+                    "on-primary-fixed": "#0c006b",
+                    "on-error": "#690005",
+                    "tertiary": "#bcc7de",
+                    "inverse-on-surface": "#283044",
+                    "error": "#ffb4ab",
+                    "on-secondary-container": "#a7b6cc",
+                    "on-primary-fixed-variant": "#332dbc",
+                    "secondary": "#b9c8de",
+                    "secondary-fixed-dim": "#b9c8de",
+                    "surface-container-highest": "#2d3449",
+                    "on-tertiary-fixed-variant": "#3c475a",
+                    "on-secondary-fixed-variant": "#39485a",
+                    "surface-container-high": "#222a3d",
+                    "secondary-container": "#39485a",
+                    "on-surface-variant": "#c7c4d7",
+                    "error-container": "#93000a",
+                    "on-secondary": "#233143",
+                    "surface": "#0b1326",
+                    "surface-container-lowest": "#060e20",
+                    "on-tertiary-fixed": "#111c2d",
+                    "surface-dim": "#0b1326",
+                    "inverse-primary": "#4d4ad5",
+                    "tertiary-fixed-dim": "#bcc7de"
             },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-sm": "12px",
+                    "unit": "8px",
+                    "container-max": "1440px",
+                    "margin": "40px",
+                    "gutter": "24px",
+                    "stack-md": "24px",
+                    "stack-lg": "48px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Space Grotesk"],
+                    "body-md": ["Manrope"],
+                    "label-caps": ["Manrope"],
+                    "display": ["Space Grotesk"],
+                    "body-lg": ["Manrope"],
+                    "headline-md": ["Space Grotesk"],
+                    "body-sm": ["Manrope"],
+                    "mono": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
           },
-        }
+        },
+      }
     </script>
 <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
         body {
             background-color: #0b1326;
             color: #dae2fd;
+            -webkit-font-smoothing: antialiased;
         }
-        ::-webkit-scrollbar { width: 4px; }
-        ::-webkit-scrollbar-track { background: #0b1326; }
-        ::-webkit-scrollbar-thumb { background: #39485a; border-radius: 10px; }
+        .terminal-glow {
+            box-shadow: inset 0 0 20px rgba(94, 92, 230, 0.05);
+        }
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2d3449;
+            border-radius: 10px;
+        }
     </style>
-</head>
-<body class="font-body-md overflow-hidden">
-<!-- Sidebar Navigation -->
-<aside class="fixed left-0 top-0 h-full w-64 bg-zinc-950 border-r border-zinc-800 flex flex-col py-8 z-50">
-<div class="px-8 mb-12">
-<h1 class="text-lg font-black text-zinc-50 font-display tracking-widest">BEEGO HUB</h1>
-<p class="text-[10px] text-zinc-500 font-label-caps tracking-widest mt-1">V1.0.4-Orbital</p>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md bg-background min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-zinc-950/70 backdrop-blur-xl border-b border-zinc-800/50 flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#5E5CE6]" data-icon="terminal">terminal</span>
+<span class="font-['Space_Grotesk'] text-lg font-bold tracking-widest text-zinc-100">BEEGO-SPACE</span>
 </div>
-<nav class="flex-1 space-y-1">
-<a class="bg-zinc-900 text-violet-500 border-r-2 border-violet-500 flex items-center px-6 py-4 transition-all" href="#">
-<span class="material-symbols-outlined mr-4" data-icon="dashboard">dashboard</span>
-<span class="font-label-caps uppercase tracking-widest">Dashboard</span>
-</a>
-<a class="text-zinc-500 hover:bg-zinc-900/50 hover:text-zinc-100 flex items-center px-6 py-4 transition-all" href="#">
-<span class="material-symbols-outlined mr-4" data-icon="precision_manufacturing">precision_manufacturing</span>
-<span class="font-label-caps uppercase tracking-widest">Automations</span>
-</a>
-<a class="text-zinc-500 hover:bg-zinc-900/50 hover:text-zinc-100 flex items-center px-6 py-4 transition-all" href="#">
-<span class="material-symbols-outlined mr-4" data-icon="account_balance">account_balance</span>
-<span class="font-label-caps uppercase tracking-widest">Liquidity</span>
-</a>
-<a class="text-zinc-500 hover:bg-zinc-900/50 hover:text-zinc-100 flex items-center px-6 py-4 transition-all" href="#">
-<span class="material-symbols-outlined mr-4" data-icon="receipt_long">receipt_long</span>
-<span class="font-label-caps uppercase tracking-widest">Logs</span>
-</a>
-<a class="text-zinc-500 hover:bg-zinc-900/50 hover:text-zinc-100 flex items-center px-6 py-4 transition-all" href="#">
-<span class="material-symbols-outlined mr-4" data-icon="tune">tune</span>
-<span class="font-label-caps uppercase tracking-widest">Settings</span>
-</a>
-</nav>
-<div class="px-6 mt-auto space-y-4">
-<button class="w-full py-3 bg-primary-container text-on-primary-container rounded font-label-caps uppercase tracking-widest text-xs hover:brightness-110 active:scale-95 transition-all">
-                Launch New Strategy
-            </button>
-<div class="pt-6 border-t border-zinc-800 space-y-2">
-<a class="text-zinc-500 hover:text-zinc-100 flex items-center text-xs font-label-caps uppercase" href="#">
-<span class="material-symbols-outlined text-sm mr-2" data-icon="menu_book">menu_book</span> Docs
-                </a>
-<a class="text-zinc-500 hover:text-zinc-100 flex items-center text-xs font-label-caps uppercase" href="#">
-<span class="material-symbols-outlined text-sm mr-2" data-icon="contact_support">contact_support</span> Support
-                </a>
-</div>
-</div>
-</aside>
-<!-- Top App Bar -->
-<header class="fixed top-0 left-64 right-0 h-16 bg-zinc-950/80 backdrop-blur-md border-b border-zinc-800 flex justify-between items-center px-8 z-40">
-<div class="flex items-center">
-<span class="text-xl font-bold tracking-widest text-zinc-100 uppercase font-display">BEEGO-SPACE</span>
-</div>
-<div class="flex items-center space-x-6">
-<div class="flex items-center space-x-4">
-<span class="material-symbols-outlined text-zinc-400 hover:text-violet-400 cursor-pointer transition-colors" data-icon="account_balance_wallet">account_balance_wallet</span>
-<span class="material-symbols-outlined text-zinc-400 hover:text-violet-400 cursor-pointer transition-colors" data-icon="notifications">notifications</span>
-<span class="material-symbols-outlined text-zinc-400 hover:text-violet-400 cursor-pointer transition-colors" data-icon="settings">settings</span>
-</div>
-<button class="px-6 py-2 bg-primary-container text-on-primary-container font-label-caps uppercase text-xs rounded-full hover:brightness-110 active:scale-95 transition-all" id="connectButton">
-                Connect Wallet
-            </button>
+<div class="relative active:scale-95 transition-transform duration-100">
+<img alt="Profile" class="w-8 h-8 rounded-full border border-zinc-700" data-alt="A high-resolution close-up portrait of a professional systems engineer in a dark workspace. The lighting is low-key with subtle electric violet reflections on their face, matching the orbital command center aesthetic. The background is softly blurred, showing hints of high-tech interface panels and terminal screens. The overall mood is focused, calm, and technologically advanced." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzrma2S15Cia38JiAMXAQjvOkDN30vMpypozIKLACAGgHbef_GGNngB0iHN_j94sdCOdCAML-PMudZFkzFlh0aKxJqsrZzW6kdYQhYwfJUZR5RosNSzTuwyeb-krnOwI7nr39UPl8ieB4WrVER_8uFLYdMObU_OCj3oWi_fSrSdmZ110dpKFUjSU8eSwmMzRKzUKZfUpnRJkktIGyAbhS559Cf_p44daHALOoZ7oQq7kEoNK3tdJ1pji2Qlmxaegoy2DteINifDA"/>
 </div>
 </header>
-<!-- Main Content Area -->
-<main class="ml-64 mt-16 p-10 h-[calc(100vh-64px)] overflow-y-auto">
-<!-- Hero: BEEGO-CORE Chip -->
-<section class="mb-stack-lg relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/40 p-12">
-<div class="flex flex-col md:flex-row items-center gap-12 relative z-10">
-<div class="flex-1">
-<h2 class="font-display text-display text-zinc-50 mb-4">Control Center</h2>
-<p class="font-body-lg text-secondary max-w-xl mb-8">
-                        The orbital command interface for autonomous liquidity provisioning and smart contract execution. Monitor your BEEGO-CORE engine performance in real-time.
-                    </p>
-<div class="flex gap-4">
-<button class="px-8 py-3 bg-violet-600 text-white font-label-caps uppercase tracking-widest rounded hover:bg-violet-500 transition-colors" id="rebalanceBtn" onclick="alert('Action triggered: REBALANCE')">
-                            REBALANCE
-                        </button>
-<button class="px-8 py-3 border border-zinc-700 text-zinc-300 font-label-caps uppercase tracking-widest rounded hover:bg-zinc-800 transition-colors" id="depositBtn" onclick="alert('Action triggered: DEPOSIT')">
-                            DEPOSIT
-                        </button>
+<main class="pt-20 pb-28 px-4 max-w-lg mx-auto space-y-stack-md">
+<!-- Hardware Metrics HUD -->
+<section class="grid grid-cols-3 gap-3">
+<div class="bg-surface-container-low border border-zinc-800/50 rounded-lg p-3 space-y-2">
+<p class="font-label-caps text-[10px] text-zinc-500 uppercase tracking-wider">CPU Load</p>
+<p class="font-headline-md text-primary text-xl">42%</p>
+<div class="h-1 w-full bg-zinc-800 rounded-full overflow-hidden">
+<div class="h-full bg-[#5E5CE6] w-[42%]"></div>
 </div>
 </div>
-<div class="w-full md:w-1/3 flex flex-col items-center">
-<div class="relative p-1 bg-gradient-to-br from-violet-500/20 to-transparent rounded-2xl">
-<img alt="BEEGO-CORE processor chip" class="w-64 h-64 object-contain" data-alt="A highly detailed close-up shot of a sophisticated BEEGO-CORE processor chip sitting on a high-tech circuit board. The perspective is a straight-on, professional macro view. The chip is metallic with laser-etched branding and glowing violet fiber-optic channels running through it. The lighting is low-key with sharp ultraviolet highlights, creating a premium orbital aerospace engineering aesthetic. The background is a blur of deep zinc and dark blue technological components." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAL20rtPUewsqHj4NQAQqiKH-i5duSaxAbwjsJY_947XFh1iSEjihAWHdMXMBZu-3Oy-dPXYITEEF8Wts5Bq5dRfaPevrMyz-KYGe0Jk1stYszXlpnuAKi2ExR0aEGmsEFt9BIXwUiC8k3omBTlLw2uOzzWXeCvl3sQiVDJB8U1QoWtt7UIHcmx3uOzH-bGGwQRImn8sy5dWkW-dCy-AhFdtqWlzNVQTuAHc3pz9vJdehiggNtv3EcXUCrVI5mpTiJUPbcmw8lP1g"/>
+<div class="bg-surface-container-low border border-zinc-800/50 rounded-lg p-3 space-y-2">
+<p class="font-label-caps text-[10px] text-zinc-500 uppercase tracking-wider">Memory</p>
+<p class="font-headline-md text-primary text-xl">8.4GB</p>
+<div class="h-1 w-full bg-zinc-800 rounded-full overflow-hidden">
+<div class="h-full bg-[#5E5CE6] w-[68%]"></div>
 </div>
-<span class="mt-4 font-label-caps text-violet-400 text-xs tracking-widest">BEEGO-CORE SYSTEM READY</span>
+</div>
+<div class="bg-surface-container-low border border-zinc-800/50 rounded-lg p-3 space-y-2">
+<p class="font-label-caps text-[10px] text-zinc-500 uppercase tracking-wider">Temp</p>
+<p class="font-headline-md text-primary text-xl">54°C</p>
+<div class="h-1 w-full bg-zinc-800 rounded-full overflow-hidden">
+<div class="h-full bg-[#5E5CE6] w-[54%]"></div>
 </div>
 </div>
-<!-- Background Decoration -->
-<div class="absolute -bottom-24 -right-24 w-96 h-96 bg-violet-600/5 blur-[120px] rounded-full"></div>
 </section>
-<!-- Main Dashboard Grid -->
-<div class="grid grid-cols-12 gap-gutter">
-<!-- Active Contracts (Column 1-8) -->
-<div class="col-span-12 lg:col-span-8 bg-zinc-900/30 border border-zinc-800 rounded-xl overflow-hidden">
-<div class="p-6 border-b border-zinc-800 flex justify-between items-center">
-<h3 class="font-headline-md text-zinc-100 flex items-center">
-<span class="material-symbols-outlined mr-2 text-violet-500" data-icon="description">description</span>
-                        Active Contracts
-                    </h3>
-<button class="text-xs font-label-caps text-violet-400 hover:text-violet-300">View All</button>
+<!-- Main Terminal Console -->
+<section class="flex flex-col h-80 bg-zinc-950 border border-zinc-800/60 rounded-xl overflow-hidden terminal-glow">
+<div class="flex items-center justify-between px-4 py-2 border-b border-zinc-800/60 bg-zinc-900/30">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-green-500/80"></div>
+<span class="font-label-caps text-[10px] text-zinc-400">SESSION: ACTIVE [00:43:12]</span>
 </div>
-<div class="p-0">
-<table class="w-full text-left font-body-sm">
-<thead class="bg-zinc-950/50 text-zinc-500 font-label-caps text-[10px] uppercase">
-<tr>
-<th class="px-6 py-4">Contract Name</th>
-<th class="px-6 py-4">Type</th>
-<th class="px-6 py-4">Status</th>
-<th class="px-6 py-4 text-right">TVL</th>
-</tr>
-</thead>
-<tbody class="divide-y divide-zinc-800/50">
-<tr class="hover:bg-zinc-800/30 transition-colors">
-<td class="px-6 py-4 font-medium text-zinc-100">BEEGO-ALPHA-USDC</td>
-<td class="px-6 py-4 text-zinc-400">Liquidity Provision</td>
-<td class="px-6 py-4">
-<span class="inline-flex items-center px-2 py-1 bg-green-500/10 text-green-400 rounded-full text-[10px] font-label-caps uppercase">Running</span>
-</td>
-<td class="px-6 py-4 text-right text-zinc-100">$245,102.00</td>
-</tr>
-<tr class="hover:bg-zinc-800/30 transition-colors">
-<td class="px-6 py-4 font-medium text-zinc-100">STAKING-VAULT-V2</td>
-<td class="px-6 py-4 text-zinc-400">Yield Aggregator</td>
-<td class="px-6 py-4">
-<span class="inline-flex items-center px-2 py-1 bg-green-500/10 text-green-400 rounded-full text-[10px] font-label-caps uppercase">Running</span>
-</td>
-<td class="px-6 py-4 text-right text-zinc-100">$892,445.00</td>
-</tr>
-<tr class="hover:bg-zinc-800/30 transition-colors">
-<td class="px-6 py-4 font-medium text-zinc-100">ARBITRAGE-ORBITAL-04</td>
-<td class="px-6 py-4 text-zinc-400">Flash Loan Strat</td>
-<td class="px-6 py-4">
-<span class="inline-flex items-center px-2 py-1 bg-amber-500/10 text-amber-400 rounded-full text-[10px] font-label-caps uppercase">Optimizing</span>
-</td>
-<td class="px-6 py-4 text-right text-zinc-100">$45,000.00</td>
-</tr>
-</tbody>
-</table>
+<span class="material-symbols-outlined text-zinc-500 text-sm" data-icon="fullscreen">fullscreen</span>
 </div>
+<div class="flex-1 overflow-y-auto p-4 font-mono text-[11px] leading-relaxed text-zinc-400 space-y-1">
+<p><span class="text-[#5E5CE6]">[BOOT]</span> Initializing orbital kernel v4.2.1-beego...</p>
+<p><span class="text-[#5E5CE6]">[SYS]</span> Handshaking with Gateway Node-Alpha...</p>
+<p><span class="text-green-500/70">[OK]</span> Connection established. Latency 14ms.</p>
+<p><span class="text-[#5E5CE6]">[SYS]</span> Allocating virtual memory buckets...</p>
+<p><span class="text-zinc-500">&gt; user@beego-space:~$ ./launch_node_visualizer</span></p>
+<p><span class="text-[#5E5CE6]">[NODES]</span> Loading straight-perspective micro-architecture...</p>
+<p class="text-zinc-600">-------------------------------------------</p>
+<p><span class="text-[#5E5CE6]">[LOG]</span> Packet sync heartbeat active.</p>
+<p><span class="text-[#5E5CE6]">[LOG]</span> Monitoring node health: Cluster-7 (Healthy)</p>
+<p><span class="text-[#5E5CE6]">[LOG]</span> Decoding interstellar telemetry packets...</p>
+<p><span class="text-[#5E5CE6]">[SYS]</span> Auto-optimization sequence triggered.</p>
+<p><span class="text-[#5E5CE6]">[LOG]</span> Node density within nominal parameters.</p>
+<p><span class="text-zinc-500">&gt; _</span></p>
 </div>
-<!-- Network Status (Column 9-12) -->
-<div class="col-span-12 lg:col-span-4 flex flex-col gap-gutter">
-<div class="bg-zinc-900/30 border border-zinc-800 rounded-xl p-6">
-<h3 class="font-label-caps text-zinc-500 uppercase text-[10px] mb-4 flex items-center">
-<span class="material-symbols-outlined text-sm mr-2" data-icon="sensors">sensors</span>
-                        Network Status Summary
-                    </h3>
-<div class="space-y-6">
-<div class="flex justify-between items-end">
+</section>
+<!-- Node Visualizer -->
+<section class="space-y-3">
+<div class="flex items-center justify-between">
+<h3 class="font-['Space_Grotesk'] text-sm font-bold uppercase tracking-widest text-zinc-100">Node Architecture</h3>
+<span class="font-label-caps text-[10px] text-[#5E5CE6]">VIEW ALL NODES</span>
+</div>
+<div class="relative group aspect-video rounded-xl overflow-hidden border border-zinc-800/50">
+<img alt="Node Visualizer" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A futuristic, straight-perspective microchip design with glowing electric violet circuitry on a sleek dark metallic surface. The image emphasizes mathematical precision and symmetry, showcasing high-end aerospace engineering. Subtle light trails trace the paths of data transmission across the chip. The atmosphere is professional, clean, and minimalist, avoiding cluttered sci-fi tropes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsY4fGwjJjKNG0_JOWuXF32Z5RVFCuFXhpgtmsDg8IHbxt1gvYkd-8QvrX4Rbcpq3RLJN0TBQRTekxNKlP9852m-ku2kKYoHw_e09uMywEPRbPRyhO9aBAb4AmdEPTrvmvh7fHnQKF0C9Zqv7TPayYxl8uS6JLCugEsU8iLneV2Xy7UQRnJXYmIFz3JpYwWBjNyQpRrv_0MIg2qrIzoM0rB1IpGaJ8ZEQ5lsXScnL-ohJ07kmZfo3GnN7dqc7JOHOP5Sv9ImC2KQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
 <div>
-<p class="text-[10px] text-zinc-500 uppercase font-label-caps">GAS PRICE</p>
-<p class="text-xl font-headline-md text-zinc-100">12 Gwei</p>
+<p class="font-headline-md text-sm text-zinc-100">Core Node-Alpha</p>
+<p class="font-body-sm text-xs text-zinc-400">Region: Sector-7G</p>
 </div>
-<div class="text-green-400 text-xs flex items-center">
-<span class="material-symbols-outlined text-sm mr-1" data-icon="trending_down">trending_down</span> -2.4%
-                            </div>
+<div class="bg-[#5E5CE6] text-white p-2 rounded-lg active:scale-95 transition-transform duration-100">
+<span class="material-symbols-outlined text-base" data-icon="hub">hub</span>
 </div>
-<div class="flex justify-between items-end">
+</div>
+</div>
+</section>
+<!-- Node Activity Feed -->
+<section class="space-y-2">
+<h3 class="font-['Space_Grotesk'] text-sm font-bold uppercase tracking-widest text-zinc-100">Live Traffic</h3>
+<div class="space-y-1">
+<div class="flex items-center justify-between p-3 bg-surface-container-low border border-zinc-800/30 rounded-lg">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-[#5E5CE6] text-sm" data-icon="arrow_upward">arrow_upward</span>
+</div>
 <div>
-<p class="text-[10px] text-zinc-500 uppercase font-label-caps">BLOCK TIME</p>
-<p class="text-xl font-headline-md text-zinc-100">1.2s</p>
-</div>
-<div class="text-zinc-400 text-xs font-label-caps">STABLE</div>
-</div>
-<div class="pt-4 border-t border-zinc-800">
-<button class="w-full py-2 bg-transparent border border-zinc-700 text-zinc-300 font-label-caps uppercase text-xs rounded hover:bg-zinc-800 transition-all" id="withdrawBtn" onclick="alert('Action triggered: WITHDRAW')">
-                                Emergency Withdraw
-                            </button>
+<p class="font-body-sm text-xs text-zinc-200">OUTBOUND PACKET</p>
+<p class="font-label-caps text-[10px] text-zinc-500">TO: HUB-BETA-4</p>
 </div>
 </div>
+<p class="font-mono text-[10px] text-zinc-400">2.4MB/s</p>
 </div>
-<!-- Small Activity Log Mini Widget -->
-<div class="bg-zinc-950 border border-zinc-800 rounded-xl p-4 flex-1">
-<div class="flex items-center justify-between mb-4">
-<h4 class="font-label-caps text-[10px] uppercase text-zinc-500">Live Health</h4>
-<div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+<div class="flex items-center justify-between p-3 bg-surface-container-low border border-zinc-800/30 rounded-lg">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-green-500 text-sm" data-icon="arrow_downward">arrow_downward</span>
 </div>
-<div class="h-24 w-full flex items-end gap-1">
-<div class="bg-violet-600/40 w-full" style="height: 40%"></div>
-<div class="bg-violet-600/60 w-full" style="height: 60%"></div>
-<div class="bg-violet-600/40 w-full" style="height: 35%"></div>
-<div class="bg-violet-600/80 w-full" style="height: 85%"></div>
-<div class="bg-violet-600/50 w-full" style="height: 55%"></div>
-<div class="bg-violet-600/30 w-full" style="height: 25%"></div>
-<div class="bg-violet-600/90 w-full" style="height: 95%"></div>
+<div>
+<p class="font-body-sm text-xs text-zinc-200">INBOUND DATA</p>
+<p class="font-label-caps text-[10px] text-zinc-500">FROM: EARTH-RELAY</p>
 </div>
 </div>
-</div>
-<!-- Execution Logs Console (Column 1-12) -->
-<div class="col-span-12 bg-zinc-950 border border-zinc-800 rounded-xl overflow-hidden">
-<div class="bg-zinc-900 px-6 py-3 border-b border-zinc-800 flex items-center gap-2">
-<div class="flex gap-1.5">
-<div class="w-2.5 h-2.5 rounded-full bg-zinc-800"></div>
-<div class="w-2.5 h-2.5 rounded-full bg-zinc-800"></div>
-<div class="w-2.5 h-2.5 rounded-full bg-zinc-800"></div>
-</div>
-<span class="ml-4 font-label-caps text-[10px] text-zinc-500 uppercase tracking-widest">Live Execution Logs</span>
-</div>
-<div class="p-6 h-48 overflow-y-auto font-mono text-[12px] space-y-2 text-zinc-400 bg-black/40">
-<p><span class="text-zinc-600">[14:22:01]</span> <span class="text-violet-400">SYSTEM:</span> Initializing Orbital Core Hub v1.0.4...</p>
-<p><span class="text-zinc-600">[14:22:02]</span> <span class="text-blue-400">NETWORK:</span> Connected to Ethereum Mainnet RPC-01</p>
-<p><span class="text-zinc-600">[14:22:05]</span> <span class="text-green-400">AUTH:</span> Handshake successful. Waiting for wallet provider...</p>
-<p><span class="text-zinc-600">[14:22:12]</span> <span class="text-zinc-500">DAEMON:</span> Scanning active contracts (3 detected)</p>
-<p><span class="text-zinc-600">[14:22:15]</span> <span class="text-amber-400">WATCHER:</span> Potential rebalance detected on BEEGO-ALPHA-USDC (Spread: 0.12%)</p>
-<p><span class="text-zinc-600">[14:22:20]</span> <span class="text-zinc-500">DAEMON:</span> Heartbeat sent. Latency: 14ms</p>
-<p class="text-violet-500 animate-pulse" id="dynamicLog"><span class="text-zinc-600">[System State]</span> Waiting for User Interaction...</p>
+<p class="font-mono text-[10px] text-zinc-400">12.8MB/s</p>
 </div>
 </div>
-</div>
+</section>
 </main>
-<script>
-        // --- Connect Wallet Logic ---
-        const connectBtn = document.getElementById('connectButton');
-        const dynamicLog = document.getElementById('dynamicLog');
-
-        async function connectWallet() {
-            try {
-                // Visual feedback
-                connectBtn.innerText = "Connecting...";
-                connectBtn.classList.add('opacity-50', 'cursor-not-allowed');
-                
-                // Simulation of wallet connection
-                // In a real env, Thirdweb would be used here:
-                // const sdk = new ThirdwebSDK("ethereum");
-                // const address = await sdk.wallet.connect();
-
-                if (window.ethereum) {
-                    const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
-                    const account = accounts[0];
-                    const maskedAddress = `${account.substring(0, 6)}...${account.substring(account.length - 4)}`;
-                    
-                    connectBtn.innerText = `Connected: ${maskedAddress}`;
-                    connectBtn.classList.remove('bg-primary-container', 'opacity-50');
-                    connectBtn.classList.add('bg-zinc-800', 'text-green-400', 'border', 'border-green-500/30');
-                    
-                    // Log update
-                    const timestamp = new Date().toLocaleTimeString('en-GB', { hour12: false });
-                    dynamicLog.innerHTML = `<span class="text-zinc-600">[${timestamp}]</span> <span class="text-green-400">WALLET:</span> Authorized ${account}`;
-                    
-                    alert(`Connected successfully: ${account}`);
-                } else {
-                    alert("Please install MetaMask or a compatible Web3 wallet.");
-                    connectBtn.innerText = "Connect Wallet";
-                    connectBtn.classList.remove('opacity-50', 'cursor-not-allowed');
-                }
-            } catch (error) {
-                console.error(error);
-                connectBtn.innerText = "Connect Wallet";
-                connectBtn.classList.remove('opacity-50', 'cursor-not-allowed');
-                alert("Connection failed. Check console for details.");
-            }
-        }
-
-        connectBtn.addEventListener('click', connectWallet);
-
-        // --- Interaction Handlers ---
-        // These are also defined inline with 'onclick' as per requirements, 
-        // but can be extended here for more complex logic.
-        const btns = ['rebalanceBtn', 'depositBtn', 'withdrawBtn'];
-        btns.forEach(id => {
-            const el = document.getElementById(id);
-            if(el) {
-                el.addEventListener('mousedown', () => {
-                   const timestamp = new Date().toLocaleTimeString('en-GB', { hour12: false });
-                   const logEntry = document.createElement('p');
-                   logEntry.innerHTML = `<span class="text-zinc-600">[${timestamp}]</span> <span class="text-violet-400">USER:</span> Clicked ${id.toUpperCase().replace('BTN', '')}`;
-                   dynamicLog.parentNode.insertBefore(logEntry, dynamicLog);
-                });
-            }
-        });
-    </script>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-lg bg-zinc-950/80 backdrop-blur-2xl border-t border-zinc-800/60 flex justify-around items-center h-20 pb-safe px-4 w-full">
+<!-- Terminal (Active) -->
+<a class="flex flex-col items-center justify-center text-[#5E5CE6] font-bold" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="list_alt">list_alt</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-medium uppercase tracking-tighter">Terminal</span>
+</a>
+<!-- Metrics -->
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-300 transition-colors active:opacity-80 transition-opacity" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="monitoring">monitoring</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-medium uppercase tracking-tighter">Metrics</span>
+</a>
+<!-- Nodes -->
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-300 transition-colors active:opacity-80 transition-opacity" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="hub">hub</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-medium uppercase tracking-tighter">Nodes</span>
+</a>
+<!-- Settings -->
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-300 transition-colors active:opacity-80 transition-opacity" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="settings">settings</span>
+<span class="font-['Space_Grotesk'] text-[10px] font-medium uppercase tracking-tighter">Settings</span>
+</a>
+</nav>
 </body></html>
