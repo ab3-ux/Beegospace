@@ -2,121 +2,102 @@
 
 <html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BEEGO SPACE | Automation Hub</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "surface-container": "#171f33",
-                    "surface-container-low": "#131b2e",
-                    "primary-container": "#5e5ce6",
-                    "tertiary-fixed": "#d8e3fb",
-                    "on-primary": "#1800a7",
-                    "outline-variant": "#464554",
-                    "primary": "#c2c1ff",
-                    "background": "#0b1326",
-                    "primary-fixed": "#e2dfff",
-                    "surface-tint": "#c2c1ff",
-                    "secondary-fixed": "#d4e4fa",
-                    "on-tertiary-container": "#eff2ff",
-                    "on-tertiary": "#263143",
-                    "tertiary-container": "#646f84",
-                    "on-secondary-fixed": "#0d1c2d",
-                    "on-background": "#dae2fd",
-                    "surface-variant": "#2d3449",
-                    "on-error-container": "#ffdad6",
-                    "outline": "#918fa0",
-                    "on-surface": "#dae2fd",
-                    "inverse-surface": "#dae2fd",
-                    "on-primary-container": "#f4f1ff",
-                    "surface-bright": "#31394d",
-                    "primary-fixed-dim": "#c2c1ff",
-                    "on-primary-fixed": "#0c006b",
-                    "on-error": "#690005",
-                    "tertiary": "#bcc7de",
-                    "inverse-on-surface": "#283044",
-                    "error": "#ffb4ab",
-                    "on-secondary-container": "#a7b6cc",
-                    "on-primary-fixed-variant": "#332dbc",
-                    "secondary": "#b9c8de",
-                    "secondary-fixed-dim": "#b9c8de",
-                    "surface-container-highest": "#2d3449",
-                    "on-tertiary-fixed-variant": "#3c475a",
-                    "on-secondary-fixed-variant": "#39485a",
-                    "surface-container-high": "#222a3d",
-                    "secondary-container": "#39485a",
-                    "on-surface-variant": "#c7c4d7",
-                    "error-container": "#93000a",
-                    "on-secondary": "#233143",
-                    "surface": "#0b1326",
-                    "surface-container-lowest": "#060e20",
-                    "on-tertiary-fixed": "#111c2d",
-                    "surface-dim": "#0b1326",
-                    "inverse-primary": "#4d4ad5",
-                    "tertiary-fixed-dim": "#bcc7de"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0.25rem",
-                    "lg": "0.5rem",
-                    "xl": "0.75rem",
-                    "full": "9999px"
-            },
-            "spacing": {
-                    "stack-sm": "12px",
-                    "unit": "8px",
-                    "container-max": "1440px",
-                    "margin": "40px",
-                    "gutter": "24px",
-                    "stack-md": "24px",
-                    "stack-lg": "48px"
-            },
-            "fontFamily": {
-                    "headline-lg": ["Space Grotesk"],
-                    "body-md": ["Manrope"],
-                    "label-caps": ["Manrope"],
-                    "display": ["Space Grotesk"],
-                    "body-lg": ["Manrope"],
-                    "headline-md": ["Space Grotesk"],
-                    "body-sm": ["Manrope"],
-                    "mono": ["JetBrains Mono"]
-            },
-            "fontSize": {
-                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "500"}],
-                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
-                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "500"}],
-                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "500"}],
-                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#c7c4d7",
+                        "on-secondary": "#233143",
+                        "error-container": "#93000a",
+                        "on-tertiary-fixed": "#111c2d",
+                        "surface-container-lowest": "#060e20",
+                        "surface": "#0b1326",
+                        "tertiary-fixed-dim": "#bcc7de",
+                        "inverse-primary": "#4d4ad5",
+                        "surface-dim": "#0b1326",
+                        "tertiary": "#bcc7de",
+                        "primary-fixed-dim": "#c2c1ff",
+                        "on-primary-fixed": "#0c006b",
+                        "on-error": "#690005",
+                        "surface-bright": "#31394d",
+                        "error": "#ffb4ab",
+                        "inverse-on-surface": "#283044",
+                        "secondary-fixed-dim": "#b9c8de",
+                        "secondary": "#b9c8de",
+                        "on-secondary-container": "#a7b6cc",
+                        "on-primary-fixed-variant": "#332dbc",
+                        "surface-container-high": "#222a3d",
+                        "secondary-container": "#39485a",
+                        "on-secondary-fixed-variant": "#39485a",
+                        "surface-container-highest": "#2d3449",
+                        "on-tertiary-fixed-variant": "#3c475a",
+                        "tertiary-container": "#646f84",
+                        "on-tertiary": "#263143",
+                        "surface-tint": "#c2c1ff",
+                        "secondary-fixed": "#d4e4fa",
+                        "on-tertiary-container": "#eff2ff",
+                        "surface-variant": "#2d3449",
+                        "on-background": "#dae2fd",
+                        "on-secondary-fixed": "#0d1c2d",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-container": "#f4f1ff",
+                        "on-surface": "#dae2fd",
+                        "inverse-surface": "#dae2fd",
+                        "outline": "#918fa0",
+                        "surface-container": "#171f33",
+                        "surface-container-low": "#131b2e",
+                        "outline-variant": "#464554",
+                        "tertiary-fixed": "#d8e3fb",
+                        "on-primary": "#1800a7",
+                        "primary-container": "#5e5ce6",
+                        "primary-fixed": "#e2dfff",
+                        "primary": "#c2c1ff",
+                        "background": "#0b1326"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "stack-sm": "12px",
+                        "stack-md": "24px",
+                        "stack-lg": "48px",
+                        "container-max": "1440px",
+                        "margin": "40px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Manrope"],
+                        "display": ["Space Grotesk"],
+                        "body-lg": ["Manrope"],
+                        "headline-lg": ["Space Grotesk"],
+                        "body-md": ["Manrope"],
+                        "headline-md": ["Space Grotesk"],
+                        "body-sm": ["Manrope"]
+                    }
+                }
             }
-          },
-        },
-      }
+        }
     </script>
 <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
         body {
             background-color: #0b1326;
             color: #dae2fd;
-            -webkit-font-smoothing: antialiased;
-        }
-        .terminal-glow {
-            box-shadow: inset 0 0 20px rgba(94, 92, 230, 0.05);
-        }
-        ::-webkit-scrollbar {
-            width: 4px;
-        }
-        ::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #2d3449;
-            border-radius: 10px;
+            -webkit-tap-highlight-color: transparent;
         }
     </style>
 <style>
@@ -125,139 +106,151 @@
     }
   </style>
   </head>
-<body class="font-body-md bg-background min-h-screen">
+<body class="font-body-md selection:bg-primary-container/30">
 <!-- TopAppBar -->
-<header class="fixed top-0 w-full z-50 bg-zinc-950/70 backdrop-blur-xl border-b border-zinc-800/50 flex justify-between items-center px-6 h-16 w-full">
+<header class="bg-zinc-950/80 backdrop-blur-xl docked full-width top-0 z-50 border-b border-zinc-800/50 flex justify-between items-center px-6 h-16 w-full fixed">
 <div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-[#5E5CE6]" data-icon="terminal">terminal</span>
-<span class="font-['Space_Grotesk'] text-lg font-bold tracking-widest text-zinc-100">BEEGO-SPACE</span>
+<span class="material-symbols-outlined text-indigo-500" data-icon="rocket_launch">rocket_launch</span>
+<h1 class="text-lg font-bold tracking-widest text-zinc-100 font-['Space_Grotesk'] tracking-tight">BEEGO SPACE</h1>
 </div>
-<div class="relative active:scale-95 transition-transform duration-100">
-<img alt="Profile" class="w-8 h-8 rounded-full border border-zinc-700" data-alt="A high-resolution close-up portrait of a professional systems engineer in a dark workspace. The lighting is low-key with subtle electric violet reflections on their face, matching the orbital command center aesthetic. The background is softly blurred, showing hints of high-tech interface panels and terminal screens. The overall mood is focused, calm, and technologically advanced." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzrma2S15Cia38JiAMXAQjvOkDN30vMpypozIKLACAGgHbef_GGNngB0iHN_j94sdCOdCAML-PMudZFkzFlh0aKxJqsrZzW6kdYQhYwfJUZR5RosNSzTuwyeb-krnOwI7nr39UPl8ieB4WrVER_8uFLYdMObU_OCj3oWi_fSrSdmZ110dpKFUjSU8eSwmMzRKzUKZfUpnRJkktIGyAbhS559Cf_p44daHALOoZ7oQq7kEoNK3tdJ1pji2Qlmxaegoy2DteINifDA"/>
-</div>
+<button class="bg-primary-container text-on-primary-container px-4 py-2 rounded-lg font-label-caps text-label-caps hover:brightness-110 active:scale-95 transition-all">
+            Connect Wallet
+        </button>
 </header>
-<main class="pt-20 pb-28 px-4 max-w-lg mx-auto space-y-stack-md">
-<!-- Hardware Metrics HUD -->
-<section class="grid grid-cols-3 gap-3">
-<div class="bg-surface-container-low border border-zinc-800/50 rounded-lg p-3 space-y-2">
-<p class="font-label-caps text-[10px] text-zinc-500 uppercase tracking-wider">CPU Load</p>
-<p class="font-headline-md text-primary text-xl">42%</p>
-<div class="h-1 w-full bg-zinc-800 rounded-full overflow-hidden">
-<div class="h-full bg-[#5E5CE6] w-[42%]"></div>
-</div>
-</div>
-<div class="bg-surface-container-low border border-zinc-800/50 rounded-lg p-3 space-y-2">
-<p class="font-label-caps text-[10px] text-zinc-500 uppercase tracking-wider">Memory</p>
-<p class="font-headline-md text-primary text-xl">8.4GB</p>
-<div class="h-1 w-full bg-zinc-800 rounded-full overflow-hidden">
-<div class="h-full bg-[#5E5CE6] w-[68%]"></div>
-</div>
-</div>
-<div class="bg-surface-container-low border border-zinc-800/50 rounded-lg p-3 space-y-2">
-<p class="font-label-caps text-[10px] text-zinc-500 uppercase tracking-wider">Temp</p>
-<p class="font-headline-md text-primary text-xl">54°C</p>
-<div class="h-1 w-full bg-zinc-800 rounded-full overflow-hidden">
-<div class="h-full bg-[#5E5CE6] w-[54%]"></div>
-</div>
+<!-- Main Content Canvas -->
+<main class="pt-24 pb-32 px-6 max-w-md mx-auto space-y-8">
+<!-- Hero Section with Integrated Microchip Image -->
+<section class="relative h-48 rounded-xl overflow-hidden border border-outline-variant/30 group">
+<img alt="Microchip Remastered" class="absolute inset-0 w-full h-auto object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" data-alt="A highly detailed, futuristic microchip rendered in a high-end minimalist style. The microchip features intricate golden circuits and glowing violet energy paths set against a deep zinc-black substrate. Soft, atmospheric lighting emphasizes the precision engineering of the components, creating a professional orbital command center aesthetic. The overall mood is one of profound technological stability and advanced computational power." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMZwE7aC2cSwWKxwz_t4H9i7sbeY0jvLFMuGX1BBwTapl6vZZ2A1bdym9KcJttB0f9eTrJz2pLMBFbgw5KaBqknOFj5L9xUCPXPeHqwjfooSKFyHBIekjQyCZLsuz8VODf1snhrPvuO-HIwWYUalHzzNzidBKKEuaAWWCe7qoGooxZk4Pzm1LX2TwVpFSy6X0IhPkSY6J2U7XpX0yvjZfDo_NawR5CxJPvBFDDCDeDdx4tZeZoLfsYQYD9Rmml9HFRsNFNb7QYcA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<span class="text-label-caps font-label-caps text-primary tracking-widest">SYSTEM ONLINE</span>
+<h2 class="text-headline-md font-headline-md text-on-background">Automation Hub</h2>
 </div>
 </section>
-<!-- Main Terminal Console -->
-<section class="flex flex-col h-80 bg-zinc-950 border border-zinc-800/60 rounded-xl overflow-hidden terminal-glow">
-<div class="flex items-center justify-between px-4 py-2 border-b border-zinc-800/60 bg-zinc-900/30">
-<div class="flex items-center gap-2">
-<div class="w-2 h-2 rounded-full bg-green-500/80"></div>
-<span class="font-label-caps text-[10px] text-zinc-400">SESSION: ACTIVE [00:43:12]</span>
-</div>
-<span class="material-symbols-outlined text-zinc-500 text-sm" data-icon="fullscreen">fullscreen</span>
-</div>
-<div class="flex-1 overflow-y-auto p-4 font-mono text-[11px] leading-relaxed text-zinc-400 space-y-1">
-<p><span class="text-[#5E5CE6]">[BOOT]</span> Initializing orbital kernel v4.2.1-beego...</p>
-<p><span class="text-[#5E5CE6]">[SYS]</span> Handshaking with Gateway Node-Alpha...</p>
-<p><span class="text-green-500/70">[OK]</span> Connection established. Latency 14ms.</p>
-<p><span class="text-[#5E5CE6]">[SYS]</span> Allocating virtual memory buckets...</p>
-<p><span class="text-zinc-500">&gt; user@beego-space:~$ ./launch_node_visualizer</span></p>
-<p><span class="text-[#5E5CE6]">[NODES]</span> Loading straight-perspective micro-architecture...</p>
-<p class="text-zinc-600">-------------------------------------------</p>
-<p><span class="text-[#5E5CE6]">[LOG]</span> Packet sync heartbeat active.</p>
-<p><span class="text-[#5E5CE6]">[LOG]</span> Monitoring node health: Cluster-7 (Healthy)</p>
-<p><span class="text-[#5E5CE6]">[LOG]</span> Decoding interstellar telemetry packets...</p>
-<p><span class="text-[#5E5CE6]">[SYS]</span> Auto-optimization sequence triggered.</p>
-<p><span class="text-[#5E5CE6]">[LOG]</span> Node density within nominal parameters.</p>
-<p><span class="text-zinc-500">&gt; _</span></p>
-</div>
-</section>
-<!-- Node Visualizer -->
-<section class="space-y-3">
+<!-- Control Center Section -->
+<section class="space-y-4">
 <div class="flex items-center justify-between">
-<h3 class="font-['Space_Grotesk'] text-sm font-bold uppercase tracking-widest text-zinc-100">Node Architecture</h3>
-<span class="font-label-caps text-[10px] text-[#5E5CE6]">VIEW ALL NODES</span>
+<h3 class="text-headline-sm font-headline-md text-on-surface">Control Center</h3>
+<span class="material-symbols-outlined text-outline" data-icon="tune">tune</span>
 </div>
-<div class="relative group aspect-video rounded-xl overflow-hidden border border-zinc-800/50">
-<img alt="Node Visualizer" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A futuristic, straight-perspective microchip design with glowing electric violet circuitry on a sleek dark metallic surface. The image emphasizes mathematical precision and symmetry, showcasing high-end aerospace engineering. Subtle light trails trace the paths of data transmission across the chip. The atmosphere is professional, clean, and minimalist, avoiding cluttered sci-fi tropes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsY4fGwjJjKNG0_JOWuXF32Z5RVFCuFXhpgtmsDg8IHbxt1gvYkd-8QvrX4Rbcpq3RLJN0TBQRTekxNKlP9852m-ku2kKYoHw_e09uMywEPRbPRyhO9aBAb4AmdEPTrvmvh7fHnQKF0C9Zqv7TPayYxl8uS6JLCugEsU8iLneV2Xy7UQRnJXYmIFz3JpYwWBjNyQpRrv_0MIg2qrIzoM0rB1IpGaJ8ZEQ5lsXScnL-ohJ07kmZfo3GnN7dqc7JOHOP5Sv9ImC2KQ"/>
-<div class="absolute inset-0 bg-gradient-to-t from-zinc-950/80 to-transparent"></div>
-<div class="absolute bottom-4 left-4 right-4 flex justify-between items-end">
-<div>
-<p class="font-headline-md text-sm text-zinc-100">Core Node-Alpha</p>
-<p class="font-body-sm text-xs text-zinc-400">Region: Sector-7G</p>
+<div class="grid grid-cols-1 gap-3">
+<button class="flex items-center justify-between w-full p-4 bg-primary-container/10 border border-primary-container/20 rounded-xl active:scale-[0.98] transition-all">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container" data-icon="sync_alt">sync_alt</span>
 </div>
-<div class="bg-[#5E5CE6] text-white p-2 rounded-lg active:scale-95 transition-transform duration-100">
-<span class="material-symbols-outlined text-base" data-icon="hub">hub</span>
+<span class="font-label-caps text-label-caps tracking-wider text-primary">REBALANCE</span>
 </div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</button>
+<div class="grid grid-cols-2 gap-3">
+<button class="flex flex-col gap-3 p-4 bg-surface-container border border-outline-variant/20 rounded-xl active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined text-indigo-400" data-icon="south_west">south_west</span>
+<span class="font-label-caps text-label-caps tracking-wider text-on-surface">DEPOSIT</span>
+</button>
+<button class="flex flex-col gap-3 p-4 bg-surface-container border border-outline-variant/20 rounded-xl active:scale-[0.98] transition-all">
+<span class="material-symbols-outlined text-indigo-400" data-icon="north_east">north_east</span>
+<span class="font-label-caps text-label-caps tracking-wider text-on-surface">WITHDRAW</span>
+</button>
 </div>
 </div>
 </section>
-<!-- Node Activity Feed -->
-<section class="space-y-2">
-<h3 class="font-['Space_Grotesk'] text-sm font-bold uppercase tracking-widest text-zinc-100">Live Traffic</h3>
-<div class="space-y-1">
-<div class="flex items-center justify-between p-3 bg-surface-container-low border border-zinc-800/30 rounded-lg">
+<!-- Network Status Summary -->
+<section class="grid grid-cols-2 gap-4">
+<div class="p-4 bg-surface-container-low border border-outline-variant/10 rounded-xl">
+<p class="text-label-caps font-label-caps text-outline mb-1">GAS PRICE</p>
+<div class="flex items-baseline gap-2">
+<span class="text-headline-md font-headline-md text-on-background">12</span>
+<span class="text-body-sm font-body-sm text-outline">Gwei</span>
+</div>
+</div>
+<div class="p-4 bg-surface-container-low border border-outline-variant/10 rounded-xl">
+<p class="text-label-caps font-label-caps text-outline mb-1">BLOCK TIME</p>
+<div class="flex items-baseline gap-2">
+<span class="text-headline-md font-headline-md text-on-background">1.2</span>
+<span class="text-body-sm font-body-sm text-outline">sec</span>
+</div>
+</div>
+</section>
+<!-- Live Health Mini Chart -->
+<section class="p-5 bg-surface-container-high border border-outline-variant/20 rounded-xl space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-indigo-500 shadow-[0_0_8px_rgba(99,102,241,0.6)]"></div>
+<h3 class="text-label-caps font-label-caps text-on-background tracking-wider">LIVE SYSTEM HEALTH</h3>
+</div>
+<span class="text-label-caps font-label-caps text-primary">99.9%</span>
+</div>
+<div class="h-16 flex items-end gap-1 px-1">
+<div class="flex-1 bg-indigo-500/20 h-8 rounded-sm"></div>
+<div class="flex-1 bg-indigo-500/30 h-10 rounded-sm"></div>
+<div class="flex-1 bg-indigo-500/20 h-12 rounded-sm"></div>
+<div class="flex-1 bg-indigo-500/40 h-9 rounded-sm"></div>
+<div class="flex-1 bg-indigo-500/50 h-14 rounded-sm"></div>
+<div class="flex-1 bg-indigo-500/60 h-11 rounded-sm"></div>
+<div class="flex-1 bg-indigo-500/40 h-13 rounded-sm"></div>
+<div class="flex-1 bg-primary-container h-16 rounded-sm"></div>
+<div class="flex-1 bg-indigo-500/70 h-14 rounded-sm"></div>
+<div class="flex-1 bg-indigo-500/50 h-12 rounded-sm"></div>
+</div>
+</section>
+<!-- Active Contracts List -->
+<section class="space-y-4">
+<h3 class="text-headline-sm font-headline-md text-on-surface">Active Contracts</h3>
+<div class="space-y-3">
+<!-- Contract Item 1 -->
+<div class="p-4 bg-surface-container border border-outline-variant/10 rounded-xl flex items-center justify-between">
 <div class="flex items-center gap-3">
-<div class="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center">
-<span class="material-symbols-outlined text-[#5E5CE6] text-sm" data-icon="arrow_upward">arrow_upward</span>
+<div class="w-8 h-8 rounded bg-zinc-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-indigo-400 text-sm" data-icon="deployed_code">deployed_code</span>
 </div>
 <div>
-<p class="font-body-sm text-xs text-zinc-200">OUTBOUND PACKET</p>
-<p class="font-label-caps text-[10px] text-zinc-500">TO: HUB-BETA-4</p>
+<p class="font-headline-sm text-on-background text-sm font-bold">BEEGO-ALPHA-USDC</p>
+<p class="text-xs text-outline font-label-caps">AUTO-YIELD</p>
 </div>
 </div>
-<p class="font-mono text-[10px] text-zinc-400">2.4MB/s</p>
+<div class="flex items-center gap-2 px-2 py-1 bg-indigo-500/10 border border-indigo-500/20 rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
+<span class="text-[10px] font-label-caps text-indigo-400">ACTIVE</span>
 </div>
-<div class="flex items-center justify-between p-3 bg-surface-container-low border border-zinc-800/30 rounded-lg">
+</div>
+<!-- Contract Item 2 -->
+<div class="p-4 bg-surface-container border border-outline-variant/10 rounded-xl flex items-center justify-between">
 <div class="flex items-center gap-3">
-<div class="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center">
-<span class="material-symbols-outlined text-green-500 text-sm" data-icon="arrow_downward">arrow_downward</span>
+<div class="w-8 h-8 rounded bg-zinc-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-indigo-400 text-sm" data-icon="lock">lock</span>
 </div>
 <div>
-<p class="font-body-sm text-xs text-zinc-200">INBOUND DATA</p>
-<p class="font-label-caps text-[10px] text-zinc-500">FROM: EARTH-RELAY</p>
+<p class="font-headline-sm text-on-background text-sm font-bold">STAKING-VAULT-V2</p>
+<p class="text-xs text-outline font-label-caps">LOCKED ASSETS</p>
 </div>
 </div>
-<p class="font-mono text-[10px] text-zinc-400">12.8MB/s</p>
+<div class="flex items-center gap-2 px-2 py-1 bg-indigo-500/10 border border-indigo-500/20 rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
+<span class="text-[10px] font-label-caps text-indigo-400">ACTIVE</span>
+</div>
 </div>
 </div>
 </section>
 </main>
 <!-- BottomNavBar -->
-<nav class="fixed bottom-0 w-full z-50 rounded-t-lg bg-zinc-950/80 backdrop-blur-2xl border-t border-zinc-800/60 flex justify-around items-center h-20 pb-safe px-4 w-full">
-<!-- Terminal (Active) -->
-<a class="flex flex-col items-center justify-center text-[#5E5CE6] font-bold" href="#">
-<span class="material-symbols-outlined mb-1" data-icon="list_alt">list_alt</span>
-<span class="font-['Space_Grotesk'] text-[10px] font-medium uppercase tracking-tighter">Terminal</span>
-</a>
-<!-- Metrics -->
-<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-300 transition-colors active:opacity-80 transition-opacity" href="#">
-<span class="material-symbols-outlined mb-1" data-icon="monitoring">monitoring</span>
-<span class="font-['Space_Grotesk'] text-[10px] font-medium uppercase tracking-tighter">Metrics</span>
-</a>
-<!-- Nodes -->
-<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-300 transition-colors active:opacity-80 transition-opacity" href="#">
-<span class="material-symbols-outlined mb-1" data-icon="hub">hub</span>
-<span class="font-['Space_Grotesk'] text-[10px] font-medium uppercase tracking-tighter">Nodes</span>
-</a>
-<!-- Settings -->
-<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-300 transition-colors active:opacity-80 transition-opacity" href="#">
-<span class="material-symbols-outlined mb-1" data-icon="settings">settings</span>
-<span class="font-['Space_Grotesk'] text-[10px] font-medium uppercase tracking-tighter">Settings</span>
-</a>
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-zinc-950/90 backdrop-blur-2xl border-t border-zinc-800 shadow-[0_-4px_20px_rgba(0,0,0,0.5)] rounded-t-lg">
+<div class="flex flex-col items-center justify-center text-indigo-400 font-bold bg-indigo-500/10 rounded-lg py-1 px-3 active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-tighter">Hub</span>
+</div>
+<div class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-300 active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="monitoring">monitoring</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-tighter">Assets</span>
+</div>
+<div class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-300 active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="terminal">terminal</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-tighter">Logs</span>
+</div>
+<div class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-300 active:scale-90 transition-transform duration-150">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="font-['Space_Grotesk'] text-[10px] uppercase tracking-tighter">Wallet</span>
+</div>
 </nav>
 </body></html>
